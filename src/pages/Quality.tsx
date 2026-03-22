@@ -36,13 +36,26 @@ const Quality = () => {
         image={heroImage}
       />
 
-      <section className="py-[15vh] bg-background">
+       <section className="py-[15vh] bg-background">
         <div className="container">
-          <SectionHeading
-            tag="Quality Standards / 01"
-            title="Our Quality Framework"
-            description="Every product undergoes rigorous inspection and testing protocols to ensure it meets the highest standards of industrial performance."
-          />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="lg:col-span-5 overflow-hidden border border-border"
+            >
+              <img src={qualityLabUrl} alt="Quality testing laboratory" className="w-full h-[350px] object-cover" />
+            </motion.div>
+            <div className="lg:col-span-7">
+              <SectionHeading
+                tag="Quality Standards / 01"
+                title="Our Quality Framework"
+                description="Every product undergoes rigorous inspection and testing protocols to ensure it meets the highest standards of industrial performance."
+              />
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {qualityPillars.map((q) => (
               <SpecCard key={q.serial} {...q} />
@@ -54,7 +67,20 @@ const Quality = () => {
       {/* QC Process */}
       <section className="py-[15vh] bg-secondary border-t border-border">
         <div className="container">
-          <SectionHeading tag="QC Process / 02" title="Quality Control Workflow" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-12">
+            <div className="lg:col-span-7">
+              <SectionHeading tag="QC Process / 02" title="Quality Control Workflow" />
+            </div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="lg:col-span-5 overflow-hidden border border-border"
+            >
+              <img src={inspectionUrl} alt="Inspection process" className="w-full h-[300px] object-cover" />
+            </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {qcProcess.map((p, i) => (
               <motion.div
