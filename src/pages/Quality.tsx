@@ -91,7 +91,7 @@ const Quality = () => {
                 transition={{ delay: i * 0.1 }}
                 className="relative"
               >
-                <span className="font-display text-6xl font-bold text-primary/20">{p.step}</span>
+                <span className="font-display text-6xl font-bold text-primary">{p.step}</span>
                 <h3 className="font-display text-xl font-bold text-foreground mt-2 mb-2">{p.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
               </motion.div>

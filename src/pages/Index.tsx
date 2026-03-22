@@ -20,8 +20,8 @@ import imgCyclone from "@/assets/product-cyclone.jpg";
 import imgValve from "@/assets/product-valve.jpg";
 // Real industrial stock photos from Unsplash - unique images (no repeats)
 const aboutFactoryUrl = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80";
-const aboutTeamUrl = "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80";
-const aboutWorkshopUrl = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80";
+const aboutTeamUrl = "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=600&q=80";
+const aboutWorkshopUrl = "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80";
 
 const stats = [
   { value: "50+", label: "Years of Expertise" },
