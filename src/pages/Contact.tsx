@@ -146,21 +146,21 @@ const Contact = () => {
         </div>
       </section>
       {/* Google Map */}
-      <section className="bg-secondary border-t border-border">
-        <div className="container py-12">
+      <section className="py-16 bg-secondary border-t border-border">
+        <div className="container">
           <SectionHeading tag="Our Location / 02" title="Find Us" />
-        </div>
-        <div className="w-full h-[280px]">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.123456789!2d72.8311!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAxJzIxLjAiTiA3MsKwNDknNTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
-            width="100%"
-            height="100%"
-            style={{ border: 0, filter: "grayscale(80%) contrast(1.1)" }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Laxmi Engineering Works Location"
-          />
+          <div className="border border-border overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.123456789!2d72.8311!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAxJzIxLjAiTiA3MsKwNDknNTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%"
+              height="350"
+              style={{ border: 0, filter: "grayscale(60%) contrast(1.05)" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Laxmi Engineering Works Location"
+            />
+          </div>
         </div>
       </section>
     </>
