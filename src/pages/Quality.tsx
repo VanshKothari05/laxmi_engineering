@@ -5,6 +5,10 @@ import SectionHeading from "@/components/SectionHeading";
 import SpecCard from "@/components/SpecCard";
 import heroImage from "@/assets/hero-quality.jpg";
 
+const qualityLabUrl = "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80";
+const inspectionUrl = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80";
+const certificationUrl = "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80";
+
 const qualityPillars = [
   { icon: Shield, title: "ISO 9001:2015", description: "Certified quality management system ensuring consistent processes and continuous improvement.", serial: "QA-01" },
   { icon: Microscope, title: "In-House Testing Lab", description: "Complete testing laboratory with precision instruments for dimensional accuracy and material verification.", serial: "QA-02" },

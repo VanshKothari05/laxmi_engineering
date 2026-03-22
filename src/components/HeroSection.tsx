@@ -56,7 +56,20 @@ const HeroSection = ({ tagline, title, titleAccent, subtitle, image, video }: He
             <source src={video} type="video/mp4" />
           </video>
         </motion.div>
-      ) : null}
+      ) : (
+        <motion.div
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.4 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0"
+        >
+          <img
+            src={image}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
+      )}
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />

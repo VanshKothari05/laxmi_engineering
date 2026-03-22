@@ -150,7 +150,7 @@ const Contact = () => {
         <div className="container py-12">
           <SectionHeading tag="Our Location / 02" title="Find Us" />
         </div>
-        <div className="w-full h-[450px]">
+        <div className="w-full h-[280px]">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.123456789!2d72.8311!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAxJzIxLjAiTiA3MsKwNDknNTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
             width="100%"
