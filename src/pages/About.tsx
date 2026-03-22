@@ -125,8 +125,12 @@ const About = () => {
       </section>
 
       {/* Values - redesigned cards */}
-      <section className="py-[15vh] bg-secondary border-t border-border">
-        <div className="container">
+      <section className="relative py-[15vh] bg-secondary border-t border-border overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=80" alt="" className="w-full h-full object-cover opacity-[0.06]" />
+        </div>
+        <div className="container relative z-10">
           <SectionHeading
             tag="Our Foundation / 02"
             title="Built on Integrity"
