@@ -5,6 +5,10 @@ import SectionHeading from "@/components/SectionHeading";
 import SpecCard from "@/components/SpecCard";
 import heroImage from "@/assets/hero-quality.jpg";
 
+const qualityLabUrl = "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80";
+const inspectionUrl = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80";
+const certificationUrl = "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80";
+
 const qualityPillars = [
   { icon: Shield, title: "ISO 9001:2015", description: "Certified quality management system ensuring consistent processes and continuous improvement.", serial: "QA-01" },
   { icon: Microscope, title: "In-House Testing Lab", description: "Complete testing laboratory with precision instruments for dimensional accuracy and material verification.", serial: "QA-02" },
@@ -32,13 +36,26 @@ const Quality = () => {
         image={heroImage}
       />
 
-      <section className="py-[15vh] bg-background">
+       <section className="py-[15vh] bg-background">
         <div className="container">
-          <SectionHeading
-            tag="Quality Standards / 01"
-            title="Our Quality Framework"
-            description="Every product undergoes rigorous inspection and testing protocols to ensure it meets the highest standards of industrial performance."
-          />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="lg:col-span-5 overflow-hidden border border-border"
+            >
+              <img src={qualityLabUrl} alt="Quality testing laboratory" className="w-full h-[350px] object-cover" />
+            </motion.div>
+            <div className="lg:col-span-7">
+              <SectionHeading
+                tag="Quality Standards / 01"
+                title="Our Quality Framework"
+                description="Every product undergoes rigorous inspection and testing protocols to ensure it meets the highest standards of industrial performance."
+              />
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {qualityPillars.map((q) => (
               <SpecCard key={q.serial} {...q} />
@@ -50,7 +67,20 @@ const Quality = () => {
       {/* QC Process */}
       <section className="py-[15vh] bg-secondary border-t border-border">
         <div className="container">
-          <SectionHeading tag="QC Process / 02" title="Quality Control Workflow" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-12">
+            <div className="lg:col-span-7">
+              <SectionHeading tag="QC Process / 02" title="Quality Control Workflow" />
+            </div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="lg:col-span-5 overflow-hidden border border-border"
+            >
+              <img src={inspectionUrl} alt="Inspection process" className="w-full h-[300px] object-cover" />
+            </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {qcProcess.map((p, i) => (
               <motion.div
@@ -74,6 +104,14 @@ const Quality = () => {
       <section className="py-[15vh] bg-background border-t border-border">
         <div className="container">
           <SectionHeading tag="Certifications / 03" title="Standards & Compliance" />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-10 overflow-hidden border border-border"
+          >
+            <img src={certificationUrl} alt="Certified manufacturing facility" className="w-full h-[300px] object-cover" />
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { title: "ISO 9001:2015", desc: "Quality Management System — ensuring consistent quality in design, manufacturing, and delivery." },
