@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 84% 48%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 0 84% 48%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 48%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 100% / 0.1;
+    --input: 0 0% 100% / 0.1;
+    --ring: 0 84% 48%;
+
+    --radius: 0.125rem;
+
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 84% 48%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 100% / 0.1;
+    --sidebar-ring: 0 84% 48%;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --gradient-milled-edge: linear-gradient(to bottom right, rgba(255,255,255,0.1), transparent);
+    --shadow-industrial: 0 20px 60px -15px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+/* The Laxmi Stripe - vertical red line */
+.laxmi-stripe {
+  position: fixed;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: hsl(var(--primary));
+  z-index: 50;
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .laxmi-stripe {
+    display: none;
+  }
+}
+
+/* Milled edge border effect */
+.milled-edge {
+  border: 1px solid transparent;
+  background-image: var(--gradient-milled-edge);
+  background-origin: border-box;
+  background-clip: border-box;
+}
+
+/* Spec card hover */
+.spec-card {
+  transition: all 0.3s ease;
+}
+.spec-card:hover {
+  border-color: hsl(var(--primary));
+  transform: translateY(-4px);
+}
+
+/* Red accent bar */
+.accent-bar {
+  width: 3rem;
+  height: 0.25rem;
+  background: hsl(var(--primary));
+}
+
+/* Mono labels */
+.mono-label {
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: hsl(var(--primary));
+}
+
+/* Hero text stroke effect */
+.text-stroke {
+  -webkit-text-stroke: 1px hsl(var(--foreground));
+  color: transparent;
+}
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, hsl(0 0% 10%) 25%, hsl(0 0% 15%) 50%, hsl(0 0% 10%) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
