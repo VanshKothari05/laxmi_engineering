@@ -18,6 +18,7 @@ import imgOilLineHeater from "@/assets/product-oil-line-heater.jpg";
 import imgOilFilter from "@/assets/product-oil-filter.jpg";
 import imgCyclone from "@/assets/product-cyclone.jpg";
 import imgValve from "@/assets/product-valve.jpg";
+import bgIndustrialSolutions from "@/assets/bg-industrial-solutions.jpg";
 // Real industrial stock photos from Unsplash - unique images (no repeats)
 const aboutFactoryUrl = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80";
 const aboutTeamUrl = "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=600&q=80";
@@ -273,7 +274,7 @@ const Index = () => {
       <section className="relative py-[15vh] bg-background overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ede4c21?w=1200&q=80" alt="" className="w-full h-full object-cover opacity-[0.12]" />
+          <img src={bgIndustrialSolutions} alt="" className="w-full h-full object-cover opacity-[0.15]" />
         </div>
         <div className="container relative z-10">
           <SectionHeading
