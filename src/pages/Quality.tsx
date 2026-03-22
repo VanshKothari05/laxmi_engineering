@@ -104,6 +104,14 @@ const Quality = () => {
       <section className="py-[15vh] bg-background border-t border-border">
         <div className="container">
           <SectionHeading tag="Certifications / 03" title="Standards & Compliance" />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-10 overflow-hidden border border-border"
+          >
+            <img src={certificationUrl} alt="Certified manufacturing facility" className="w-full h-[300px] object-cover" />
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { title: "ISO 9001:2015", desc: "Quality Management System — ensuring consistent quality in design, manufacturing, and delivery." },
