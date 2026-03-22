@@ -274,7 +274,7 @@ const Index = () => {
       <section className="relative py-[15vh] bg-background overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ede4c21?w=1200&q=80" alt="" className="w-full h-full object-cover opacity-[0.12]" />
+          <img src={bgIndustrialSolutions} alt="" className="w-full h-full object-cover opacity-[0.15]" />
         </div>
         <div className="container relative z-10">
           <SectionHeading
