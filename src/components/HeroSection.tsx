@@ -51,10 +51,9 @@ const HeroSection = ({ tagline, title, titleAccent, subtitle, image, video }: He
             muted
             playsInline
             poster={image}
+            src={video}
             className="w-full h-full object-cover"
-          >
-            <source src={video} type="video/mp4" />
-          </video>
+          />
         </motion.div>
       ) : (
         <motion.div
