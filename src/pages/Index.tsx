@@ -7,7 +7,7 @@ import FlipCard from "@/components/FlipCard";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { TestimonialsColumn } from "@/components/ui/testimonials-columns-1";
 import heroImage from "@/assets/hero-home.jpg";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
+import heroVideo from "@/assets/hero-home-video.mp4.asset.json";
 
 import imgOilBurners from "@/assets/product-oil-burners.jpg";
 import imgBlowers from "@/assets/product-blowers.jpg";
