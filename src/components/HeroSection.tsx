@@ -41,7 +41,7 @@ const HeroSection = ({ tagline, title, titleAccent, subtitle, image, video }: He
       {video ? (
         <motion.div
           initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.45 }}
+          animate={{ scale: 1, opacity: 0.55 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           className="absolute inset-0"
         >
