@@ -3,6 +3,10 @@ import { Award, Clock, Users, MapPin, Target, Zap, Shield, Wrench } from "lucide
 import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
 import heroImage from "@/assets/hero-about.jpg";
+import capCncImg from "@/assets/capability-cnc.jpg";
+import capPrototypeImg from "@/assets/capability-prototype.jpg";
+import capTestingImg from "@/assets/capability-testing.jpg";
+import capFabricationImg from "@/assets/capability-fabrication.jpg";
 
 // Real industrial stock photos - unique from Index page
 const aboutFactoryUrl = "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80";
@@ -24,10 +28,10 @@ const values = [
 ];
 
 const capabilities = [
-  { icon: Target, title: "CNC Machining", desc: "5-axis CNC centres for complex geometries and tight tolerances." },
-  { icon: Zap, title: "Rapid Prototyping", desc: "Concept to prototype in under 2 weeks for critical timelines." },
-  { icon: Shield, title: "Quality Testing", desc: "In-house NDT, dimensional inspection, and material analysis." },
-  { icon: Wrench, title: "Custom Fabrication", desc: "Heavy fabrication up to 10-tonne assemblies with certified welding." },
+  { icon: Target, title: "CNC Machining", desc: "5-axis CNC centres for complex geometries and tight tolerances.", image: capCncImg },
+  { icon: Zap, title: "Rapid Prototyping", desc: "Concept to prototype in under 2 weeks for critical timelines.", image: capPrototypeImg },
+  { icon: Shield, title: "Quality Testing", desc: "In-house NDT, dimensional inspection, and material analysis.", image: capTestingImg },
+  { icon: Wrench, title: "Custom Fabrication", desc: "Heavy fabrication up to 10-tonne assemblies with certified welding.", image: capFabricationImg },
 ];
 
 const About = () => {
@@ -182,14 +186,22 @@ const About = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex gap-5 bg-secondary border border-border p-6 group hover:border-primary/40 transition-all duration-300"
+                className="relative overflow-hidden border border-border group hover:border-primary/40 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-background border border-border flex items-center justify-center shrink-0 group-hover:border-primary/50 transition-colors">
-                  <cap.icon className="text-primary" size={22} />
+                {/* Background image */}
+                <div className="absolute inset-0">
+                  <img src={cap.image} alt={cap.title} className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500 group-hover:scale-105 transition-transform" loading="lazy" width={800} height={512} />
                 </div>
-                <div>
-                  <h3 className="font-display text-base font-bold text-foreground mb-1 group-hover:text-primary transition-colors">{cap.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{cap.desc}</p>
+                <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+                
+                <div className="relative flex gap-5 p-6">
+                  <div className="w-12 h-12 bg-background border border-border flex items-center justify-center shrink-0 group-hover:border-primary/50 transition-colors">
+                    <cap.icon className="text-primary" size={22} />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-base font-bold text-foreground mb-1 group-hover:text-primary transition-colors">{cap.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{cap.desc}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
