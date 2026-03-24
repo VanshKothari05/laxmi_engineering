@@ -180,7 +180,7 @@ const Index = () => {
               {/* Two smaller images */}
               <div className="overflow-hidden group">
                 <img
-                  src={aboutTeamUrl}
+                  src={aboutTeamImg}
                   alt="Engineering team at work"
                   className="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
