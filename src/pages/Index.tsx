@@ -161,7 +161,7 @@ const Index = () => {
               {/* Large main image */}
               <div className="col-span-2 relative overflow-hidden group">
                 <img
-                  src={aboutFactoryUrl}
+                  src={aboutFactoryImg}
                   alt="Industrial manufacturing facility"
                   className="w-full h-[300px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
