@@ -28,10 +28,10 @@ const values = [
 ];
 
 const capabilities = [
-  { icon: Target, title: "CNC Machining", desc: "5-axis CNC centres for complex geometries and tight tolerances." },
-  { icon: Zap, title: "Rapid Prototyping", desc: "Concept to prototype in under 2 weeks for critical timelines." },
-  { icon: Shield, title: "Quality Testing", desc: "In-house NDT, dimensional inspection, and material analysis." },
-  { icon: Wrench, title: "Custom Fabrication", desc: "Heavy fabrication up to 10-tonne assemblies with certified welding." },
+  { icon: Target, title: "CNC Machining", desc: "5-axis CNC centres for complex geometries and tight tolerances.", image: capCncImg },
+  { icon: Zap, title: "Rapid Prototyping", desc: "Concept to prototype in under 2 weeks for critical timelines.", image: capPrototypeImg },
+  { icon: Shield, title: "Quality Testing", desc: "In-house NDT, dimensional inspection, and material analysis.", image: capTestingImg },
+  { icon: Wrench, title: "Custom Fabrication", desc: "Heavy fabrication up to 10-tonne assemblies with certified welding.", image: capFabricationImg },
 ];
 
 const About = () => {
