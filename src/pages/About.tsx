@@ -3,6 +3,10 @@ import { Award, Clock, Users, MapPin, Target, Zap, Shield, Wrench } from "lucide
 import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
 import heroImage from "@/assets/hero-about.jpg";
+import capCncImg from "@/assets/capability-cnc.jpg";
+import capPrototypeImg from "@/assets/capability-prototype.jpg";
+import capTestingImg from "@/assets/capability-testing.jpg";
+import capFabricationImg from "@/assets/capability-fabrication.jpg";
 
 // Real industrial stock photos - unique from Index page
 const aboutFactoryUrl = "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80";
