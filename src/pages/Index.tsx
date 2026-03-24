@@ -19,10 +19,9 @@ import imgOilFilter from "@/assets/product-oil-filter.jpg";
 import imgCyclone from "@/assets/product-cyclone.jpg";
 import imgValve from "@/assets/product-valve.jpg";
 import bgIndustrialSolutions from "@/assets/bg-industrial-solutions.jpg";
-// Real industrial stock photos from Unsplash - unique images (no repeats)
-const aboutFactoryUrl = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80";
-const aboutTeamUrl = "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=600&q=80";
-const aboutWorkshopUrl = "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80";
+import aboutFactoryImg from "@/assets/about-factory.jpg";
+import aboutTeamImg from "@/assets/about-team.jpg";
+import aboutWorkshopImg from "@/assets/about-workshop.jpg";
 
 const stats = [
   { value: "50+", label: "Years of Expertise" },
@@ -162,7 +161,7 @@ const Index = () => {
               {/* Large main image */}
               <div className="col-span-2 relative overflow-hidden group">
                 <img
-                  src={aboutFactoryUrl}
+                  src={aboutFactoryImg}
                   alt="Industrial manufacturing facility"
                   className="w-full h-[300px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -181,14 +180,14 @@ const Index = () => {
               {/* Two smaller images */}
               <div className="overflow-hidden group">
                 <img
-                  src={aboutTeamUrl}
+                  src={aboutTeamImg}
                   alt="Engineering team at work"
                   className="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="overflow-hidden group">
                 <img
-                  src={aboutWorkshopUrl}
+                  src={aboutWorkshopImg}
                   alt="CNC machinery workshop"
                   className="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
