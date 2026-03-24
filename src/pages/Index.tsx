@@ -187,7 +187,7 @@ const Index = () => {
               </div>
               <div className="overflow-hidden group">
                 <img
-                  src={aboutWorkshopUrl}
+                  src={aboutWorkshopImg}
                   alt="CNC machinery workshop"
                   className="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
