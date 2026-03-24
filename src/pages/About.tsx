@@ -186,14 +186,22 @@ const About = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex gap-5 bg-secondary border border-border p-6 group hover:border-primary/40 transition-all duration-300"
+                className="relative overflow-hidden border border-border group hover:border-primary/40 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-background border border-border flex items-center justify-center shrink-0 group-hover:border-primary/50 transition-colors">
-                  <cap.icon className="text-primary" size={22} />
+                {/* Background image */}
+                <div className="absolute inset-0">
+                  <img src={cap.image} alt={cap.title} className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500 group-hover:scale-105 transition-transform" loading="lazy" width={800} height={512} />
                 </div>
-                <div>
-                  <h3 className="font-display text-base font-bold text-foreground mb-1 group-hover:text-primary transition-colors">{cap.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{cap.desc}</p>
+                <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+                
+                <div className="relative flex gap-5 p-6">
+                  <div className="w-12 h-12 bg-background border border-border flex items-center justify-center shrink-0 group-hover:border-primary/50 transition-colors">
+                    <cap.icon className="text-primary" size={22} />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-base font-bold text-foreground mb-1 group-hover:text-primary transition-colors">{cap.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{cap.desc}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
