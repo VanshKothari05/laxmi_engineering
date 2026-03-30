@@ -108,8 +108,14 @@ const categories = ["All", ...Array.from(new Set(products.map(p => p.category)))
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
+  const [galleryIndex, setGalleryIndex] = useState(0);
 
   const filtered = activeCategory === "All" ? products : products.filter(p => p.category === activeCategory);
+
+  const openProduct = (product: typeof products[0]) => {
+    setSelectedProduct(product);
+    setGalleryIndex(0);
+  };
 
   return (
     <>
