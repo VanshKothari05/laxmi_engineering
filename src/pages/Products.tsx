@@ -21,6 +21,7 @@ import imgValve from "@/assets/product-valve.jpg";
 const products = [
   {
     image: imgOilBurners,
+    images: [imgOilBurners, imgOilBurner2, imgOilBurner3, imgOilBurner4],
     name: "Oil Burner",
     serial: "LX-OB-2024",
     icon: Flame,
