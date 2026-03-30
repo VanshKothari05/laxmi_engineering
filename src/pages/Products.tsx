@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, ArrowRight, X, Flame, Wind, Thermometer, Cog, ThermometerSun, Filter, Factory, CircleDot, Disc, ExternalLink } from "lucide-react";
+import { ChevronRight, ArrowRight, X, Flame, Wind, Thermometer, Cog, ThermometerSun, Filter, Factory, CircleDot, Disc, ChevronLeft } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import heroImage from "@/assets/hero-products.jpg";
 import { Link } from "react-router-dom";
 
 import imgOilBurners from "@/assets/product-oil-burners.jpg";
+import imgOilBurner2 from "@/assets/product-oil-burner-2.jpg";
+import imgOilBurner3 from "@/assets/product-oil-burner-3.jpg";
+import imgOilBurner4 from "@/assets/product-oil-burner-4.jpg";
 import imgBlowers from "@/assets/product-blowers.jpg";
 import imgFurnaces from "@/assets/product-furnaces.jpg";
 import imgOilHeating from "@/assets/product-oil-heating.jpg";
@@ -18,6 +21,7 @@ import imgValve from "@/assets/product-valve.jpg";
 const products = [
   {
     image: imgOilBurners,
+    images: [imgOilBurners, imgOilBurner2, imgOilBurner3, imgOilBurner4],
     name: "Oil Burner",
     serial: "LX-OB-2024",
     icon: Flame,
@@ -104,8 +108,14 @@ const categories = ["All", ...Array.from(new Set(products.map(p => p.category)))
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
+  const [galleryIndex, setGalleryIndex] = useState(0);
 
   const filtered = activeCategory === "All" ? products : products.filter(p => p.category === activeCategory);
+
+  const openProduct = (product: typeof products[0]) => {
+    setSelectedProduct(product);
+    setGalleryIndex(0);
+  };
 
   return (
     <>
@@ -168,7 +178,7 @@ const Products = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ delay: i * 0.06, duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
-                    onClick={() => setSelectedProduct(product)}
+                    onClick={() => openProduct(product)}
                     className="group cursor-pointer relative bg-card border border-border overflow-hidden hover:border-primary/40 transition-colors duration-500"
                   >
                     {/* Image with parallax-like zoom */}
@@ -283,33 +293,78 @@ const Products = () => {
               onClick={(e) => e.stopPropagation()}
               className="bg-card border border-border max-w-3xl w-full max-h-[85vh] overflow-y-auto"
             >
-              <div className="relative h-64 md:h-80 overflow-hidden">
-                <img
-                  src={selectedProduct.image}
-                  alt={selectedProduct.name}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
-                <button
-                  onClick={() => setSelectedProduct(null)}
-                  className="absolute top-4 right-4 w-10 h-10 bg-background/60 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors"
-                >
-                  <X size={18} />
-                </button>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="font-mono text-[10px] text-primary tracking-widest uppercase bg-primary/15 backdrop-blur-sm px-3 py-1 border border-primary/30">
-                      {selectedProduct.category}
-                    </span>
-                    <span className="font-mono text-[10px] text-foreground/50 tracking-wider">
-                      {selectedProduct.serial}
-                    </span>
+              {(() => {
+                const images = selectedProduct.images || [selectedProduct.image];
+                const hasMultiple = images.length > 1;
+                return (
+                  <div className="relative h-64 md:h-80 overflow-hidden">
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={galleryIndex}
+                        src={images[galleryIndex]}
+                        alt={`${selectedProduct.name} - ${galleryIndex + 1}`}
+                        className="w-full h-full object-cover"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </AnimatePresence>
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
+
+                    {hasMultiple && (
+                      <>
+                        <button
+                          onClick={() => setGalleryIndex((prev) => (prev - 1 + images.length) % images.length)}
+                          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-background/60 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors z-10"
+                        >
+                          <ChevronLeft size={18} />
+                        </button>
+                        <button
+                          onClick={() => setGalleryIndex((prev) => (prev + 1) % images.length)}
+                          className="absolute right-16 top-1/2 -translate-y-1/2 w-10 h-10 bg-background/60 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors z-10"
+                        >
+                          <ChevronRight size={18} />
+                        </button>
+                        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                          {images.map((_, idx) => (
+                            <button
+                              key={idx}
+                              onClick={() => setGalleryIndex(idx)}
+                              className={`w-2.5 h-2.5 rounded-full transition-all ${idx === galleryIndex ? "bg-primary scale-125" : "bg-foreground/30 hover:bg-foreground/50"}`}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
+
+                    <button
+                      onClick={() => setSelectedProduct(null)}
+                      className="absolute top-4 right-4 w-10 h-10 bg-background/60 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors z-10"
+                    >
+                      <X size={18} />
+                    </button>
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="font-mono text-[10px] text-primary tracking-widest uppercase bg-primary/15 backdrop-blur-sm px-3 py-1 border border-primary/30">
+                          {selectedProduct.category}
+                        </span>
+                        <span className="font-mono text-[10px] text-foreground/50 tracking-wider">
+                          {selectedProduct.serial}
+                        </span>
+                        {hasMultiple && (
+                          <span className="font-mono text-[10px] text-foreground/50 tracking-wider">
+                            {galleryIndex + 1} / {images.length}
+                          </span>
+                        )}
+                      </div>
+                      <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+                        {selectedProduct.name}
+                      </h2>
+                    </div>
                   </div>
-                  <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-                    {selectedProduct.name}
-                  </h2>
-                </div>
-              </div>
+                );
+              })()}
 
               <div className="p-8">
                 <p className="text-muted-foreground leading-relaxed mb-8 text-[15px]">
