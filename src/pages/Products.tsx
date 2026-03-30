@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, ArrowRight, X, Flame, Wind, Thermometer, Cog, ThermometerSun, Filter, Factory, CircleDot, Disc, ChevronLeft } from "lucide-react";
+import { ChevronRight, ArrowRight, X, Flame, Wind, Thermometer, Cog, ThermometerSun, Filter, Factory, CircleDot, Disc } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import heroImage from "@/assets/hero-products.jpg";
 import { Link } from "react-router-dom";
