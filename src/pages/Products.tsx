@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, ArrowRight, X, Flame, Wind, Thermometer, Cog, ThermometerSun, Filter, Factory, CircleDot, Disc, ExternalLink } from "lucide-react";
+import { ChevronRight, ArrowRight, X, Flame, Wind, Thermometer, Cog, ThermometerSun, Filter, Factory, CircleDot, Disc, ChevronLeft } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import heroImage from "@/assets/hero-products.jpg";
 import { Link } from "react-router-dom";
 
 import imgOilBurners from "@/assets/product-oil-burners.jpg";
+import imgOilBurner2 from "@/assets/product-oil-burner-2.jpg";
+import imgOilBurner3 from "@/assets/product-oil-burner-3.jpg";
+import imgOilBurner4 from "@/assets/product-oil-burner-4.jpg";
 import imgBlowers from "@/assets/product-blowers.jpg";
 import imgFurnaces from "@/assets/product-furnaces.jpg";
 import imgOilHeating from "@/assets/product-oil-heating.jpg";
