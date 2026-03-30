@@ -178,7 +178,7 @@ const Products = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ delay: i * 0.06, duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
-                    onClick={() => setSelectedProduct(product)}
+                    onClick={() => openProduct(product)}
                     className="group cursor-pointer relative bg-card border border-border overflow-hidden hover:border-primary/40 transition-colors duration-500"
                   >
                     {/* Image with parallax-like zoom */}
