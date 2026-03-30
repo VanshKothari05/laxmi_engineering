@@ -293,75 +293,47 @@ const Products = () => {
               onClick={(e) => e.stopPropagation()}
               className="bg-card border border-border max-w-3xl w-full max-h-[85vh] overflow-y-auto"
             >
+              {/* Header */}
+              <div className="relative p-6 pb-4 border-b border-border">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="font-mono text-[10px] text-primary tracking-widest uppercase bg-primary/15 px-3 py-1 border border-primary/30">
+                    {selectedProduct.category}
+                  </span>
+                  <span className="font-mono text-[10px] text-foreground/50 tracking-wider">
+                    {selectedProduct.serial}
+                  </span>
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+                  {selectedProduct.name}
+                </h2>
+                <button
+                  onClick={() => setSelectedProduct(null)}
+                  className="absolute top-4 right-4 w-10 h-10 bg-secondary border border-border flex items-center justify-center hover:bg-accent transition-colors"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+
+              {/* Image Gallery Grid */}
               {(() => {
                 const images = selectedProduct.images || [selectedProduct.image];
-                const hasMultiple = images.length > 1;
                 return (
-                  <div className="relative h-64 md:h-80 overflow-hidden">
-                    <AnimatePresence mode="wait">
-                      <motion.img
-                        key={galleryIndex}
-                        src={images[galleryIndex]}
-                        alt={`${selectedProduct.name} - ${galleryIndex + 1}`}
-                        className="w-full h-full object-cover"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                      />
-                    </AnimatePresence>
-                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
-
-                    {hasMultiple && (
-                      <>
-                        <button
-                          onClick={() => setGalleryIndex((prev) => (prev - 1 + images.length) % images.length)}
-                          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-background/60 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors z-10"
-                        >
-                          <ChevronLeft size={18} />
-                        </button>
-                        <button
-                          onClick={() => setGalleryIndex((prev) => (prev + 1) % images.length)}
-                          className="absolute right-16 top-1/2 -translate-y-1/2 w-10 h-10 bg-background/60 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors z-10"
-                        >
-                          <ChevronRight size={18} />
-                        </button>
-                        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                          {images.map((_, idx) => (
-                            <button
-                              key={idx}
-                              onClick={() => setGalleryIndex(idx)}
-                              className={`w-2.5 h-2.5 rounded-full transition-all ${idx === galleryIndex ? "bg-primary scale-125" : "bg-foreground/30 hover:bg-foreground/50"}`}
-                            />
-                          ))}
-                        </div>
-                      </>
-                    )}
-
-                    <button
-                      onClick={() => setSelectedProduct(null)}
-                      className="absolute top-4 right-4 w-10 h-10 bg-background/60 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors z-10"
-                    >
-                      <X size={18} />
-                    </button>
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="font-mono text-[10px] text-primary tracking-widest uppercase bg-primary/15 backdrop-blur-sm px-3 py-1 border border-primary/30">
-                          {selectedProduct.category}
-                        </span>
-                        <span className="font-mono text-[10px] text-foreground/50 tracking-wider">
-                          {selectedProduct.serial}
-                        </span>
-                        {hasMultiple && (
-                          <span className="font-mono text-[10px] text-foreground/50 tracking-wider">
-                            {galleryIndex + 1} / {images.length}
-                          </span>
-                        )}
-                      </div>
-                      <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-                        {selectedProduct.name}
-                      </h2>
-                    </div>
+                  <div className={`grid gap-2 p-4 ${images.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
+                    {images.map((img, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: idx * 0.08, duration: 0.4 }}
+                        className="relative border border-border overflow-hidden bg-secondary"
+                      >
+                        <img
+                          src={img}
+                          alt={`${selectedProduct.name} - ${idx + 1}`}
+                          className="w-full h-auto object-contain"
+                        />
+                      </motion.div>
+                    ))}
                   </div>
                 );
               })()}
