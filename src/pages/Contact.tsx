@@ -49,18 +49,26 @@ const Contact = () => {
               <SectionHeading tag="Contact Info / 01" title="Reach Us" />
               <div className="space-y-8">
                 {[
-                  { icon: MapPin, label: "Location", value: "Industrial Area, India" },
-                  { icon: Phone, label: "Phone", value: "+91 XXXX XXXXXX" },
-                  { icon: Mail, label: "Email", value: "info@laxmieng.com" },
-                  { icon: Clock, label: "Working Hours", value: "Mon - Sat: 9:00 AM - 6:00 PM" },
+                  { icon: MapPin, label: "Location", value: "Unit No. 09, Laxmi Engineering Works, Bhola Bhagwan Industrial Estate, IB Patel Road, Goregaon East, Mumbai – 400063, Maharashtra" },
+                  { icon: Phone, label: "Phone", values: ["+91 98332 41824", "+91 88790 95770"] },
+                  { icon: Mail, label: "Email", values: ["info@laxmieng.com", "sailesh_bhat@rediffmail.com"] },
+                  { icon: Clock, label: "Working Hours", value: "Mon – Sat: 9:00 AM – 6:00 PM" },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-4 items-start">
-                    <item.icon className="text-primary mt-1" size={20} />
+                    <item.icon className="text-primary mt-1 shrink-0" size={26} />
                     <div>
-                      <span className="font-mono text-xs text-muted-foreground tracking-widest uppercase block mb-1">
+                      <span className="font-mono text-sm text-muted-foreground tracking-widest uppercase block mb-1">
                         {item.label}
                       </span>
-                      <span className="text-foreground text-sm">{item.value}</span>
+                      {"values" in item ? (
+                        <div className="flex flex-col gap-1">
+                          {item.values.map((v) => (
+                            <span key={v} className="text-foreground text-base">{v}</span>
+                          ))}
+                        </div>
+                      ) : (
+                        <span className="text-foreground text-base">{item.value}</span>
+                      )}
                     </div>
                   </div>
                 ))}
