@@ -5,23 +5,82 @@ import HeroSection from "@/components/HeroSection";
 import heroImage from "@/assets/hero-products.jpg";
 import { Link } from "react-router-dom";
 
+// Oil Burner
 import imgOilBurners from "@/assets/product-oil-burners.jpg";
 import imgOilBurner2 from "@/assets/product-oil-burner-2.jpg";
 import imgOilBurner3 from "@/assets/product-oil-burner-3.jpg";
 import imgOilBurner4 from "@/assets/product-oil-burner-4.jpg";
+
+// Air Blowers — cover uses original, gallery uses numbered
 import imgBlowers from "@/assets/product-blowers.jpg";
+import imgBlowers1 from "@/assets/air-blower-1.jpg";
+import imgBlowers2 from "@/assets/air-blower-2.jpg";
+import imgBlowers3 from "@/assets/air-blower-3.png";
+import imgBlowers4 from "@/assets/air-blower-4.jpg";
+
+// Furnace
 import imgFurnaces from "@/assets/product-furnaces.jpg";
+import imgMelting1 from "@/assets/melting-1.jpg";
+import imgMelting2 from "@/assets/melting-2.jpg";
+import imgMelting3 from "@/assets/melting-3.jpg";
+import imgMelting4 from "@/assets/melting-4.jpg";
+import imgOilFurnace1 from "@/assets/oil-1.jpg";
+import imgOilFurnace2 from "@/assets/oil-2.jpg";
+import imgOilFurnace3 from "@/assets/oil-3.jpg";
+import imgOilFurnace4 from "@/assets/oil-4.jpg";
+import imgPallet1 from "@/assets/pallet-1.jpg";
+import imgPallet2 from "@/assets/pallet-2.jpg";
+import imgPallet3 from "@/assets/pallet-3.jpg";
+import imgPallet4 from "@/assets/pallet-4.jpg";
+
+// Oil Heating & Pumping
 import imgOilHeating from "@/assets/product-oil-heating.jpg";
+import imgSimplex1 from "@/assets/simple-1.jpg";
+import imgSimplex2 from "@/assets/simple-2.jpg";
+import imgSimplex3 from "@/assets/simple-3.jpg";
+import imgDuplex1 from "@/assets/duplex-1.jpg";
+import imgDuplex2 from "@/assets/duplex-2.jpg";
+import imgDuplex3 from "@/assets/duplex-3.jpg";
+
+// Rotomizer — replace with real images when available
 import imgRotomizer from "@/assets/product-rotomizer.jpg";
+// import imgRotomizer2 from "@/assets/rotomizer-2.jpg";
+// import imgRotomizer3 from "@/assets/rotomizer-3.jpg";
+// import imgRotomizer4 from "@/assets/rotomizer-4.jpg";
+
+// Oil Line Heater — replace with real images when available
 import imgOilLineHeater from "@/assets/product-oil-line-heater.jpg";
+// import imgOilLineHeater2 from "@/assets/oil-line-heater-2.jpg";
+// import imgOilLineHeater3 from "@/assets/oil-line-heater-3.jpg";
+// import imgOilLineHeater4 from "@/assets/oil-line-heater-4.jpg";
+
+// Oil Filter — replace with real images when available
 import imgOilFilter from "@/assets/product-oil-filter.jpg";
+// import imgOilFilter2 from "@/assets/oil-filter-2.jpg";
+// import imgOilFilter3 from "@/assets/oil-filter-3.jpg";
+// import imgOilFilter4 from "@/assets/oil-filter-4.jpg";
+
+// Cyclone — cover uses original, gallery uses numbered
 import imgCyclone from "@/assets/product-cyclone.jpg";
+import imgCyclone1 from "@/assets/cyclone-1.jpg";
+import imgCyclone2 from "@/assets/cyclone-2.jpg";
+import imgCyclone3 from "@/assets/cyclone-3.jpg";
+import imgCyclone4 from "@/assets/cyclone-4.jpg";
+
+// Valve — cover uses original, gallery uses numbered
 import imgValve from "@/assets/product-valve.jpg";
+import imgValve1 from "@/assets/valve-1.jpg";
+import imgValve2 from "@/assets/valve-2.jpg";
+import imgValve3 from "@/assets/valve-3.jpg";
+import imgValve4 from "@/assets/valve-4.jpg";
+
+
 
 type ProductModel = {
   name: string;
   specs: string[];
   desc: string;
+  images?: string[];
 };
 
 type Product = {
@@ -51,6 +110,7 @@ const products: Product[] = [
   },
   {
     image: imgBlowers,
+    images: [imgBlowers1, imgBlowers2, imgBlowers3, imgBlowers4],
     name: "Air Blowers",
     serial: "LX-BL-2024",
     icon: Wind,
@@ -70,6 +130,7 @@ const products: Product[] = [
       {
         name: "Simplex Model",
         desc: "Single motor and pump configuration ideal for standard industrial oil heating and circulation needs.",
+        images: [imgSimplex1, imgSimplex2, imgSimplex3],
         specs: [
           "Oil Flow Capacity: 20 LPM and above",
           "Motor Capacity: 0.5 HP, 1500 RPM",
@@ -80,6 +141,7 @@ const products: Product[] = [
       {
         name: "Duplex Model",
         desc: "Dual motor and pump setup for enhanced reliability and efficiency in high-demand industrial processes.",
+        images: [imgDuplex1, imgDuplex2, imgDuplex3],
         specs: [
           "Oil Flow Capacity: 20 LPM and above",
           "Motor Capacity: 0.5 HP, 1500 RPM",
@@ -95,6 +157,8 @@ const products: Product[] = [
   },
   {
     image: imgRotomizer,
+    // TODO: add imgRotomizer2, imgRotomizer3, imgRotomizer4 when images are ready
+    images: [imgRotomizer /*, imgRotomizer2, imgRotomizer3, imgRotomizer4 */],
     name: "Rotomizer",
     serial: "LX-RT-2024",
     icon: Disc,
@@ -104,6 +168,8 @@ const products: Product[] = [
   },
   {
     image: imgOilLineHeater,
+    // TODO: add imgOilLineHeater2, imgOilLineHeater3, imgOilLineHeater4 when images are ready
+    images: [imgOilLineHeater /*, imgOilLineHeater2, imgOilLineHeater3, imgOilLineHeater4 */],
     name: "Oil Line Heater",
     serial: "LX-LH-2024",
     icon: ThermometerSun,
@@ -113,6 +179,8 @@ const products: Product[] = [
   },
   {
     image: imgOilFilter,
+    // TODO: add imgOilFilter2, imgOilFilter3, imgOilFilter4 when images are ready
+    images: [imgOilFilter /*, imgOilFilter2, imgOilFilter3, imgOilFilter4 */],
     name: "Oil Filter",
     serial: "LX-OF-2024",
     icon: Filter,
@@ -132,6 +200,7 @@ const products: Product[] = [
       {
         name: "Melting Furnace",
         desc: "High-temperature melting furnaces designed for metal melting operations including aluminium, brass, and cast iron.",
+        images: [imgMelting1, imgMelting2, imgMelting3, imgMelting4],
         specs: [
           "Type: Crucible / Induction",
           "Temp Range: Up to 1600°C",
@@ -142,6 +211,7 @@ const products: Product[] = [
       {
         name: "Pallet Furnace",
         desc: "Batch-type pallet furnaces for heat treatment, annealing, and stress relieving of components on pallets.",
+        images: [imgPallet1, imgPallet2, imgPallet3, imgPallet4],
         specs: [
           "Type: Batch / Continuous",
           "Temp Range: Up to 1000°C",
@@ -152,6 +222,7 @@ const products: Product[] = [
       {
         name: "Oil Furnace",
         desc: "Oil-fired furnaces engineered for forging, re-heating, and heat treatment using light or heavy fuel oil.",
+        images: [imgOilFurnace1, imgOilFurnace2, imgOilFurnace3, imgOilFurnace4],
         specs: [
           "Fuel: LDO / HSD / FO",
           "Temp Range: Up to 1200°C",
@@ -168,6 +239,7 @@ const products: Product[] = [
   },
   {
     image: imgCyclone,
+    images: [imgCyclone1, imgCyclone2, imgCyclone3, imgCyclone4],
     name: "Cyclone",
     serial: "LX-CY-2024",
     icon: CircleDot,
@@ -177,6 +249,7 @@ const products: Product[] = [
   },
   {
     image: imgValve,
+    images: [imgValve1, imgValve2, imgValve3, imgValve4],
     name: "Valve",
     serial: "LX-VL-2024",
     icon: Cog,
@@ -270,6 +343,38 @@ const ArrowDropdownButton = ({ product, onSelect, onOpen }: ArrowDropdownProps) 
   );
 };
 
+// ─── Image Gallery ────────────────────────────────────────────────────────────
+type ImageGalleryProps = {
+  images: string[];
+  name: string;
+};
+
+const ImageGallery = ({ images, name }: ImageGalleryProps) => {
+  // Always render exactly 4 slots in a 2x2 grid; repeat images to fill if fewer than 4
+  const slots = Array.from({ length: 4 }, (_, i) => images[i % images.length]);
+
+  return (
+    <div className="grid grid-cols-2 gap-2 p-4">
+      {slots.map((img, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: idx * 0.08, duration: 0.4 }}
+          className="relative border border-border overflow-hidden bg-secondary"
+          style={{ paddingBottom: "100%" }} // 1:1 aspect ratio trick
+        >
+          <img
+            src={img}
+            alt={`${name} - ${idx + 1}`}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </motion.div>
+      ))}
+    </div>
+  );
+};
+
 // ─── Main Component ───────────────────────────────────────────────────────────
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -282,6 +387,17 @@ const Products = () => {
     setSelectedProduct(product);
     setActiveModel(modelIndex);
   };
+
+  // Resolve which images to show in the modal:
+  // - For products with models: use the active model's images
+  // - For regular products: use the product's images array
+  const modalImages = (() => {
+    if (!selectedProduct) return [];
+    if (selectedProduct.models) {
+      return selectedProduct.models[activeModel]?.images ?? [selectedProduct.image];
+    }
+    return selectedProduct.images ?? [selectedProduct.image];
+  })();
 
   return (
     <>
@@ -490,29 +606,18 @@ const Products = () => {
                 </button>
               </div>
 
-              {/* Image Gallery */}
-              {(() => {
-                const images = selectedProduct.images || [selectedProduct.image];
-                return (
-                  <div className={`grid gap-2 p-4 ${images.length === 1 ? "grid-cols-1" : "grid-cols-2"}`}>
-                    {images.map((img, idx) => (
-                      <motion.div
-                        key={idx}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: idx * 0.08, duration: 0.4 }}
-                        className="relative border border-border overflow-hidden bg-secondary"
-                      >
-                        <img
-                          src={img}
-                          alt={`${selectedProduct.name} - ${idx + 1}`}
-                          className="w-full h-auto object-contain"
-                        />
-                      </motion.div>
-                    ))}
-                  </div>
-                );
-              })()}
+              {/* Image Gallery — updates when active model changes */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedProduct.models ? activeModel : selectedProduct.serial}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <ImageGallery images={modalImages} name={selectedProduct.name} />
+                </motion.div>
+              </AnimatePresence>
 
               <div className="p-8">
                 <p className="text-muted-foreground leading-relaxed mb-8 text-[15px]">
