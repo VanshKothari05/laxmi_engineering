@@ -160,7 +160,13 @@ const Navbar = () => {
               ))}
 
               <div className="border-t border-border pt-4">
-                <span className="text-xs uppercase text-primary mb-2 block">Products</span>
+               <Link
+  to="/products"
+  onClick={() => setIsOpen(false)}
+  className="font-display text-sm font-semibold uppercase py-2 text-muted-foreground block"
+>
+  Products
+</Link>
                 {productNavItems.map((item) => (
                   <div key={item.name}>
                     <Link
