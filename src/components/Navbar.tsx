@@ -62,9 +62,12 @@ const Navbar = () => {
             onMouseEnter={() => setIsProductOpen(true)}
             onMouseLeave={() => setIsProductOpen(false)}
           >
-            <div className="flex items-center gap-1 cursor-pointer font-display text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground hover:text-primary">
-              Products <ChevronDown size={14} />
-            </div>
+          <Link
+  to="/products"
+  className="flex items-center gap-1 font-display text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground hover:text-primary"
+>
+  Products <ChevronDown size={14} />
+</Link>
 
             <AnimatePresence>
               {isProductOpen && (
