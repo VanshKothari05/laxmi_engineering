@@ -1,24 +1,19 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, ArrowRight, X, Flame, Wind, Thermometer, Cog, ThermometerSun, Filter, Factory, CircleDot, Disc, ChevronDown } from "lucide-react";
+import { ChevronRight, ArrowRight, X, Flame, Wind, Thermometer, Cog, ThermometerSun, Filter, Factory, CircleDot, Disc } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import heroImage from "@/assets/hero-products.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-// Oil Burner
 import imgOilBurners from "@/assets/product-oil-burners.jpg";
 import imgOilBurner2 from "@/assets/product-oil-burner-2.jpg";
 import imgOilBurner3 from "@/assets/product-oil-burner-3.jpg";
 import imgOilBurner4 from "@/assets/product-oil-burner-4.jpg";
-
-// Air Blowers — cover uses original, gallery uses numbered
 import imgBlowers from "@/assets/product-blowers.jpg";
 import imgBlowers1 from "@/assets/air-blower-1.jpg";
 import imgBlowers2 from "@/assets/air-blower-2.jpg";
 import imgBlowers3 from "@/assets/air-blower-3.png";
 import imgBlowers4 from "@/assets/air-blower-4.jpg";
-
-// Furnace
 import imgFurnaces from "@/assets/product-furnaces.jpg";
 import imgMelting1 from "@/assets/melting-1.jpg";
 import imgMelting2 from "@/assets/melting-2.jpg";
@@ -32,8 +27,6 @@ import imgPallet1 from "@/assets/pallet-1.jpg";
 import imgPallet2 from "@/assets/pallet-2.jpg";
 import imgPallet3 from "@/assets/pallet-3.jpg";
 import imgPallet4 from "@/assets/pallet-4.jpg";
-
-// Oil Heating & Pumping
 import imgOilHeating from "@/assets/product-oil-heating.jpg";
 import imgSimplex1 from "@/assets/simple-1.jpg";
 import imgSimplex2 from "@/assets/simple-2.jpg";
@@ -41,40 +34,22 @@ import imgSimplex3 from "@/assets/simple-3.jpg";
 import imgDuplex1 from "@/assets/duplex-1.jpg";
 import imgDuplex2 from "@/assets/duplex-2.jpg";
 import imgDuplex3 from "@/assets/duplex-3.jpg";
-
-// Rotomizer — replace with real images when available
 import imgRotomizer from "@/assets/product-rotomizer.jpg";
-// import imgRotomizer2 from "@/assets/rotomizer-2.jpg";
-// import imgRotomizer3 from "@/assets/rotomizer-3.jpg";
-// import imgRotomizer4 from "@/assets/rotomizer-4.jpg";
-
-// Oil Line Heater — replace with real images when available
 import imgOilLineHeater from "@/assets/product-oil-line-heater.jpg";
-// import imgOilLineHeater2 from "@/assets/oil-line-heater-2.jpg";
-// import imgOilLineHeater3 from "@/assets/oil-line-heater-3.jpg";
-// import imgOilLineHeater4 from "@/assets/oil-line-heater-4.jpg";
-
-// Oil Filter — replace with real images when available
 import imgOilFilter from "@/assets/product-oil-filter.jpg";
-// import imgOilFilter2 from "@/assets/oil-filter-2.jpg";
-// import imgOilFilter3 from "@/assets/oil-filter-3.jpg";
-// import imgOilFilter4 from "@/assets/oil-filter-4.jpg";
-
-// Cyclone — cover uses original, gallery uses numbered
 import imgCyclone from "@/assets/product-cyclone.jpg";
 import imgCyclone1 from "@/assets/cyclone-1.jpg";
 import imgCyclone2 from "@/assets/cyclone-2.jpg";
 import imgCyclone3 from "@/assets/cyclone-3.jpg";
 import imgCyclone4 from "@/assets/cyclone-4.jpg";
-
-// Valve — cover uses original, gallery uses numbered
 import imgValve from "@/assets/product-valve.jpg";
 import imgValve1 from "@/assets/valve-1.jpg";
 import imgValve2 from "@/assets/valve-2.jpg";
 import imgValve3 from "@/assets/valve-3.jpg";
 import imgValve4 from "@/assets/valve-4.jpg";
 
-
+export const toSlug = (name: string) =>
+  name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 type ProductModel = {
   name: string;
@@ -93,11 +68,10 @@ type Product = {
   specs: string[];
   desc: string;
   models?: ProductModel[];
-  /** If true, the arrow button shows a dropdown to pick a model before opening the modal */
   dropdownModels?: { label: string; modelIndex: number }[];
 };
 
-const products: Product[] = [
+export const products: Product[] = [
   {
     image: imgOilBurners,
     images: [imgOilBurners, imgOilBurner4, imgOilBurner2, imgOilBurner3],
@@ -125,29 +99,19 @@ const products: Product[] = [
     icon: Thermometer,
     category: "Heating",
     specs: ["Motor Power: 1 HP and above", "Voltage: 220V & 440V", "Material: Mild Steel", "Warranty: 1 Year"],
-    desc: "Laxmi Engineering Works' Oil Heating and Pumping Units are designed for reliable oil circulation and heating in industrial applications. Available in Simplex and Duplex models for optimized oil consumption and production efficiency.",
+    desc: "Reliable oil circulation and heating units for industrial applications. Available in Simplex and Duplex configurations.",
     models: [
       {
         name: "Simplex Model",
         desc: "Single motor and pump configuration ideal for standard industrial oil heating and circulation needs.",
         images: [imgSimplex1, imgSimplex2, imgSimplex3],
-        specs: [
-          "Oil Flow Capacity: 20 LPM and above",
-          "Motor Capacity: 0.5 HP, 1500 RPM",
-          "Heater Capacity: 4 KW and above",
-          "Features: Oil filter, pressure gauge, temperature gauge, return & pressure line fittings in MS tray",
-        ],
+        specs: ["Oil Flow Capacity: 20 LPM and above", "Motor Capacity: 0.5 HP, 1500 RPM", "Heater Capacity: 4 KW and above", "Features: Oil filter, pressure gauge, temperature gauge, return & pressure line fittings in MS tray"],
       },
       {
         name: "Duplex Model",
         desc: "Dual motor and pump setup for enhanced reliability and efficiency in high-demand industrial processes.",
         images: [imgDuplex1, imgDuplex2, imgDuplex3],
-        specs: [
-          "Oil Flow Capacity: 20 LPM and above",
-          "Motor Capacity: 0.5 HP, 1500 RPM",
-          "Configuration: 2 motors and 2 pumps",
-          "Features: Dual oil filters, pressure gauges, temperature gauges, return & pressure line fittings in MS tray",
-        ],
+        specs: ["Oil Flow Capacity: 20 LPM and above", "Motor Capacity: 0.5 HP, 1500 RPM", "Configuration: 2 motors and 2 pumps", "Features: Dual oil filters, pressure gauges, temperature gauges, return & pressure line fittings in MS tray"],
       },
     ],
     dropdownModels: [
@@ -157,8 +121,7 @@ const products: Product[] = [
   },
   {
     image: imgRotomizer,
-    // TODO: add imgRotomizer2, imgRotomizer3, imgRotomizer4 when images are ready
-    images: [imgRotomizer /*, imgRotomizer2, imgRotomizer3, imgRotomizer4 */],
+    images: [imgRotomizer],
     name: "Rotomizer",
     serial: "LX-RT-2024",
     icon: Disc,
@@ -168,8 +131,7 @@ const products: Product[] = [
   },
   {
     image: imgOilLineHeater,
-    // TODO: add imgOilLineHeater2, imgOilLineHeater3, imgOilLineHeater4 when images are ready
-    images: [imgOilLineHeater /*, imgOilLineHeater2, imgOilLineHeater3, imgOilLineHeater4 */],
+    images: [imgOilLineHeater],
     name: "Oil Line Heater",
     serial: "LX-LH-2024",
     icon: ThermometerSun,
@@ -179,8 +141,7 @@ const products: Product[] = [
   },
   {
     image: imgOilFilter,
-    // TODO: add imgOilFilter2, imgOilFilter3, imgOilFilter4 when images are ready
-    images: [imgOilFilter /*, imgOilFilter2, imgOilFilter3, imgOilFilter4 */],
+    images: [imgOilFilter],
     name: "Oil Filter",
     serial: "LX-OF-2024",
     icon: Filter,
@@ -199,36 +160,21 @@ const products: Product[] = [
     models: [
       {
         name: "Melting Furnace",
-        desc: "High-temperature melting furnaces designed for metal melting operations including aluminium, brass, and cast iron.",
+        desc: "High-temperature melting furnaces for metal melting operations including aluminium, brass, and cast iron.",
         images: [imgMelting1, imgMelting2, imgMelting3, imgMelting4],
-        specs: [
-          "Type: Crucible / Induction",
-          "Temp Range: Up to 1600°C",
-          "Fuel: Oil / Gas / Electric",
-          "Capacity: 50 kg – 2000 kg",
-        ],
+        specs: ["Type: Crucible / Induction", "Temp Range: Up to 1600°C", "Fuel: Oil / Gas / Electric", "Capacity: 50 kg – 2000 kg"],
       },
       {
         name: "Pallet Furnace",
         desc: "Batch-type pallet furnaces for heat treatment, annealing, and stress relieving of components on pallets.",
         images: [imgPallet1, imgPallet2, imgPallet3, imgPallet4],
-        specs: [
-          "Type: Batch / Continuous",
-          "Temp Range: Up to 1000°C",
-          "Loading: Pallet / Trolley",
-          "Fuel: Oil / Gas / Electric",
-        ],
+        specs: ["Type: Batch / Continuous", "Temp Range: Up to 1000°C", "Loading: Pallet / Trolley", "Fuel: Oil / Gas / Electric"],
       },
       {
         name: "Oil Furnace",
         desc: "Oil-fired furnaces engineered for forging, re-heating, and heat treatment using light or heavy fuel oil.",
         images: [imgOilFurnace1, imgOilFurnace2, imgOilFurnace3, imgOilFurnace4],
-        specs: [
-          "Fuel: LDO / HSD / FO",
-          "Temp Range: Up to 1200°C",
-          "Burner: Pressure Jet / Air Atomised",
-          "Efficiency: >85%",
-        ],
+        specs: ["Fuel: LDO / HSD / FO", "Temp Range: Up to 1200°C", "Burner: Pressure Jet / Air Atomised", "Efficiency: >85%"],
       },
     ],
     dropdownModels: [
@@ -259,100 +205,10 @@ const products: Product[] = [
   },
 ];
 
-const categories = ["All", ...Array.from(new Set(products.map(p => p.category)))];
+const categories = ["All", ...Array.from(new Set(products.map((p) => p.category)))];
 
-// ─── Arrow Button with Dropdown ──────────────────────────────────────────────
-type ArrowDropdownProps = {
-  product: Product;
-  onSelect: (product: Product, modelIndex: number) => void;
-  onOpen: (product: Product) => void;
-};
-
-const ArrowDropdownButton = ({ product, onSelect, onOpen }: ArrowDropdownProps) => {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
-
-  const handleButtonClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (product.dropdownModels) {
-      setOpen((v) => !v);
-    } else {
-      onOpen(product);
-    }
-  };
-
-  const handleOptionClick = (e: React.MouseEvent, modelIndex: number) => {
-    e.stopPropagation();
-    setOpen(false);
-    onSelect(product, modelIndex);
-  };
-
-  return (
-    <div ref={ref} className="relative mt-1" onClick={(e) => e.stopPropagation()}>
-      <button
-        onClick={handleButtonClick}
-        className="w-8 h-8 border border-border flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-300"
-        aria-label={product.dropdownModels ? "Select model" : "View details"}
-      >
-        {product.dropdownModels ? (
-          <ChevronDown
-            size={14}
-            className={`text-muted-foreground group-hover:text-primary transition-all duration-300 ${open ? "rotate-180" : ""}`}
-          />
-        ) : (
-          <ArrowRight
-            size={14}
-            className="text-muted-foreground group-hover:text-primary transition-colors -rotate-45 group-hover:rotate-0 duration-300"
-          />
-        )}
-      </button>
-
-      <AnimatePresence>
-        {open && product.dropdownModels && (
-          <motion.div
-            initial={{ opacity: 0, y: -6, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -6, scale: 0.96 }}
-            transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
-            className="absolute right-0 top-full mt-1.5 z-30 min-w-[170px] bg-card border border-border shadow-xl"
-          >
-            {product.dropdownModels.map((opt) => (
-              <button
-                key={opt.label}
-                onClick={(e) => handleOptionClick(e, opt.modelIndex)}
-                className="w-full text-left px-4 py-2.5 font-mono text-[11px] tracking-wider text-muted-foreground hover:text-foreground hover:bg-primary/10 hover:text-primary transition-colors duration-150 flex items-center gap-2"
-              >
-                <ChevronRight size={10} className="text-primary/60 shrink-0" />
-                {opt.label}
-              </button>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
-
-// ─── Image Gallery ────────────────────────────────────────────────────────────
-type ImageGalleryProps = {
-  images: string[];
-  name: string;
-};
-
-const ImageGallery = ({ images, name }: ImageGalleryProps) => {
-  // Always render exactly 4 slots in a 2x2 grid; repeat images to fill if fewer than 4
+const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
   const slots = Array.from({ length: 4 }, (_, i) => images[i % images.length]);
-
   return (
     <div className="grid grid-cols-2 gap-2 p-4">
       {slots.map((img, idx) => (
@@ -362,40 +218,54 @@ const ImageGallery = ({ images, name }: ImageGalleryProps) => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: idx * 0.08, duration: 0.4 }}
           className="relative border border-border overflow-hidden bg-secondary"
-          style={{ paddingBottom: "100%" }} // 1:1 aspect ratio trick
+          style={{ paddingBottom: "100%" }}
         >
-          <img
-            src={img}
-            alt={`${name} - ${idx + 1}`}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <img src={img} alt={`${name} - ${idx + 1}`} className="absolute inset-0 w-full h-full object-cover" />
         </motion.div>
       ))}
     </div>
   );
 };
 
-// ─── Main Component ───────────────────────────────────────────────────────────
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeModel, setActiveModel] = useState(0);
+  const location = useLocation();
 
-  const filtered = activeCategory === "All" ? products : products.filter(p => p.category === activeCategory);
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const openSlug = params.get("open");
+    const modelLabel = params.get("model");
 
-  const openProduct = (product: Product, modelIndex = 0) => {
-    setSelectedProduct(product);
-    setActiveModel(modelIndex);
-  };
+    if (openSlug) {
+      const product = products.find((p) => toSlug(p.name) === openSlug);
+      if (product) {
+        let modelIndex = 0;
+        if (modelLabel && product.dropdownModels) {
+          const found = product.dropdownModels.findIndex(
+            (m) => m.label === decodeURIComponent(modelLabel)
+          );
+          if (found !== -1) modelIndex = found;
+        }
+        setSelectedProduct(product);
+        setActiveModel(modelIndex);
+      }
+    }
 
-  // Resolve which images to show in the modal:
-  // - For products with models: use the active model's images
-  // - For regular products: use the product's images array
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 200);
+    }
+  }, [location]);
+
+  const filtered = activeCategory === "All" ? products : products.filter((p) => p.category === activeCategory);
+  const openProduct = (product: Product, modelIndex = 0) => { setSelectedProduct(product); setActiveModel(modelIndex); };
+
   const modalImages = (() => {
     if (!selectedProduct) return [];
-    if (selectedProduct.models) {
-      return selectedProduct.models[activeModel]?.images ?? [selectedProduct.image];
-    }
+    if (selectedProduct.models) return selectedProduct.models[activeModel]?.images ?? [selectedProduct.image];
     return selectedProduct.images ?? [selectedProduct.image];
   })();
 
@@ -409,7 +279,6 @@ const Products = () => {
         image={heroImage}
       />
 
-      {/* Category Filter */}
       <section className="py-24 bg-background">
         <div className="container">
           <motion.div
@@ -422,9 +291,7 @@ const Products = () => {
             <div className="accent-bar mb-6" />
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
               <div>
-                <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tighter text-foreground">
-                  Industrial Solutions
-                </h2>
+                <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tighter text-foreground">Industrial Solutions</h2>
                 <p className="mt-4 text-muted-foreground max-w-2xl leading-relaxed">
                   Every product in our range is designed and manufactured to meet the highest standards of industrial performance.
                 </p>
@@ -447,22 +314,25 @@ const Products = () => {
             </div>
           </motion.div>
 
-          {/* Product Grid */}
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Product Grid — items-start so cards don't stretch to fill row height */}
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
             <AnimatePresence mode="popLayout">
               {filtered.map((product, i) => {
                 const Icon = product.icon;
+                const isMultiModel = !!product.dropdownModels;
+
                 return (
                   <motion.div
+                    id={toSlug(product.name)}
                     key={product.serial}
                     layout
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ delay: i * 0.06, duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
-                    onClick={() => !product.dropdownModels && openProduct(product)}
+                    onClick={() => !isMultiModel && openProduct(product)}
                     className={`group relative bg-card border border-border overflow-hidden hover:border-primary/40 transition-colors duration-500 ${
-                      !product.dropdownModels ? "cursor-pointer" : "cursor-default"
+                      !isMultiModel ? "cursor-pointer" : "cursor-default"
                     }`}
                   >
                     {/* Image */}
@@ -476,13 +346,9 @@ const Products = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
                       <div className="absolute top-4 right-4 bg-background/40 backdrop-blur-md border border-border/50 px-3 py-1.5 opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-                        <span className="font-mono text-[10px] text-foreground/70 tracking-wider">
-                          {product.serial}
-                        </span>
+                        <span className="font-mono text-[10px] text-foreground/70 tracking-wider">{product.serial}</span>
                       </div>
-
                       <div className="absolute top-4 left-4">
                         <div className="relative">
                           <div className="absolute inset-0 bg-primary/30 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -491,15 +357,6 @@ const Products = () => {
                           </div>
                         </div>
                       </div>
-
-                      {/* Model badge for products with variants */}
-                      {product.dropdownModels && (
-                        <div className="absolute bottom-4 left-4 bg-primary/90 backdrop-blur-md px-3 py-1">
-                          <span className="font-mono text-[10px] text-primary-foreground tracking-widest uppercase">
-                            {product.dropdownModels.length} Models
-                          </span>
-                        </div>
-                      )}
                     </div>
 
                     {/* Content */}
@@ -508,29 +365,29 @@ const Products = () => {
                         <div className="h-full bg-primary/50 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
                       </div>
 
-                      <div className="flex items-start justify-between mb-3">
-                        <div>
-                          <span className="font-mono text-[10px] text-primary tracking-[0.2em] uppercase block mb-1.5">
-                            {product.category}
-                          </span>
-                          <h3 className="font-display text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
-                            {product.name}
-                          </h3>
-                        </div>
+                      {/* Category */}
+                      <span className="font-mono text-[10px] text-primary tracking-[0.2em] uppercase block mb-1.5">
+                        {product.category}
+                      </span>
 
-                        {/* Arrow or Dropdown button */}
-                        <ArrowDropdownButton
-                          product={product}
-                          onSelect={(p, modelIndex) => openProduct(p, modelIndex)}
-                          onOpen={(p) => openProduct(p)}
-                        />
+                      {/* Name + "Select Model" pill on the same line */}
+                      <div className="flex items-center gap-2 flex-wrap mb-3">
+                        <h3 className="font-display text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
+                          {product.name}
+                        </h3>
+                        {isMultiModel && (
+                          <span className="font-mono text-[9px] tracking-widest uppercase px-2 py-0.5 border border-primary/40 text-primary/80 bg-primary/5 leading-4 shrink-0">
+                            Select Model
+                          </span>
+                        )}
                       </div>
 
                       <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-4">
                         {product.desc}
                       </p>
 
-                      <div className="flex flex-wrap gap-1.5">
+                      {/* Spec chips */}
+                      <div className="flex flex-wrap gap-1.5 mb-4">
                         {product.specs.slice(0, 2).map((spec) => (
                           <span
                             key={spec}
@@ -543,6 +400,34 @@ const Products = () => {
                           +{product.specs.length - 2} more
                         </span>
                       </div>
+
+                      {/* CTA */}
+                      {isMultiModel ? (
+                        <div
+                          className="flex flex-col gap-2 pt-3 border-t border-border/60"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {product.dropdownModels!.map((opt) => (
+                            <button
+                              key={opt.label}
+                              onClick={() => openProduct(product, opt.modelIndex)}
+                              className="w-full flex items-center justify-between px-4 py-3 font-mono text-[11px] tracking-wider uppercase bg-secondary border border-border text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200 group/btn"
+                            >
+                              <span>{opt.label}</span>
+                              <ArrowRight size={13} className="text-primary group-hover/btn:text-primary-foreground transition-colors" />
+                            </button>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="flex items-center justify-between pt-3 border-t border-border/60">
+                          <span className="font-mono text-[10px] text-muted-foreground tracking-widest uppercase">
+                            View Details
+                          </span>
+                          <div className="w-8 h-8 border border-border flex items-center justify-center group-hover:border-primary/60 group-hover:bg-primary/10 transition-all duration-300">
+                            <ArrowRight size={13} className="text-muted-foreground group-hover:text-primary transition-colors -rotate-45 group-hover:rotate-0 duration-300" />
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </motion.div>
                 );
@@ -550,30 +435,19 @@ const Products = () => {
             </AnimatePresence>
           </motion.div>
 
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mt-20 text-center"
-          >
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 font-mono text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors"
-            >
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-20 text-center">
+            <Link to="/contact" className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 font-mono text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors">
               Request Specifications <ChevronRight size={16} />
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Product Detail Modal */}
+      {/* Modal */}
       <AnimatePresence>
         {selectedProduct && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-md"
             onClick={() => setSelectedProduct(null)}
           >
@@ -585,81 +459,43 @@ const Products = () => {
               onClick={(e) => e.stopPropagation()}
               className="bg-card border border-border max-w-3xl w-full max-h-[85vh] overflow-y-auto"
             >
-              {/* Header */}
               <div className="relative p-6 pb-4 border-b border-border">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="font-mono text-[10px] text-primary tracking-widest uppercase bg-primary/15 px-3 py-1 border border-primary/30">
-                    {selectedProduct.category}
-                  </span>
-                  <span className="font-mono text-[10px] text-foreground/50 tracking-wider">
-                    {selectedProduct.serial}
-                  </span>
+                  <span className="font-mono text-[10px] text-primary tracking-widest uppercase bg-primary/15 px-3 py-1 border border-primary/30">{selectedProduct.category}</span>
+                  <span className="font-mono text-[10px] text-foreground/50 tracking-wider">{selectedProduct.serial}</span>
                 </div>
-                <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-                  {selectedProduct.name}
-                </h2>
-                <button
-                  onClick={() => setSelectedProduct(null)}
-                  className="absolute top-4 right-4 w-10 h-10 bg-secondary border border-border flex items-center justify-center hover:bg-accent transition-colors"
-                >
+                <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground">{selectedProduct.name}</h2>
+                <button onClick={() => setSelectedProduct(null)} className="absolute top-4 right-4 w-10 h-10 bg-secondary border border-border flex items-center justify-center hover:bg-accent transition-colors">
                   <X size={18} />
                 </button>
               </div>
 
-              {/* Image Gallery — updates when active model changes */}
               <AnimatePresence mode="wait">
-                <motion.div
-                  key={selectedProduct.models ? activeModel : selectedProduct.serial}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.25 }}
-                >
+                <motion.div key={selectedProduct.models ? activeModel : selectedProduct.serial} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}>
                   <ImageGallery images={modalImages} name={selectedProduct.name} />
                 </motion.div>
               </AnimatePresence>
 
               <div className="p-8">
-                <p className="text-muted-foreground leading-relaxed mb-8 text-[15px]">
-                  {selectedProduct.desc}
-                </p>
+                <p className="text-muted-foreground leading-relaxed mb-8 text-[15px]">{selectedProduct.desc}</p>
 
-                {/* Models Section — only for products with variants */}
                 {selectedProduct.models ? (
                   <div className="border-t border-border pt-6">
-                    <span className="font-mono text-xs text-primary tracking-widest uppercase mb-5 block">
-                      Available Models
-                    </span>
-
-                    {/* Model Tab Switcher */}
+                    <span className="font-mono text-xs text-primary tracking-widest uppercase mb-5 block">Available Models</span>
                     <div className="flex gap-0 mb-6 border border-border w-fit">
                       {selectedProduct.models.map((model, idx) => (
                         <button
                           key={model.name}
                           onClick={() => setActiveModel(idx)}
-                          className={`font-mono text-[11px] tracking-widest uppercase px-6 py-2.5 transition-all duration-200 ${
-                            activeModel === idx
-                              ? "bg-primary text-primary-foreground"
-                              : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                          }`}
+                          className={`font-mono text-[11px] tracking-widest uppercase px-6 py-2.5 transition-all duration-200 ${activeModel === idx ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground hover:bg-secondary"}`}
                         >
                           {model.name}
                         </button>
                       ))}
                     </div>
-
-                    {/* Active Model Content */}
                     <AnimatePresence mode="wait">
-                      <motion.div
-                        key={activeModel}
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -8 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <p className="text-muted-foreground text-sm leading-relaxed mb-5">
-                          {selectedProduct.models[activeModel].desc}
-                        </p>
+                      <motion.div key={activeModel} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.2 }}>
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-5">{selectedProduct.models[activeModel].desc}</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {selectedProduct.models[activeModel].specs.map((spec) => {
                             const colonIdx = spec.indexOf(": ");
@@ -675,12 +511,8 @@ const Products = () => {
                         </div>
                       </motion.div>
                     </AnimatePresence>
-
-                    {/* Key Features shared across models */}
                     <div className="mt-6 pt-6 border-t border-border">
-                      <span className="font-mono text-xs text-primary tracking-widest uppercase mb-4 block">
-                        Key Features
-                      </span>
+                      <span className="font-mono text-xs text-primary tracking-widest uppercase mb-4 block">Key Features</span>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {selectedProduct.specs.map((spec) => {
                           const [label, value] = spec.split(": ");
@@ -695,11 +527,8 @@ const Products = () => {
                     </div>
                   </div>
                 ) : (
-                  /* Standard specs for all other products */
                   <div className="border-t border-border pt-6">
-                    <span className="font-mono text-xs text-primary tracking-widest uppercase mb-5 block">
-                      Technical Specifications
-                    </span>
+                    <span className="font-mono text-xs text-primary tracking-widest uppercase mb-5 block">Technical Specifications</span>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {selectedProduct.specs.map((spec) => {
                         const [label, value] = spec.split(": ");
@@ -715,16 +544,10 @@ const Products = () => {
                 )}
 
                 <div className="mt-8 flex gap-4">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 font-mono text-xs tracking-widest uppercase hover:bg-primary/90 transition-colors"
-                  >
+                  <Link to="/contact" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 font-mono text-xs tracking-widest uppercase hover:bg-primary/90 transition-colors">
                     Request Quote <ArrowRight size={14} />
                   </Link>
-                  <button
-                    onClick={() => setSelectedProduct(null)}
-                    className="inline-flex items-center gap-2 border border-border px-6 py-3 font-mono text-xs tracking-widest uppercase text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
-                  >
+                  <button onClick={() => setSelectedProduct(null)} className="inline-flex items-center gap-2 border border-border px-6 py-3 font-mono text-xs tracking-widest uppercase text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors">
                     Close
                   </button>
                 </div>
