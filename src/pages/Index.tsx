@@ -270,74 +270,72 @@ const Index = () => {
       </section>
 
       {/* Products Grid - Industrial Solutions */}
-      <section className="relative py-[15vh] bg-background overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <img src={bgIndustrialSolutions} alt="" className="w-full h-full object-cover opacity-[0.15]" />
-        </div>
-        <div className="container relative z-10">
-          <SectionHeading
-            tag="Our Capabilities / 02"
-            title="Industrial Solutions"
-            description="Our product range delivers outstanding reliability, reduced downtime, and optimal efficiency across oil & gas, manufacturing, metalworking, and beyond."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {products.map((product, i) => (
-              <motion.div
-                key={product.serial}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07, duration: 0.5 }}
-              >
-                <Link
-                  to="/products"
-                  className="block relative bg-secondary border border-border p-7 group hover:border-primary/40 transition-all duration-500 overflow-hidden h-full"
-                >
-                  {/* Hover background glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Top row: icon + serial */}
-                  <div className="relative flex items-start justify-between mb-5">
-                    <div className="relative">
-                      <div className="w-12 h-12 bg-background border border-border flex items-center justify-center group-hover:border-primary/50 transition-colors duration-500">
-                        <product.icon className="text-primary" size={22} />
-                      </div>
-                      {/* Animated corner accent */}
-                      <div className="absolute -top-px -left-px w-3 h-3 border-t border-l border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    </div>
-                    <span className="font-mono text-[10px] text-muted-foreground/50 tracking-[0.2em] group-hover:text-primary/50 transition-colors duration-500">
-                      {product.serial}
-                    </span>
-                  </div>
+{/* Our Expertise Section (Replacement for Capabilities) */}
+<section className="py-[15vh] bg-background border-t border-border">
+  <div className="container">
+    <SectionHeading
+      tag="Our Expertise / 02"
+      title="Engineering Excellence Across Domains"
+      description="Delivering precision-engineered solutions with deep industry knowledge and cutting-edge manufacturing."
+    />
 
-                  {/* Title */}
-                  <h3 className="relative font-display text-lg font-bold text-foreground tracking-tight mb-2 group-hover:text-primary transition-colors duration-300">
-                    {product.title}
-                  </h3>
-                  
-                  {/* Divider */}
-                  <div className="w-6 h-px bg-primary/30 mb-3 group-hover:w-10 transition-all duration-500" />
-
-                  {/* Description */}
-                  <p className="relative text-muted-foreground text-sm leading-relaxed mb-5">
-                    {product.description}
-                  </p>
-
-                  {/* CTA */}
-                  <div className="relative inline-flex items-center gap-2 text-primary font-mono text-[11px] tracking-[0.15em] uppercase">
-                    <span className="group-hover:mr-1 transition-all duration-300">Explore</span>
-                    <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-
-                  {/* Bottom-right corner accent */}
-                  <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </Link>
-              </motion.div>
-            ))}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {[
+        {
+          title: "Custom Engineering",
+          desc: "Tailor-made industrial solutions designed to meet specific operational and performance requirements.",
+          icon: Wrench,
+        },
+        {
+          title: "High Efficiency Systems",
+          desc: "Optimized equipment ensuring maximum output with minimal energy consumption and downtime.",
+          icon: Gauge,
+        },
+        {
+          title: "End-to-End Solutions",
+          desc: "From design and manufacturing to installation and support — complete lifecycle services.",
+          icon: Cog,
+        },
+        {
+          title: "Advanced Manufacturing",
+          desc: "State-of-the-art CNC machining and fabrication for precision and durability.",
+          icon: Factory,
+        },
+        {
+          title: "Quality Assurance",
+          desc: "Strict adherence to ISO standards ensuring reliability and consistent performance.",
+          icon: ShieldCheck,
+        },
+        {
+          title: "After-Sales Support",
+          desc: "Dedicated support team for maintenance, troubleshooting, and upgrades.",
+          icon: Users,
+        },
+      ].map((item, i) => (
+        <motion.div
+          key={item.title}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.08 }}
+          className="bg-secondary border border-border p-6 hover:border-primary/40 transition-all duration-300"
+        >
+          <div className="w-12 h-12 bg-background border border-border flex items-center justify-center mb-4">
+            <item.icon className="text-primary" size={22} />
           </div>
-        </div>
-      </section>
+
+          <h3 className="font-display text-lg font-bold text-foreground mb-2">
+            {item.title}
+          </h3>
+
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            {item.desc}
+          </p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Industries We Serve */}
       <section className="py-[15vh] bg-secondary border-t border-border">
