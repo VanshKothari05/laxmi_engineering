@@ -81,7 +81,7 @@ export const products: Product[] = [
     icon: Flame,
     category: "Combustion",
     specs: [],
-    desc: "High-efficiency industrial oil burners with precise flame control for consistent combustion and maximum thermal output.",
+    desc: "Laxmi Engineering Works' Industrial Oil Burners are engineered for precision and efficiency, available in Gas and Oil Burner models with oil flow capacities ranging from 3 to 350 litres per hour. Capable of reaching temperatures up to 1500°C, they are ideal for melting Aluminium, Brass, Copper, and Zinc. Both Automatic and Manual firing options are available, including Dual Fire configurations for maximum flexibility.",
     brochure: "https://example.com/oil-burner-brochure.pdf",
   },
   {
@@ -92,7 +92,7 @@ export const products: Product[] = [
     icon: Wind,
     category: "Air Systems",
     specs: ["Type: Centrifugal / Axial", "Capacity: Up to 50,000 CFM", "Pressure: Up to 500 mmWG", "Material: MS / SS"],
-    desc: "Heavy-duty air blowers for combustion air supply, ventilation, and industrial process requirements.",
+    desc: "Laxmi Engineering Works' Industrial Air Blowers deliver efficient and reliable air movement for low, medium, and high-pressure industrial environments. Available in flow rates from 1,000 to 6,000 CFM, with impellers fabricated in Mild Steel and Aluminium for long-lasting durability. Drive options include direct shaft mount, C.I. coupling, and V-Belt configurations — all customisable to specific operational requirements.",
   },
   {
     image: imgOilHeating,
@@ -101,17 +101,17 @@ export const products: Product[] = [
     icon: Thermometer,
     category: "Heating",
     specs: ["Motor Power: 1 HP and above", "Voltage: 220V & 440V", "Material: Mild Steel", "Warranty: 1 Year"],
-    desc: "Reliable oil circulation and heating units for industrial applications. Available in Simplex and Duplex configurations.",
+    desc: "Laxmi Engineering Works' Oil Heating and Pumping Units provide efficient oil circulation and precise heating for demanding industrial processes. Available in Simplex and Duplex models, each equipped with oil filters, pressure gauges, temperature gauges, and return and pressure line fittings mounted on a robust MS structure. Built for durability and optimal performance, these units ensure consistent oil supply to burners and industrial systems.",
     models: [
       {
         name: "Simplex Model",
-        desc: "Single motor and pump configuration ideal for standard industrial oil heating and circulation needs.",
+        desc: "The Simplex Model features a single motor and pump configuration designed for efficient oil heating and circulation in standard industrial applications. It includes an oil filter, pressure gauge, and temperature gauge, all housed in a sturdy MS plant structure for reliable, long-term operation.",
         images: [imgSimplex1, imgSimplex2, imgSimplex3],
         specs: ["Oil Flow Capacity: 20 LPM and above", "Motor Capacity: 0.5 HP, 1500 RPM", "Heater Capacity: 4 KW and above", "Features: Oil filter, pressure gauge, temperature gauge, return & pressure line fittings in MS tray"],
       },
       {
         name: "Duplex Model",
-        desc: "Dual motor and pump setup for enhanced reliability and efficiency in high-demand industrial processes.",
+        desc: "The Duplex Model is equipped with two motors and two pumps for enhanced reliability and redundancy in high-demand industrial environments. It features dual oil filters, pressure gauges, and temperature gauges — ensuring uninterrupted oil supply even during maintenance or component servicing.",
         images: [imgDuplex1, imgDuplex2, imgDuplex3],
         specs: ["Oil Flow Capacity: 20 LPM and above", "Motor Capacity: 0.5 HP, 1500 RPM", "Configuration: 2 motors and 2 pumps", "Features: Dual oil filters, pressure gauges, temperature gauges, return & pressure line fittings in MS tray"],
       },
@@ -153,7 +153,7 @@ export const products: Product[] = [
   },
   {
     image: imgFurnaces,
-    name: "Furnace",
+    name: "Furnace / Pallet Furnace",
     serial: "LX-FR-2024",
     icon: Factory,
     category: "Heat Treatment",
@@ -162,19 +162,19 @@ export const products: Product[] = [
     models: [
       {
         name: "Melting Furnace",
-        desc: "High-temperature melting furnaces for metal melting operations including aluminium, brass, and cast iron.",
+        desc: "Laxmi Engineering Works' Electric Furnaces are purpose-built for efficient and reliable metal melting, particularly aluminium, with temperatures reaching up to 980°C. Rated at 6 kW and above, they support both single-phase and three-phase power and feature fully automatic operation with minimal heat loss and reduced power consumption. Their durable construction ensures long-term performance in demanding industrial environments.",
         images: [imgMelting1, imgMelting2, imgMelting3, imgMelting4],
         specs: ["Type: Crucible / Induction", "Temp Range: Up to 1600°C", "Fuel: Oil / Gas / Electric", "Capacity: 50 kg – 2000 kg"],
       },
       {
         name: "Pallet Furnace",
-        desc: "Batch-type pallet furnaces for heat treatment, annealing, and stress relieving of components on pallets.",
+        desc: "The Laxmi Pallet Furnace is an innovative, eco-friendly heating solution that uses readily available wooden pallets as fuel, eliminating harmful carbon emissions and dramatically reducing energy costs. Compared to conventional gas or diesel furnaces, it can save industries up to ₹25 lakhs per year in fuel costs while delivering high-performance heating for aluminium melting and other industrial processes. Recognised and promoted by the Indian government as a sustainable alternative to fossil-fuel-based heating.",
         images: [imgPallet1, imgPallet2, imgPallet3, imgPallet4],
         specs: ["Type: Batch / Continuous", "Temp Range: Up to 1000°C", "Loading: Pallet / Trolley", "Fuel: Oil / Gas / Electric"],
       },
       {
         name: "Oil Furnace",
-        desc: "Oil-fired furnaces engineered for forging, re-heating, and heat treatment using light or heavy fuel oil.",
+        desc: "Laxmi Engineering Works' Oil Fired Furnaces are built for efficient and reliable metal melting across a wide range of industries, including brass, copper, aluminium, zinc, forging, and chemical processing. Available in capacities from 20 kg to 6 tons with temperatures reaching up to 1600°C, they are offered in fixed and tilt configurations for versatile operation. Engineered for exceptional heating efficiency and durability, these furnaces perform reliably in the most demanding industrial conditions.",
         images: [imgOilFurnace1, imgOilFurnace2, imgOilFurnace3, imgOilFurnace4],
         specs: ["Fuel: LDO / HSD / FO", "Temp Range: Up to 1200°C", "Burner: Pressure Jet / Air Atomised", "Efficiency: >85%"],
       },
