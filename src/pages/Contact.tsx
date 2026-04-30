@@ -46,13 +46,12 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Contact Info */}
             <div className="lg:col-span-4">
-              <SectionHeading tag="Contact Info / 01" title="Reach Us" />
+              <SectionHeading tag="Contact Info" title="Reach Us" />
               <div className="space-y-8">
                 {[
                   { icon: MapPin, label: "Location", value: "Unit No. 09, Laxmi Engineering Works, Bhola Bhagwan Industrial Estate, IB Patel Road, Goregaon East, Mumbai – 400063, Maharashtra" },
                   { icon: Phone, label: "Phone", values: ["+91 98332 41824", "+91 88790 95770"] },
-                  { icon: Mail, label: "Email", values: ["info@laxmieng.com", "sailesh_bhat@rediffmail.com"] },
-                  { icon: Clock, label: "Working Hours", value: "Mon – Sat: 9:00 AM – 6:00 PM" },
+                  { icon: Mail, label: "Email", values: ["info@laxmieng.com", "sailesh_bhat@rediffmail.com"] }
                 ].map((item) => (
                   <div key={item.label} className="flex gap-4 items-start">
                     <item.icon className="text-primary mt-1 shrink-0" size={26} />
@@ -77,7 +76,7 @@ const Contact = () => {
 
             {/* Form */}
             <div className="lg:col-span-8">
-              <SectionHeading tag="Quote Form / 02" title="Send a Request" />
+              <SectionHeading tag="Quote Form" title="Send a Request" />
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
@@ -156,7 +155,7 @@ const Contact = () => {
       {/* Google Map */}
       <section className="py-16 bg-secondary border-t border-border">
         <div className="container">
-          <SectionHeading tag="Our Location / 02" title="Find Us" />
+          <SectionHeading tag="Our Location" title="Find Us" />
           <div className="border border-border overflow-hidden shadow-lg">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.123456789!2d72.8311!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAxJzIxLjAiTiA3MsKwNDknNTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890"

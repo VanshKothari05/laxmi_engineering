@@ -98,7 +98,7 @@ const About = () => {
             >
               <SectionHeading tag="Who We Are / 01" title="A Legacy of Excellence" />
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Founded in 1974, <strong className="text-foreground">Laxmi Engineering Works</strong> has grown from a small workshop into one of India's most trusted industrial manufacturing companies. Our 40,000 sq. ft. state-of-the-art facility houses advanced CNC machinery, in-house testing laboratories, and a team of 100+ skilled engineers and technicians.
+                Founded in 1974, <strong className="text-foreground">Laxmi Engineering Works</strong> has grown from a small workshop into one of Global's most trusted industrial manufacturing companies. Our 40,000 sq. ft. state-of-the-art facility houses advanced CNC machinery, in-house testing laboratories, and a team of 100+ skilled engineers and technicians.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 We specialize in oil burners, industrial blowers, furnaces, heating units, and custom machinery — serving 500+ clients across oil & gas, steel, power, and automotive sectors with unwavering commitment to quality and reliability.

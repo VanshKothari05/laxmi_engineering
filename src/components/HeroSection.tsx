@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 interface HeroSectionProps {
-  tagline: string;
+  tagline: React.ReactNode;
   title: string;
   titleAccent?: string;
   subtitle?: string;

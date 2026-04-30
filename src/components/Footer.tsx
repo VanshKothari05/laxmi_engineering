@@ -61,7 +61,7 @@ const socialLinks = [
   },
   {
     label: "Maps",
-    href: "https://maps.app.goo.gl/vcdgQTqzyY1urzQE9?g_st=ic",
+    href: "https://maps.app.goo.gl/RKDVtP2vtr8BcWNL9",
     icon: <MapPin size={20} />,
     color: "#34A853",
     bg: "rgba(52,168,83,0.1)",

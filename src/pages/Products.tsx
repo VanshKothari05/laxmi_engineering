@@ -5,7 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import heroImage from "@/assets/hero-products.jpg";
 import { Link, useLocation } from "react-router-dom";
 
-import imgOilBurners from "@/assets/product-oil-burners.jpg";
+import imgOilBurners from "@/assets/product-oil-burners.png";
 import imgOilBurner2 from "@/assets/product-oil-burner-2.jpg";
 import imgOilBurner3 from "@/assets/product-oil-burner-3.jpg";
 import imgOilBurner4 from "@/assets/product-oil-burner-4.jpg";
@@ -69,6 +69,7 @@ type Product = {
   desc: string;
   models?: ProductModel[];
   dropdownModels?: { label: string; modelIndex: number }[];
+  brochure?: string;
 };
 
 export const products: Product[] = [
@@ -79,8 +80,9 @@ export const products: Product[] = [
     serial: "LX-OB-2024",
     icon: Flame,
     category: "Combustion",
-    specs: ["Capacity: 50-5000 kCal/hr", "Fuel: LDO / HSD / FO", "Efficiency: >92%", "Atomization: Pressure / Air"],
+    specs: [],
     desc: "High-efficiency industrial oil burners with precise flame control for consistent combustion and maximum thermal output.",
+    brochure: "https://example.com/oil-burner-brochure.pdf",
   },
   {
     image: imgBlowers,
@@ -386,20 +388,24 @@ const Products = () => {
                         {product.desc}
                       </p>
 
-                      {/* Spec chips */}
-                      <div className="flex flex-wrap gap-1.5 mb-4">
-                        {product.specs.slice(0, 2).map((spec) => (
-                          <span
-                            key={spec}
-                            className="font-mono text-[10px] text-muted-foreground bg-secondary px-2.5 py-1 border border-border/50 tabular-nums"
-                          >
-                            {spec}
-                          </span>
-                        ))}
-                        <span className="font-mono text-[10px] text-primary/70 bg-primary/5 px-2.5 py-1 border border-primary/20">
-                          +{product.specs.length - 2} more
-                        </span>
-                      </div>
+{/* Spec chips */}
+                      {product.specs.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 mb-4">
+                          {product.specs.slice(0, 2).map((spec) => (
+                            <span
+                              key={spec}
+                              className="font-mono text-[10px] text-muted-foreground bg-secondary px-2.5 py-1 border border-border/50 tabular-nums"
+                            >
+                              {spec}
+                            </span>
+                          ))}
+                          {product.specs.length > 2 && (
+                            <span className="font-mono text-[10px] text-primary/70 bg-primary/5 px-2.5 py-1 border border-primary/20">
+                              +{product.specs.length - 2} more
+                            </span>
+                          )}
+                        </div>
+                      )}
 
                       {/* CTA */}
                       {isMultiModel ? (
@@ -543,10 +549,20 @@ const Products = () => {
                   </div>
                 )}
 
-                <div className="mt-8 flex gap-4">
+                <div className="mt-8 flex flex-wrap gap-4">
                   <Link to="/contact" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 font-mono text-xs tracking-widest uppercase hover:bg-primary/90 transition-colors">
                     Request Quote <ArrowRight size={14} />
                   </Link>
+                  {selectedProduct.brochure && (
+                    <a
+                      href={selectedProduct.brochure}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 border border-primary/50 text-primary px-6 py-3 font-mono text-xs tracking-widest uppercase hover:bg-primary/10 transition-colors"
+                    >
+                      Download Brochure <ArrowRight size={14} />
+                    </a>
+                  )}
                   <button onClick={() => setSelectedProduct(null)} className="inline-flex items-center gap-2 border border-border px-6 py-3 font-mono text-xs tracking-widest uppercase text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors">
                     Close
                   </button>

@@ -9,7 +9,7 @@ import { TestimonialsColumn } from "@/components/ui/testimonials-columns-1";
 import heroImage from "@/assets/hero-home.jpg";
 import heroVideo from "@/assets/hero-home-video.mp4.asset.json";
 
-import imgOilBurners from "@/assets/product-oil-burners.jpg";
+import imgOilBurners from "@/assets/product-oil-burners.png";
 import imgBlowers from "@/assets/product-blowers.jpg";
 import imgFurnaces from "@/assets/product-furnaces.jpg";
 import imgOilHeating from "@/assets/product-oil-heating.jpg";
@@ -106,21 +106,31 @@ const thirdColumn = testimonials.slice(6, 9);
 const featuredProducts = [
   { image: imgOilBurners, name: "Oil Burner", tag: "Best Seller", description: "Precision-engineered oil burners delivering >92% efficiency with advanced flame control for industrial heating applications." },
   { image: imgBlowers, name: "Air Blowers", tag: "Heavy Duty", description: "Centrifugal and axial blowers rated up to 50,000 CFM, built for non-stop operation in the harshest environments." },
-  { image: imgFurnaces, name: "Furnace", tag: "Custom Built", description: "Box, pit, and rotary furnaces reaching 1200°C — designed and built to your exact heat treatment specifications." },
-  { image: imgRotomizer, name: "Rotomizer", tag: "Precision", description: "High-speed rotary atomizers for uniform spray drying and coating at up to 12,000 RPM." },
+  { image: imgFurnaces, name: "Furnace / Pallet Furnace", tag: "Custom Built", description: "Box, pit, and rotary furnaces reaching 1200°C — designed and built to your exact heat treatment specifications." },
+  { image: imgRotomizer, name: "Oil Heating And Pumping Unit", tag: "Precision", description: "High-speed rotary atomizers for uniform spray drying and coating at up to 12,000 RPM." },
 ];
 
 const industries = [
-  "Oil & Gas", "Steel & Metals", "Power Generation", "Petrochemicals",
-  "Cement", "Textiles", "Food Processing", "Pharmaceuticals",
-  "Automotive", "Shipbuilding",
+  "Oil & Gas Industry",
+  "Steel & Metal Manufacturing",
+  "Power Generation & Energy",
+  "Petrochemicals & Chemical Processing",
+  "Metalworking & Foundries",
+  "Mining & Cement Production",
+  "Textiles & Paper Mills",
+  "Food Processing & Agro Industries",
+  "Pharmaceutical Manufacturing",
+  "Automotive & Engineering",
+  "Infrastructure & Road Construction",
+  "Pollution Control & Environment",
+  "Shipbuilding & Marine",
 ];
 
 const Index = () => {
   return (
     <>
       <HeroSection
-        tagline="Precision Engineering / Since 1974"
+        tagline={<>Precision Engineering<span className="text-xl"> Since 1974</span></>}
         title="ENGINEERING THE FUTURE"
         titleAccent="OF INDUSTRIAL INFRASTRUCTURE"
         subtitle="A trusted leader in high-performance industrial manufacturing. Oil burners, blowers, furnaces, and precision machinery."
@@ -148,7 +158,7 @@ const Index = () => {
       <section className="py-[15vh] bg-secondary border-b border-border overflow-hidden">
         <div className="container">
           <SectionHeading tag="Who We Are" title="Powering India's Industry Since 1974" />
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Left - Image mosaic */}
             <motion.div
@@ -203,7 +213,7 @@ const Index = () => {
               className="lg:col-span-5 flex flex-col justify-center"
             >
               <p className="text-muted-foreground leading-relaxed mb-4">
-                <strong className="text-foreground">Laxmi Engineering Works</strong> is one of India's most trusted names in industrial manufacturing. From our 40,000 sq. ft. ISO 9001:2015 certified facility, we deliver precision-engineered oil burners, blowers, furnaces, and custom machinery to 500+ clients across 10+ sectors.
+                <strong className="text-foreground">Laxmi Engineering Works</strong> is one of Global's most trusted names in industrial manufacturing. From our 40,000 sq. ft. ISO 9001:2015 certified facility, we deliver precision-engineered oil burners, blowers, furnaces, and custom machinery to 500+ clients across 10+ sectors.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Our experienced team of 100+ engineers combines decades of expertise with modern CNC technology to build equipment that runs reliably, year after year.
@@ -250,7 +260,7 @@ const Index = () => {
       <section className="py-[15vh] bg-secondary border-b border-border">
         <div className="container">
           <SectionHeading
-            tag="Featured Products / 01"
+            tag="Featured Products"
             title="Built for Industry"
             description="Explore our flagship products — engineered for maximum performance in the most demanding environments."
           />
@@ -270,78 +280,78 @@ const Index = () => {
       </section>
 
       {/* Products Grid - Industrial Solutions */}
-{/* Our Expertise Section (Replacement for Capabilities) */}
-<section className="py-[15vh] bg-background border-t border-border">
-  <div className="container">
-    <SectionHeading
-      tag="Our Expertise / 02"
-      title="Engineering Excellence Across Domains"
-      description="Delivering precision-engineered solutions with deep industry knowledge and cutting-edge manufacturing."
-    />
+      {/* Our Expertise Section (Replacement for Capabilities) */}
+      <section className="py-[15vh] bg-background border-t border-border">
+        <div className="container">
+          <SectionHeading
+            tag="Our Expertise"
+            title="Engineering Excellence Across Domains"
+            description="Delivering precision-engineered solutions with deep industry knowledge and cutting-edge manufacturing."
+          />
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {[
-        {
-          title: "Custom Engineering",
-          desc: "Tailor-made industrial solutions designed to meet specific operational and performance requirements.",
-          icon: Wrench,
-        },
-        {
-          title: "High Efficiency Systems",
-          desc: "Optimized equipment ensuring maximum output with minimal energy consumption and downtime.",
-          icon: Gauge,
-        },
-        {
-          title: "End-to-End Solutions",
-          desc: "From design and manufacturing to installation and support — complete lifecycle services.",
-          icon: Cog,
-        },
-        {
-          title: "Advanced Manufacturing",
-          desc: "State-of-the-art CNC machining and fabrication for precision and durability.",
-          icon: Factory,
-        },
-        {
-          title: "Quality Assurance",
-          desc: "Strict adherence to ISO standards ensuring reliability and consistent performance.",
-          icon: ShieldCheck,
-        },
-        {
-          title: "After-Sales Support",
-          desc: "Dedicated support team for maintenance, troubleshooting, and upgrades.",
-          icon: Users,
-        },
-      ].map((item, i) => (
-        <motion.div
-          key={item.title}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: i * 0.08 }}
-          className="bg-secondary border border-border p-6 hover:border-primary/40 transition-all duration-300"
-        >
-          <div className="w-12 h-12 bg-background border border-border flex items-center justify-center mb-4">
-            <item.icon className="text-primary" size={22} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Custom Engineering",
+                desc: "Tailor-made industrial solutions designed to meet specific operational and performance requirements.",
+                icon: Wrench,
+              },
+              {
+                title: "High Efficiency Systems",
+                desc: "Optimized equipment ensuring maximum output with minimal energy consumption and downtime.",
+                icon: Gauge,
+              },
+              {
+                title: "End-to-End Solutions",
+                desc: "From design and manufacturing to installation and support — complete lifecycle services.",
+                icon: Cog,
+              },
+              {
+                title: "Advanced Manufacturing",
+                desc: "State-of-the-art CNC machining and fabrication for precision and durability.",
+                icon: Factory,
+              },
+              {
+                title: "Quality Assurance",
+                desc: "Strict adherence to ISO standards ensuring reliability and consistent performance.",
+                icon: ShieldCheck,
+              },
+              {
+                title: "After-Sales Support",
+                desc: "Dedicated support team for maintenance, troubleshooting, and upgrades.",
+                icon: Users,
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="bg-secondary border border-border p-6 hover:border-primary/40 transition-all duration-300"
+              >
+                <div className="w-12 h-12 bg-background border border-border flex items-center justify-center mb-4">
+                  <item.icon className="text-primary" size={22} />
+                </div>
+
+                <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                  {item.title}
+                </h3>
+
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
           </div>
-
-          <h3 className="font-display text-lg font-bold text-foreground mb-2">
-            {item.title}
-          </h3>
-
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {item.desc}
-          </p>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Industries We Serve */}
       <section className="py-[15vh] bg-secondary border-t border-border">
         <div className="container">
           <SectionHeading
-            tag="Industries / 03"
+            tag="Industries"
             title="Sectors We Serve"
             description="Trusted across 10+ industries for precision-engineered industrial equipment."
           />
@@ -372,7 +382,7 @@ const Index = () => {
               viewport={{ once: true }}
               className="mono-label mb-3"
             >
-              Client Testimonials / 04
+              Client Testimonials
             </motion.span>
             <div className="accent-bar mx-auto mb-6" />
             <motion.h2
@@ -406,7 +416,7 @@ const Index = () => {
       <section className="py-[15vh] bg-secondary border-t border-border">
         <div className="container">
           <SectionHeading
-            tag="Why Laxmi / 05"
+            tag="Why Laxmi"
             title="Why Industry Leaders Choose Us"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -443,7 +453,7 @@ const Index = () => {
               viewport={{ once: true }}
               className="col-span-12 md:col-span-8"
             >
-              <span className="mono-label mb-3 block">Request for Quote / 06</span>
+              <span className="mono-label mb-3 block">Request for Quote</span>
               <div className="accent-bar mb-6" />
               <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tighter text-foreground">
                 Ready to Build?
