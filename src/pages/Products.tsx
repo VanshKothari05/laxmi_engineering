@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, ArrowRight, X, Flame, Wind, Thermometer, Cog, ThermometerSun, Filter, Factory, CircleDot, Disc } from "lucide-react";
+import { ChevronRight, ArrowRight, X, Flame, Wind, Thermometer, Cog, ThermometerSun, Filter, Factory, CircleDot } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import heroImage from "@/assets/hero-products.jpg";
 import { Link, useLocation } from "react-router-dom";
@@ -34,7 +34,6 @@ import imgSimplex3 from "@/assets/simple-3.jpg";
 import imgDuplex1 from "@/assets/duplex-1.jpg";
 import imgDuplex2 from "@/assets/duplex-2.jpg";
 import imgDuplex3 from "@/assets/duplex-3.jpg";
-import imgRotomizer from "@/assets/product-rotomizer.jpg";
 import imgOilLineHeater from "@/assets/product-oil-line-heater.jpg";
 import imgOilFilter from "@/assets/product-oil-filter.jpg";
 import imgCyclone from "@/assets/product-cyclone.jpg";
@@ -121,16 +120,7 @@ export const products: Product[] = [
       { label: "Duplex Model", modelIndex: 1 },
     ],
   },
-  {
-    image: imgRotomizer,
-    images: [imgRotomizer],
-    name: "Rotomizer",
-    serial: "LX-RT-2024",
-    icon: Disc,
-    category: "Atomization",
-    specs: ["Speed: Up to 12000 RPM", "Capacity: 50-500 kg/hr", "Material: SS 304 / 316", "Drive: Electric Motor"],
-    desc: "Precision rotary atomizers for spray drying, coating, and fine particle generation in industrial processes.",
-  },
+
   {
     image: imgOilLineHeater,
     images: [imgOilLineHeater],

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Flame, Wind, Factory, Gauge, Cog, Filter, ThermometerSun, Tornado, Disc3, ArrowRight, ChevronRight, Award, Users, Wrench, ShieldCheck } from "lucide-react";
+import { Flame, Wind, Factory, Gauge, Cog, Filter, ThermometerSun, Tornado, ArrowRight, ChevronRight, Award, Users, Wrench, ShieldCheck } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
 import FlipCard from "@/components/FlipCard";
@@ -13,7 +13,6 @@ import imgOilBurners from "@/assets/product-oil-burners.png";
 import imgBlowers from "@/assets/product-blowers.jpg";
 import imgFurnaces from "@/assets/product-furnaces.jpg";
 import imgOilHeating from "@/assets/product-oil-heating.jpg";
-import imgRotomizer from "@/assets/product-rotomizer.jpg";
 import imgOilLineHeater from "@/assets/product-oil-line-heater.jpg";
 import imgOilFilter from "@/assets/product-oil-filter.jpg";
 import imgCyclone from "@/assets/product-cyclone.jpg";
@@ -34,7 +33,7 @@ const products = [
   { icon: Flame, title: "Oil Burner", description: "High-efficiency industrial oil burners engineered for consistent combustion and maximum thermal output.", serial: "LX-OB01" },
   { icon: Wind, title: "Air Blowers", description: "Heavy-duty air blowers designed for continuous operation in demanding industrial environments.", serial: "LX-BL02" },
   { icon: Gauge, title: "Oil Heating & Pumping Unit", description: "Complete oil heating and pumping units for efficient fuel management.", serial: "LX-OH03" },
-  { icon: Disc3, title: "Rotomizer", description: "Precision rotary atomizers for spray drying, coating, and fine particle generation.", serial: "LX-RT04" },
+
   { icon: ThermometerSun, title: "Oil Line Heater", description: "Inline oil heating systems for optimal fuel viscosity and burner performance.", serial: "LX-LH05" },
   { icon: Filter, title: "Oil Filter", description: "Industrial-grade filtration systems ensuring clean fuel supply and equipment protection.", serial: "LX-OF06" },
   { icon: Factory, title: "Furnace", description: "All types of industrial furnaces for heat treatment, forging, and melting applications.", serial: "LX-FR07" },
@@ -107,7 +106,7 @@ const featuredProducts = [
   { image: imgOilBurners, name: "Oil Burner", tag: "Best Seller", description: "Precision-engineered oil burners delivering >92% efficiency with advanced flame control for industrial heating applications." },
   { image: imgBlowers, name: "Air Blowers", tag: "Heavy Duty", description: "Centrifugal and axial blowers rated up to 50,000 CFM, built for non-stop operation in the harshest environments." },
   { image: imgFurnaces, name: "Furnace / Pallet Furnace", tag: "Custom Built", description: "Box, pit, and rotary furnaces reaching 1200°C — designed and built to your exact heat treatment specifications." },
-  { image: imgRotomizer, name: "Oil Heating And Pumping Unit", tag: "Precision", description: "High-speed rotary atomizers for uniform spray drying and coating at up to 12,000 RPM." },
+  { image: imgOilHeating, name: "Oil Heating And Pumping Unit", tag: "Precision", description: "Complete oil heating and pumping systems with dual simplex and duplex configurations for reliable fuel delivery." },
 ];
 
 const industries = [
