@@ -176,9 +176,6 @@ const Footer = () => {
           <p className="text-muted-foreground text-xs font-mono tracking-wider">
             © {new Date().getFullYear()} LAXMI ENGINEERING WORKS. ALL RIGHTS RESERVED.
           </p>
-          <p className="text-muted-foreground text-xs font-mono tracking-wider">
-            LEW-{new Date().getFullYear()}-IND
-          </p>
         </div>
       </div>
     </footer>

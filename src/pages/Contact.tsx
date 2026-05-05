@@ -34,10 +34,10 @@ const Contact = () => {
   return (
     <>
       <HeroSection
-        tagline="Get in Touch / RFQ"
+        tagline="Get in Touch"
         title="REQUEST"
         titleAccent="FOR QUOTE"
-        subtitle="Contact our engineering team for custom solutions, technical specifications, and competitive pricing."
+        subtitle="Contact our engineering team for custom solutions, product details, and competitive pricing."
         image={heroImage}
       />
 
@@ -116,7 +116,8 @@ const Contact = () => {
                     <option value="oil-burner">Oil Burner Inquiry</option>
                     <option value="blower">Industrial Blower</option>
                     <option value="furnace">Furnace Requirements</option>
-                    <option value="heating-unit">Oil Heating Unit</option>
+                    <option value="pallet-furnace">Pallet Furnace</option>
+                    <option value="heating-unit">Oil Heating and PUMPING UNIT</option>
                     <option value="custom">Custom Machinery</option>
                     <option value="service">Service & Maintenance</option>
                     <option value="other">Other</option>
@@ -158,7 +159,7 @@ const Contact = () => {
           <SectionHeading tag="Our Location" title="Find Us" />
           <div className="border border-border overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.123456789!2d72.8311!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAxJzIxLjAiTiA3MsKwNDknNTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps?q=Unit%20No.%2009%2C%20Laxmi%20Engineering%20Works%2C%20Bhola%20Bhagwan%20Industrial%20Estate%2C%20IB%20Patel%20Road%2C%20Goregaon%20East%2C%20Mumbai%20400063&output=embed"
               width="100%"
               height="350"
               style={{ border: 0, filter: "grayscale(60%) contrast(1.05)" }}
@@ -167,6 +168,16 @@ const Contact = () => {
               referrerPolicy="no-referrer-when-downgrade"
               title="Laxmi Engineering Works Location"
             />
+          </div>
+          <div className="mt-4">
+            <a
+              href="https://maps.app.goo.gl/RKDVtP2vtr8BcWNL9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 font-mono text-xs tracking-widest uppercase hover:bg-primary/90 transition-colors"
+            >
+              Open Exact Location
+            </a>
           </div>
         </div>
       </section>

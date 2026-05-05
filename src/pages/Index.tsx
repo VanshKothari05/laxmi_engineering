@@ -30,15 +30,15 @@ const stats = [
 ];
 
 const products = [
-  { icon: Flame, title: "Oil Burner", description: "High-efficiency industrial oil burners engineered for consistent combustion and maximum thermal output.", serial: "LX-OB01" },
-  { icon: Wind, title: "Air Blowers", description: "Heavy-duty air blowers designed for continuous operation in demanding industrial environments.", serial: "LX-BL02" },
-  { icon: Gauge, title: "Oil Heating & Pumping Unit", description: "Complete oil heating and pumping units for efficient fuel management.", serial: "LX-OH03" },
+  { icon: Flame, title: "Oil Burner", description: "High-efficiency industrial oil burners engineered for consistent combustion and maximum thermal output." },
+  { icon: Wind, title: "Air Blowers", description: "Heavy-duty air blowers designed for continuous operation in demanding industrial environments." },
+  { icon: Gauge, title: "Oil Heating & Pumping Unit", description: "Complete oil heating and pumping units for efficient fuel management." },
 
-  { icon: ThermometerSun, title: "Oil Line Heater", description: "Inline oil heating systems for optimal fuel viscosity and burner performance.", serial: "LX-LH05" },
-  { icon: Filter, title: "Oil Filter", description: "Industrial-grade filtration systems ensuring clean fuel supply and equipment protection.", serial: "LX-OF06" },
-  { icon: Factory, title: "Furnace", description: "All types of industrial furnaces for heat treatment, forging, and melting applications.", serial: "LX-FR07" },
-  { icon: Tornado, title: "Cyclone", description: "High-efficiency cyclone separators for dust collection and air pollution control.", serial: "LX-CY08" },
-  { icon: Cog, title: "Valve", description: "Industrial valves for precise flow control in oil, gas, steam, and chemical applications.", serial: "LX-VL09" },
+  { icon: ThermometerSun, title: "Oil Line Heater", description: "Inline oil heating systems for optimal fuel viscosity and burner performance." },
+  { icon: Filter, title: "Oil Filter", description: "Industrial-grade filtration systems ensuring clean fuel supply and equipment protection." },
+  { icon: Factory, title: "Furnace", description: "All types of industrial furnaces for heat treatment, forging, and melting applications." },
+  { icon: Tornado, title: "Cyclone", description: "High-efficiency cyclone separators for dust collection and air pollution control." },
+  { icon: Cog, title: "Valve", description: "Industrial valves for precise flow control in oil, gas, steam, and chemical applications." },
 ];
 
 const testimonials = [
@@ -223,7 +223,7 @@ const Index = () => {
                 {[
                   { icon: Award, title: "ISO 9001:2015", desc: "Certified quality systems" },
                   { icon: Wrench, title: "Custom Built", desc: "Engineered to your specs" },
-                  { icon: Users, title: "500+ Clients", desc: "Pan-India & exports" },
+                  { icon: Users, title: "500+ Clients", desc: "Trusted by businesses across multiple industrial sectors." },
                   { icon: ShieldCheck, title: "99.9% Uptime", desc: "Continuous operation" },
                 ].map((item, i) => (
                   <motion.div
@@ -415,15 +415,15 @@ const Index = () => {
       <section className="py-[15vh] bg-secondary border-t border-border">
         <div className="container">
           <SectionHeading
-            tag="Why Laxmi"
-            title="Why Industry Leaders Choose Us"
+            tag="Why Laxmi Engineering Works"
+            title="Why Industry Leaders Choose Laxmi Engineering Works"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { num: "50+", title: "Years Experience", desc: "Half a century of engineering excellence and continuous innovation." },
               { num: "ISO", title: "9001:2015 Certified", desc: "Quality management system ensuring consistency at every stage." },
               { num: "24/7", title: "Technical Support", desc: "Round-the-clock assistance, spare parts supply, and remote diagnostics." },
-              { num: "PAN", title: "India Delivery", desc: "End-to-end supply chain with timely delivery across India and export markets." },
+              { num: "100+", title: "Skilled Team", desc: "Experienced engineers and technicians focused on dependable industrial solutions." },
             ].map((item, i) => (
               <motion.div
                 key={item.title}
@@ -433,8 +433,8 @@ const Index = () => {
                 transition={{ delay: i * 0.1 }}
                 className="text-center md:text-left"
               >
-                <span className="font-display text-4xl font-bold text-primary">{item.num}</span>
-                <h3 className="font-display text-lg font-bold text-foreground mt-2 mb-2">{item.title}</h3>
+                <span className="font-display text-5xl font-bold text-primary">{item.num}</span>
+                <h3 className="font-display text-xl font-bold text-foreground mt-2 mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
@@ -458,7 +458,7 @@ const Index = () => {
                 Ready to Build?
               </h2>
               <p className="mt-4 text-muted-foreground max-w-lg leading-relaxed">
-                Get in touch with our engineering team for custom solutions, technical specifications, and competitive pricing.
+                Get in touch with our engineering team for custom solutions, product details, and competitive pricing.
               </p>
             </motion.div>
             <motion.div

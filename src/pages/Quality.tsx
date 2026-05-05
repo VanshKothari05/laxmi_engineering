@@ -7,15 +7,15 @@ import heroImage from "@/assets/hero-quality.jpg";
 
 const qualityLabUrl = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80";
 const inspectionUrl = "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80";
-const certificationUrl = "https://images.unsplash.com/photo-1567789884554-0b844b597180?w=800&q=80";
+const certificationUrl = "https://plus.unsplash.com/premium_photo-1664910437583-88732b7e5019?auto=format&fit=crop&w=1200&q=80";
 
 const qualityPillars = [
-  { icon: Shield, title: "ISO 9001:2015", description: "Certified quality management system ensuring consistent processes and continuous improvement.", serial: "QA-01" },
-  { icon: Microscope, title: "In-House Testing Lab", description: "Complete testing laboratory with precision instruments for dimensional accuracy and material verification.", serial: "QA-02" },
-  { icon: FileCheck, title: "Full Traceability", description: "End-to-end material traceability from raw material procurement to finished component delivery.", serial: "QA-03" },
-  { icon: Target, title: "±0.005mm Tolerance", description: "Precision machining capabilities with ultra-tight tolerances for mission-critical industrial components.", serial: "QA-04" },
-  { icon: CheckCircle, title: "Stage-Gate Inspection", description: "Multi-stage quality checkpoints during manufacturing ensure zero-defect delivery.", serial: "QA-05" },
-  { icon: Award, title: "Performance Certification", description: "Every product ships with a comprehensive test certificate and performance documentation.", serial: "QA-06" },
+  { icon: Shield, title: "Process Control Discipline", description: "Defined process checkpoints across fabrication, machining, assembly, and final dispatch for stable output quality." },
+  { icon: Microscope, title: "Performance Validation", description: "Each unit is function-checked for combustion behavior, flow performance, and operational stability before release." },
+  { icon: FileCheck, title: "Inspection Documentation", description: "Structured inspection records and dispatch checklists ensure clarity, consistency, and service-ready handover." },
+  { icon: Target, title: "Application-Fit Engineering", description: "Configurations are aligned to actual plant conditions, fuel type, and duty cycle for dependable field performance." },
+  { icon: CheckCircle, title: "Stage-Gate Inspection", description: "Multi-stage quality checkpoints during manufacturing ensure zero-defect delivery." },
+  { icon: Award, title: "Performance Certification", description: "Every product ships with a comprehensive test certificate and performance documentation." },
 ];
 
 const qcProcess = [
@@ -29,7 +29,7 @@ const Quality = () => {
   return (
     <>
       <HeroSection
-        tagline="Quality Assurance / ISO 9001:2015"
+        tagline="Quality Assurance"
         title="ZERO DEFECT"
         titleAccent="COMMITMENT"
         subtitle="Rigorous quality control at every stage — from raw material to final delivery. Precision you can trust."
@@ -50,7 +50,7 @@ const Quality = () => {
             </motion.div>
             <div className="lg:col-span-7">
               <SectionHeading
-                tag="Quality Standards / 01"
+                tag="Quality Standards"
                 title="Our Quality Framework"
                 description="Every product undergoes rigorous inspection and testing protocols to ensure it meets the highest standards of industrial performance."
               />
@@ -58,7 +58,7 @@ const Quality = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {qualityPillars.map((q) => (
-              <SpecCard key={q.serial} {...q} />
+              <SpecCard key={q.title} {...q} />
             ))}
           </div>
         </div>
@@ -69,7 +69,7 @@ const Quality = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-12">
             <div className="lg:col-span-7">
-              <SectionHeading tag="QC Process / 02" title="Quality Control Workflow" />
+              <SectionHeading tag="QC Process" title="Quality Control Workflow" />
             </div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -103,7 +103,7 @@ const Quality = () => {
       {/* Certifications */}
       <section className="py-[15vh] bg-background border-t border-border">
         <div className="container">
-          <SectionHeading tag="Certifications / 03" title="Standards & Compliance" />
+          <SectionHeading tag="Certifications" title="Standards & Compliance" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

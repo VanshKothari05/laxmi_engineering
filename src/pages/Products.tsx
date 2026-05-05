@@ -264,7 +264,7 @@ const Products = () => {
   return (
     <>
       <HeroSection
-        tagline="Product Range / LX-2024"
+        tagline="Product Range"
         title="PRECISION"
         titleAccent="COMPONENTS"
         subtitle="Comprehensive range of industrial machinery engineered for reliability, efficiency, and performance."
@@ -279,7 +279,7 @@ const Products = () => {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <span className="mono-label mb-3 block">Product Catalog / 01</span>
+            <span className="mono-label mb-3 block">Product Catalog</span>
             <div className="accent-bar mb-6" />
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
               <div>
@@ -316,7 +316,7 @@ const Products = () => {
                 return (
                   <motion.div
                     id={toSlug(product.name)}
-                    key={product.serial}
+                    key={product.name}
                     layout
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -338,9 +338,6 @@ const Products = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                      <div className="absolute top-4 right-4 bg-background/40 backdrop-blur-md border border-border/50 px-3 py-1.5 opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-                        <span className="font-mono text-[10px] text-foreground/70 tracking-wider">{product.serial}</span>
-                      </div>
                       <div className="absolute top-4 left-4">
                         <div className="relative">
                           <div className="absolute inset-0 bg-primary/30 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -458,7 +455,6 @@ const Products = () => {
               <div className="relative p-6 pb-4 border-b border-border">
                 <div className="flex items-center gap-3 mb-2">
                   <span className="font-mono text-[10px] text-primary tracking-widest uppercase bg-primary/15 px-3 py-1 border border-primary/30">{selectedProduct.category}</span>
-                  <span className="font-mono text-[10px] text-foreground/50 tracking-wider">{selectedProduct.serial}</span>
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground">{selectedProduct.name}</h2>
                 <button onClick={() => setSelectedProduct(null)} className="absolute top-4 right-4 w-10 h-10 bg-secondary border border-border flex items-center justify-center hover:bg-accent transition-colors">
@@ -467,7 +463,7 @@ const Products = () => {
               </div>
 
               <AnimatePresence mode="wait">
-                <motion.div key={selectedProduct.models ? activeModel : selectedProduct.serial} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}>
+                <motion.div key={selectedProduct.models ? activeModel : selectedProduct.name} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}>
                   <ImageGallery images={modalImages} name={selectedProduct.name} />
                 </motion.div>
               </AnimatePresence>
@@ -524,18 +520,29 @@ const Products = () => {
                   </div>
                 ) : (
                   <div className="border-t border-border pt-6">
-                    <span className="font-mono text-xs text-primary tracking-widest uppercase mb-5 block">Technical Specifications</span>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {selectedProduct.specs.map((spec) => {
-                        const [label, value] = spec.split(": ");
-                        return (
-                          <div key={spec} className="flex justify-between items-center py-3 px-4 bg-secondary/50 border border-border/50">
-                            <span className="font-mono text-[11px] text-muted-foreground uppercase tracking-wider">{label}</span>
-                            <span className="font-mono text-sm text-foreground font-medium">{value}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
+                    {selectedProduct.specs.length > 0 ? (
+                      <>
+                        <span className="font-mono text-xs text-primary tracking-widest uppercase mb-5 block">Technical Specifications</span>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {selectedProduct.specs.map((spec) => {
+                            const [label, value] = spec.split(": ");
+                            return (
+                              <div key={spec} className="flex justify-between items-center py-3 px-4 bg-secondary/50 border border-border/50">
+                                <span className="font-mono text-[11px] text-muted-foreground uppercase tracking-wider">{label}</span>
+                                <span className="font-mono text-sm text-foreground font-medium">{value}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <span className="font-mono text-xs text-primary tracking-widest uppercase mb-5 block">Product Details</span>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          Brochure-based technical details can vary depending on burner size, fuel type, automation level, and application. Contact our team for the right configuration and quote for your requirement.
+                        </p>
+                      </>
+                    )}
                   </div>
                 )}
 

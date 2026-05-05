@@ -21,10 +21,10 @@ const milestones = [
 ];
 
 const values = [
-  { icon: Award, title: "Accuracy", description: "Every component manufactured to tolerances of ±0.005mm with rigorous quality control.", serial: "LX-V01" },
-  { icon: Clock, title: "Reliability", description: "99.9% uptime guarantee. Engineered for continuous industrial operation.", serial: "LX-V02" },
-  { icon: Users, title: "Partnership", description: "Long-term relationships with procurement officers and infrastructure developers.", serial: "LX-V03" },
-  { icon: MapPin, title: "Scale", description: "40,000 sq. ft. manufacturing facility equipped with modern CNC machinery.", serial: "LX-V04" },
+  { icon: Award, title: "Accuracy", description: "Every component manufactured to tolerances of ±0.005mm with rigorous quality control." },
+  { icon: Clock, title: "Reliability", description: "99.9% uptime guarantee. Engineered for continuous industrial operation." },
+  { icon: Users, title: "Partnership", description: "Long-term relationships with procurement officers and infrastructure developers." },
+  { icon: MapPin, title: "Scale", description: "40,000 sq. ft. manufacturing facility equipped with modern CNC machinery." },
 ];
 
 const capabilities = [
@@ -38,10 +38,10 @@ const About = () => {
   return (
     <>
       <HeroSection
-        tagline="About LEW / Est. 1974"
+        tagline="About Laxmi Engineering Works"
         title="ENGINEERING"
         titleAccent="EXCELLENCE"
-        subtitle="Established 1974. 40,000 sq. ft. facility. ISO 9001:2015 Certified. 50+ years of industrial manufacturing."
+        subtitle="40,000 sq. ft. facility. ISO 9001:2015 Certified. 50+ years of industrial manufacturing."
         image={heroImage}
       />
 
@@ -96,12 +96,12 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <SectionHeading tag="Who We Are / 01" title="A Legacy of Excellence" />
+              <SectionHeading tag="Who We Are" title="How We Deliver Every Project" />
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Founded in 1974, <strong className="text-foreground">Laxmi Engineering Works</strong> has grown from a small workshop into one of Global's most trusted industrial manufacturing companies. Our 40,000 sq. ft. state-of-the-art facility houses advanced CNC machinery, in-house testing laboratories, and a team of 100+ skilled engineers and technicians.
+                <strong className="text-foreground">Laxmi Engineering Works</strong> follows a practical, process-driven approach from requirement study to final dispatch. Our team reviews each application, recommends the right configuration, and manufactures equipment to match fuel type, output requirement, and operating conditions.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                We specialize in oil burners, industrial blowers, furnaces, heating units, and custom machinery — serving 500+ clients across oil & gas, steel, power, and automotive sectors with unwavering commitment to quality and reliability.
+                Every order is supported by in-house fabrication, machining, assembly, and quality checks so performance stays consistent in real plant environments. This execution model helps clients reduce downtime, improve efficiency, and scale with confidence.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {[
@@ -136,14 +136,14 @@ const About = () => {
         </div>
         <div className="container relative z-10">
           <SectionHeading
-            tag="Our Foundation / 02"
+            tag="Our Foundation"
             title="Built on Integrity"
             description="At Laxmi Engineering Works, we are committed to excellence, precision, and innovation in every component we manufacture."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v, i) => (
               <motion.div
-                key={v.serial}
+                key={v.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -156,9 +156,6 @@ const About = () => {
                 {/* Corner accents */}
                 <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                {/* Serial */}
-                <span className="absolute top-4 right-4 font-mono text-[9px] text-muted-foreground/40 tracking-[0.2em]">{v.serial}</span>
 
                 <div className="relative">
                   <div className="w-14 h-14 bg-secondary border border-border flex items-center justify-center mb-5 group-hover:border-primary/50 transition-colors duration-300">
@@ -177,7 +174,7 @@ const About = () => {
       {/* Capabilities */}
       <section className="py-[15vh] bg-background border-t border-border">
         <div className="container">
-          <SectionHeading tag="What We Do / 03" title="Our Capabilities" />
+          <SectionHeading tag="What We Do" title="Our Capabilities" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {capabilities.map((cap, i) => (
               <motion.div
@@ -212,7 +209,7 @@ const About = () => {
       {/* Timeline */}
       <section className="py-[15vh] bg-secondary border-t border-border">
         <div className="container">
-          <SectionHeading tag="Our Journey / 04" title="Five Decades of Industry" />
+          <SectionHeading tag="Our Journey" title="Five Decades of Industry" />
           <div className="relative">
             {/* Vertical line */}
             <div className="absolute left-[60px] md:left-[80px] top-0 bottom-0 w-px bg-border" />
@@ -246,7 +243,7 @@ const About = () => {
       {/* Certifications */}
       <section className="py-[15vh] bg-background border-t border-border">
         <div className="container">
-          <SectionHeading tag="Quality Standards / 05" title="Certified & Compliant" />
+          <SectionHeading tag="Quality Standards" title="Certified & Compliant" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { title: "ISO 9001:2015", desc: "Quality Management System certification ensuring consistent product quality.", icon: Award },

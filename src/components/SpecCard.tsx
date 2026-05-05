@@ -5,7 +5,7 @@ interface SpecCardProps {
   icon: LucideIcon;
   title: string;
   description: string;
-  serial: string;
+  serial?: string;
 }
 
 const SpecCard = ({ icon: Icon, title, description, serial }: SpecCardProps) => {
@@ -17,9 +17,11 @@ const SpecCard = ({ icon: Icon, title, description, serial }: SpecCardProps) => 
       whileHover={{ y: -5 }}
       className="spec-card bg-secondary border border-border p-8 relative"
     >
-      <span className="absolute top-4 right-4 font-mono text-xs text-muted-foreground tracking-wider">
-        {serial}
-      </span>
+      {serial && (
+        <span className="absolute top-4 right-4 font-mono text-xs text-muted-foreground tracking-wider">
+          {serial}
+        </span>
+      )}
       <Icon className="text-primary mb-4" size={32} />
       <h3 className="font-display text-xl font-bold tracking-tight text-foreground mb-2">
         {title}
