@@ -4,10 +4,10 @@ import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
 import SpecCard from "@/components/SpecCard";
 import heroImage from "@/assets/hero-quality.jpg";
+import certificationImg from "@/assets/quality-certification.png";
 
 const qualityLabUrl = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80";
 const inspectionUrl = "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80";
-const certificationUrl = "https://plus.unsplash.com/premium_photo-1664910437583-88732b7e5019?auto=format&fit=crop&w=1200&q=80";
 
 const qualityPillars = [
   { icon: Shield, title: "Process Control Discipline", description: "Defined process checkpoints across fabrication, machining, assembly, and final dispatch for stable output quality." },
@@ -103,33 +103,46 @@ const Quality = () => {
       {/* Certifications */}
       <section className="py-[15vh] bg-background border-t border-border">
         <div className="container">
-          <SectionHeading tag="Certifications" title="Standards & Compliance" />
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-10 overflow-hidden border border-border"
-          >
-            <img src={certificationUrl} alt="Certified manufacturing facility" className="w-full h-[300px] object-cover" />
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { title: "ISO 9001:2015", desc: "Quality Management System — ensuring consistent quality in design, manufacturing, and delivery." },
-              { title: "IBR Approved", desc: "Indian Boiler Regulation compliant manufacturing for pressure vessels and boiler components." },
-              { title: "CE Marking", desc: "Products designed and tested to meet European health, safety, and environmental standards." },
-            ].map((cert, i) => (
-              <motion.div
-                key={cert.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="spec-card bg-secondary border border-border p-8"
-              >
-                <h3 className="font-mono text-primary text-sm tracking-widest mb-3">{cert.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{cert.desc}</p>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left: Heading + Certification Cards */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="lg:col-span-7"
+            >
+              <SectionHeading tag="Certifications" title="Standards & Compliance" />
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mt-8">
+                {[
+                  { title: "ISO 9001:2015", desc: "Quality Management System — ensuring consistent quality in design, manufacturing, and delivery." },
+                  { title: "IBR Approved", desc: "Indian Boiler Regulation compliant manufacturing for pressure vessels and boiler components." },
+                  { title: "CE Marking", desc: "Products designed and tested to meet European health, safety, and environmental standards." },
+                ].map((cert, i) => (
+                  <motion.div
+                    key={cert.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="spec-card bg-secondary border border-border p-6"
+                  >
+                    <h3 className="font-mono text-primary text-sm tracking-widest mb-2">{cert.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{cert.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+            {/* Right: Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="lg:col-span-5 overflow-hidden border border-border"
+            >
+              <img src={certificationImg} alt="Certified manufacturing facility" className="w-full h-[480px] object-cover" />
+            </motion.div>
           </div>
         </div>
       </section>
