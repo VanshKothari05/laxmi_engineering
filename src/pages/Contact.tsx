@@ -117,7 +117,7 @@ const Contact = () => {
                     <option value="blower">Industrial Blower</option>
                     <option value="furnace">Furnace Requirements</option>
                     <option value="pallet-furnace">Pallet Furnace</option>
-                    <option value="heating-unit">Oil Heating and PUMPING UNIT</option>
+                    <option value="heating-unit">Oil Heating and Pumping Unit</option>
                     <option value="custom">Custom Machinery</option>
                     <option value="service">Service & Maintenance</option>
                     <option value="other">Other</option>
