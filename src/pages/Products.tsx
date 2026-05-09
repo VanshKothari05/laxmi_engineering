@@ -46,6 +46,14 @@ import imgValve1 from "@/assets/valve-1.jpg";
 import imgValve2 from "@/assets/valve-2.jpg";
 import imgValve3 from "@/assets/valve-3.jpg";
 import imgValve4 from "@/assets/valve-4.jpg";
+import imgIdBlower1 from "@/assets/id_1.jpg";
+import imgIdBlower2 from "@/assets/id_2.jpg";
+import imgIdBlower3 from "@/assets/id_3.jpg";
+import imgIdBlower4 from "@/assets/id_4.jpg";
+import imgTube1 from "@/assets/tube_1.jpg";
+import imgTube2 from "@/assets/tube_2.jpg";
+import imgTube3 from "@/assets/tube_3.jpg";
+import imgTube4 from "@/assets/tube_4.jpg";
 
 export const toSlug = (name: string) =>
   name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -72,6 +80,7 @@ type Product = {
 };
 
 export const products: Product[] = [
+  // 1. Oil Burner
   {
     image: imgOilBurners,
     images: [imgOilBurners, imgOilBurner4, imgOilBurner2, imgOilBurner3],
@@ -79,10 +88,11 @@ export const products: Product[] = [
     serial: "LX-OB-2024",
     icon: Flame,
     category: "Combustion",
-    specs: [],
+    specs: ["Oil Flow: 3 – 350 LPH", "Max Temp: 1500°C", "Firing: Auto / Manual / Dual Fire", "Fuels: LDO / HSD / FO"],
     desc: "Laxmi Engineering Works' Industrial Oil Burners are engineered for precision and efficiency, available in Gas and Oil Burner models with oil flow capacities ranging from 3 to 350 litres per hour. Capable of reaching temperatures up to 1500°C, they are ideal for melting Aluminium, Brass, Copper, and Zinc. Both Automatic and Manual firing options are available, including Dual Fire configurations for maximum flexibility.",
     brochure: "https://example.com/oil-burner-brochure.pdf",
   },
+  // 2. Air Blowers
   {
     image: imgBlowers,
     images: [imgBlowers1, imgBlowers2, imgBlowers3, imgBlowers4],
@@ -90,57 +100,11 @@ export const products: Product[] = [
     serial: "LX-BL-2024",
     icon: Wind,
     category: "Air Systems",
-    specs: ["Type: Centrifugal / Axial", "Capacity: Up to 50,000 CFM", "Pressure: Up to 500 mmWG", "Material: MS / SS"],
+    specs: ["Drive Options: Direct / V-Belt / CI Coupling", "Impeller Material: MS & Aluminium", "Pressure Range: Low / Medium / High", "Standards: IS & AMCA Compliant"],
     desc: "Laxmi Engineering Works' Industrial Air Blowers deliver efficient and reliable air movement for low, medium, and high-pressure industrial environments. Available in flow rates from 1,000 to 6,000 CFM, with impellers fabricated in Mild Steel and Aluminium for long-lasting durability. Drive options include direct shaft mount, C.I. coupling, and V-Belt configurations — all customisable to specific operational requirements.",
+    brochure: "https://example.com/air-blowers-brochure.pdf",
   },
-  {
-    image: imgOilHeating,
-    name: "Oil Heating & Pumping Unit",
-    serial: "LX-OH-2024",
-    icon: Thermometer,
-    category: "Heating",
-    specs: ["Motor Power: 1 HP and above", "Voltage: 220V & 440V", "Material: Mild Steel", "Warranty: 1 Year"],
-    desc: "Laxmi Engineering Works' Oil Heating and Pumping Units provide efficient oil circulation and precise heating for demanding industrial processes. Available in Simplex and Duplex models, each equipped with oil filters, pressure gauges, temperature gauges, and return and pressure line fittings mounted on a robust MS structure. Built for durability and optimal performance, these units ensure consistent oil supply to burners and industrial systems.",
-    models: [
-      {
-        name: "Simplex Model",
-        desc: "The Simplex Model features a single motor and pump configuration designed for efficient oil heating and circulation in standard industrial applications. It includes an oil filter, pressure gauge, and temperature gauge, all housed in a sturdy MS plant structure for reliable, long-term operation.",
-        images: [imgSimplex1, imgSimplex2, imgSimplex3],
-        specs: ["Oil Flow Capacity: 20 LPM and above", "Motor Capacity: 0.5 HP, 1500 RPM", "Heater Capacity: 4 KW and above", "Features: Oil filter, pressure gauge, temperature gauge, return & pressure line fittings in MS tray"],
-      },
-      {
-        name: "Duplex Model",
-        desc: "The Duplex Model is equipped with two motors and two pumps for enhanced reliability and redundancy in high-demand industrial environments. It features dual oil filters, pressure gauges, and temperature gauges — ensuring uninterrupted oil supply even during maintenance or component servicing.",
-        images: [imgDuplex1, imgDuplex2, imgDuplex3],
-        specs: ["Oil Flow Capacity: 20 LPM and above", "Motor Capacity: 0.5 HP, 1500 RPM", "Configuration: 2 motors and 2 pumps", "Features: Dual oil filters, pressure gauges, temperature gauges, return & pressure line fittings in MS tray"],
-      },
-    ],
-    dropdownModels: [
-      { label: "Simplex Model", modelIndex: 0 },
-      { label: "Duplex Model", modelIndex: 1 },
-    ],
-  },
-
-  {
-    image: imgOilLineHeater,
-    images: [imgOilLineHeater],
-    name: "Oil Line Heater",
-    serial: "LX-LH-2024",
-    icon: ThermometerSun,
-    category: "Heating",
-    specs: ["Type: Electric / Steam", "Temp: Up to 250°C", "Capacity: Custom", "Control: Thermostat / PID"],
-    desc: "Inline oil heating systems to maintain optimal fuel viscosity and temperature for burner performance.",
-  },
-  {
-    image: imgOilFilter,
-    images: [imgOilFilter],
-    name: "Oil Filter",
-    serial: "LX-OF-2024",
-    icon: Filter,
-    category: "Filtration",
-    specs: ["Type: Duplex / Simplex", "Filtration: 10-100 Micron", "Flow: Up to 5000 LPH", "Material: CS / SS"],
-    desc: "Industrial-grade oil filtration systems ensuring clean fuel supply and protecting downstream equipment.",
-  },
+  // 3. Furnace / Pallet Furnace
   {
     image: imgFurnaces,
     name: "Furnace / Pallet Furnace",
@@ -149,24 +113,25 @@ export const products: Product[] = [
     category: "Heat Treatment",
     specs: ["Type: Box / Pit / Rotary", "Temp Range: Up to 1200°C", "Fuel: Oil / Gas / Electric", "Capacity: Custom"],
     desc: "All types of industrial furnaces for heat treatment, forging, melting, and processing applications.",
+    brochure: "https://example.com/furnace-brochure.pdf",
     models: [
       {
         name: "Melting Furnace",
         desc: "Laxmi Engineering Works' Electric Furnaces are purpose-built for efficient and reliable metal melting, particularly aluminium, with temperatures reaching up to 980°C. Rated at 6 kW and above, they support both single-phase and three-phase power and feature fully automatic operation with minimal heat loss and reduced power consumption. Their durable construction ensures long-term performance in demanding industrial environments.",
         images: [imgMelting1, imgMelting2, imgMelting3, imgMelting4],
-        specs: ["Type: Crucible / Induction", "Temp Range: Up to 1600°C", "Fuel: Oil / Gas / Electric", "Capacity: 50 kg – 2000 kg"],
+        specs: ["Metals: Aluminium, Brass, Copper, Zinc", "Operation: Fully Automatic Control", "Power: Single & Three Phase Available", "Energy Saving: Minimal Heat Loss Design"],
       },
       {
         name: "Pallet Furnace",
         desc: "The Laxmi Pallet Furnace is an innovative, eco-friendly heating solution that uses readily available wooden pallets as fuel, eliminating harmful carbon emissions and dramatically reducing energy costs. Compared to conventional gas or diesel furnaces, it can save industries up to ₹25 lakhs per year in fuel costs while delivering high-performance heating for aluminium melting and other industrial processes. Recognised and promoted by the Indian government as a sustainable alternative to fossil-fuel-based heating.",
-        images: [imgPallet1, imgPallet2, imgPallet3, imgPallet4],
-        specs: ["Type: Batch / Continuous", "Temp Range: Up to 1000°C", "Loading: Pallet / Trolley", "Fuel: Oil / Gas / Electric"],
+        images: [imgPallet2, imgPallet3, imgPallet4, imgPallet1],
+        specs: ["Fuel Cost Savings: Up to ₹25 Lakhs / Year", "Carbon Emissions: Zero – Eco-Friendly Fuel", "Fuel Source: Waste Wooden Pallets", "Govt Recognition: Promoted by Govt of India"],
       },
       {
         name: "Oil Furnace",
         desc: "Laxmi Engineering Works' Oil Fired Furnaces are built for efficient and reliable metal melting across a wide range of industries, including brass, copper, aluminium, zinc, forging, and chemical processing. Available in capacities from 20 kg to 6 tons with temperatures reaching up to 1600°C, they are offered in fixed and tilt configurations for versatile operation. Engineered for exceptional heating efficiency and durability, these furnaces perform reliably in the most demanding industrial conditions.",
         images: [imgOilFurnace1, imgOilFurnace2, imgOilFurnace3, imgOilFurnace4],
-        specs: ["Fuel: LDO / HSD / FO", "Temp Range: Up to 1200°C", "Burner: Pressure Jet / Air Atomised", "Efficiency: >85%"],
+        specs: ["Industries: Brass, Copper, Aluminium, Zinc", "Configurations: Fixed & Tilt Options", "Capacity Range: 20 kg to 6 Tons", "Performance: High Efficiency & Long Life"],
       },
     ],
     dropdownModels: [
@@ -175,6 +140,94 @@ export const products: Product[] = [
       { label: "Oil Furnace", modelIndex: 2 },
     ],
   },
+  // 4. Oil Heating & Pumping Unit
+  {
+    image: imgOilHeating,
+    name: "Oil Heating & Pumping Unit",
+    serial: "LX-OH-2024",
+    icon: Thermometer,
+    category: "Heating",
+    specs: [],
+    desc: "Laxmi Engineering Works' Oil Heating and Pumping Units provide efficient oil circulation and precise heating for demanding industrial processes. Available in Simplex and Duplex models, each equipped with oil filters, pressure gauges, temperature gauges, and return and pressure line fittings mounted on a robust MS structure. Built for durability and optimal performance, these units ensure consistent oil supply to burners and industrial systems.",
+    brochure: "https://example.com/oil-heating-pumping-brochure.pdf",
+    models: [
+      {
+        name: "Simplex Model",
+        desc: "The Simplex Model features a single motor and pump configuration designed for efficient oil heating and circulation in standard industrial applications. It includes an oil filter, pressure gauge, and temperature gauge, all housed in a sturdy MS plant structure for reliable, long-term operation.",
+        images: [imgSimplex1, imgSimplex2, imgSimplex3],
+        specs: ["Configuration: Single Motor & Pump", "Built-in Safety: Pressure & Temp Gauges", "Filtration: Integrated Oil Filter", "Structure: Heavy-Duty MS Skid Mounted"],
+      },
+      {
+        name: "Duplex Model",
+        desc: "The Duplex Model is equipped with two motors and two pumps for enhanced reliability and redundancy in high-demand industrial environments. It features dual oil filters, pressure gauges, and temperature gauges — ensuring uninterrupted oil supply even during maintenance or component servicing.",
+        images: [imgDuplex1, imgDuplex2, imgDuplex3],
+        specs: ["Configuration: Dual Motor & Pump Setup", "Redundancy: Uninterrupted Oil Supply", "Filtration: Dual Integrated Oil Filters", "Uptime: Serviceable Without Shutdown"],
+      },
+    ],
+    dropdownModels: [
+      { label: "Simplex Model", modelIndex: 0 },
+      { label: "Duplex Model", modelIndex: 1 },
+    ],
+  },
+  // 5. ID Blower
+  {
+    image: imgIdBlower1,
+    images: [imgIdBlower1, imgIdBlower2, imgIdBlower3, imgIdBlower4],
+    name: "ID Blower",
+    serial: "LX-IDB-2024",
+    icon: Wind,
+    category: "Air Systems",
+    specs: ["Type: Induced Draft", "Drive: Direct / V-Belt", "Material: MS / SS", "Application: Furnace / Boiler"],
+    desc: "Laxmi Engineering Works' Induced Draft (ID) Blowers are purpose-built for effective exhaust gas extraction in furnaces, boilers, and kilns. Engineered to handle high-temperature flue gases with sustained efficiency, these blowers maintain optimal draft conditions for complete combustion and reduced emissions. Available in a range of capacities with robust MS construction and customisable drive configurations to suit specific industrial requirements.",
+    brochure: "https://example.com/id-blower-brochure.pdf",
+  },
+  // 6. Tube Axial Fan
+  {
+    image: imgTube1,
+    images: [imgTube1, imgTube2, imgTube3, imgTube4],
+    name: "Tube Axial Fan",
+    serial: "LX-TAF-2024",
+    icon: Wind,
+    category: "Air Systems",
+    specs: ["Type: Axial Flow", "Drive: Direct / V-Belt", "Material: MS / Aluminium", "Application: Ventilation / Cooling"],
+    desc: "Laxmi Engineering Works' Tube Axial Fans deliver high-volume airflow in a compact, inline configuration ideal for industrial ventilation, process cooling, and air circulation applications. Designed with aerodynamically optimised blades for maximum efficiency and low noise, they are available in multiple sizes and drive options. Their robust construction ensures reliable, long-term performance in demanding environments.",
+    brochure: "https://example.com/tube-axial-fan-brochure.pdf",
+  },
+  // 7. Oil Line Heater
+  {
+    image: imgOilLineHeater,
+    images: [imgOilLineHeater],
+    name: "Oil Line Heater",
+    serial: "LX-LH-2024",
+    icon: ThermometerSun,
+    category: "Heating",
+    specs: [
+      "Purpose: Ensures Smooth & Efficient Oil Flow to Burners",
+      "Benefit: Improves Fuel Atomisation & Combustion Quality",
+      "Application: Compatible with All Industrial Burner Systems",
+      "Design: Low Maintenance with Long Service Life",
+    ],
+    desc: "Laxmi Engineering Works' Oil Line Heaters are engineered to ensure a consistent and reliable supply of pre-heated fuel oil to burner systems. By maintaining oil at the ideal operating temperature, these heaters improve fuel atomisation, enhance combustion efficiency, and protect burner components from the damaging effects of cold, high-viscosity oil. Compact, robust, and built for continuous duty, they are an essential part of any well-functioning industrial burner installation.",
+    brochure: "https://example.com/oil-line-heater-brochure.pdf",
+  },
+  // 8. Oil Filter
+  {
+    image: imgOilFilter,
+    images: [imgOilFilter],
+    name: "Oil Filter",
+    serial: "LX-OF-2024",
+    icon: Filter,
+    category: "Filtration",
+    specs: [
+      "Protection: Extends Service Life of Pumps & Burners",
+      "Reliability: Ensures Clean, Uninterrupted Oil Supply",
+      "Maintenance: Quick & Easy Servicing Without Downtime",
+      "Durability: Built for Continuous Heavy-Duty Operation",
+    ],
+    desc: "Laxmi Engineering Works' Industrial Oil Filters provide dependable filtration to safeguard burner systems and downstream equipment from contaminants and impurities present in fuel oil. Engineered for durability and ease of maintenance, these filters extend the operating life of pumps, valves, and burner nozzles by delivering a consistently clean and stable oil supply. A critical component for any industrial fuel-oil system.",
+    brochure: "https://example.com/oil-filter-brochure.pdf",
+  },
+  // 9. Cyclone
   {
     image: imgCyclone,
     images: [imgCyclone1, imgCyclone2, imgCyclone3, imgCyclone4],
@@ -182,9 +235,16 @@ export const products: Product[] = [
     serial: "LX-CY-2024",
     icon: CircleDot,
     category: "Separation",
-    specs: ["Type: Single / Multi", "Efficiency: Up to 95%", "Material: MS / SS", "Capacity: Custom CFM"],
-    desc: "High-efficiency cyclone separators for dust collection, particulate removal, and air pollution control.",
+    specs: [
+      "Working Principle: Centrifugal Force – No Moving Parts",
+      "Application: Foundries, Kilns, Furnaces & Dusty Processes",
+      "Maintenance: Near-Zero – Self-Cleaning Operation",
+      "Compliance: Supports Industrial Emission Control Norms",
+    ],
+    desc: "Laxmi Engineering Works' Cyclone Separators are high-performance industrial dust collection systems that harness centrifugal force to efficiently separate dust, particulates, and debris from gas or air streams — with no moving parts and virtually no maintenance. Widely used in foundries, kilns, furnaces, and manufacturing facilities, they help industries achieve clean air standards, protect downstream equipment, and comply with environmental emission regulations.",
+    brochure: "https://example.com/cyclone-brochure.pdf",
   },
+  // 10. Valve
   {
     image: imgValve,
     images: [imgValve1, imgValve2, imgValve3, imgValve4],
@@ -192,8 +252,14 @@ export const products: Product[] = [
     serial: "LX-VL-2024",
     icon: Cog,
     category: "Flow Control",
-    specs: ["Type: Gate / Ball / Globe", "Size: 15mm - 300mm", "Pressure: Up to 40 kg/cm²", "Material: CS / SS / CI"],
-    desc: "Industrial valves engineered for precise flow control in oil, gas, steam, and chemical applications.",
+    specs: [
+      "Function: Reliable Flow Control & Positive Shut-Off",
+      "Compatibility: Suitable for Oil, Gas, Steam & Chemicals",
+      "Performance: Leak-Proof Sealing Under Working Conditions",
+      "Flexibility: Available in Various Materials & Configurations",
+    ],
+    desc: "Laxmi Engineering Works manufactures industrial-grade valves designed for dependable flow control across a wide range of piping applications including oil, gas, steam, water, and chemical systems. Engineered to perform reliably under demanding pressure and temperature conditions, our valves deliver leak-proof sealing and long-term durability. Available in multiple materials and configurations, each valve is built to the specific requirements of the application.",
+    brochure: "https://example.com/valve-brochure.pdf",
   },
 ];
 
@@ -375,24 +441,6 @@ const Products = () => {
                         {product.desc}
                       </p>
 
-{/* Spec chips */}
-                      {product.specs.length > 0 && (
-                        <div className="flex flex-wrap gap-1.5 mb-4">
-                          {product.specs.slice(0, 2).map((spec) => (
-                            <span
-                              key={spec}
-                              className="font-mono text-[10px] text-muted-foreground bg-secondary px-2.5 py-1 border border-border/50 tabular-nums"
-                            >
-                              {spec}
-                            </span>
-                          ))}
-                          {product.specs.length > 2 && (
-                            <span className="font-mono text-[10px] text-primary/70 bg-primary/5 px-2.5 py-1 border border-primary/20">
-                              +{product.specs.length - 2} more
-                            </span>
-                          )}
-                        </div>
-                      )}
 
                       {/* CTA */}
                       {isMultiModel ? (
@@ -503,20 +551,24 @@ const Products = () => {
                         </div>
                       </motion.div>
                     </AnimatePresence>
+                    {selectedProduct.specs.length > 0 && (
                     <div className="mt-6 pt-6 border-t border-border">
                       <span className="font-mono text-xs text-primary tracking-widest uppercase mb-4 block">Key Features</span>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {selectedProduct.specs.map((spec) => {
-                          const [label, value] = spec.split(": ");
+                          const colonIdx = spec.indexOf(": ");
+                          const label = colonIdx !== -1 ? spec.slice(0, colonIdx) : spec;
+                          const value = colonIdx !== -1 ? spec.slice(colonIdx + 2) : "";
                           return (
-                            <div key={spec} className="flex justify-between items-center py-3 px-4 bg-secondary/50 border border-border/50">
-                              <span className="font-mono text-[11px] text-muted-foreground uppercase tracking-wider">{label}</span>
-                              <span className="font-mono text-sm text-foreground font-medium">{value}</span>
+                            <div key={spec} className="flex justify-between items-start gap-4 py-3 px-4 bg-secondary/50 border border-border/50">
+                              <span className="font-mono text-[11px] text-muted-foreground uppercase tracking-wider shrink-0">{label}</span>
+                              <span className="font-mono text-sm text-foreground font-medium text-right">{value}</span>
                             </div>
                           );
                         })}
                       </div>
                     </div>
+                    )}
                   </div>
                 ) : (
                   <div className="border-t border-border pt-6">
