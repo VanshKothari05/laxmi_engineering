@@ -111,7 +111,7 @@ export const products: Product[] = [
     serial: "LX-FR-2024",
     icon: Factory,
     category: "Heat Treatment",
-    specs: ["Type: Box / Pit / Rotary", "Temp Range: Up to 1200°C", "Fuel: Oil / Gas / Electric", "Capacity: Custom"],
+    specs: [],
     desc: "All types of industrial furnaces for heat treatment, forging, melting, and processing applications.",
     brochure: "https://example.com/furnace-brochure.pdf",
     models: [
@@ -119,19 +119,19 @@ export const products: Product[] = [
         name: "Melting Furnace",
         desc: "Laxmi Engineering Works' Electric Furnaces are purpose-built for efficient and reliable metal melting, particularly aluminium, with temperatures reaching up to 980°C. Rated at 6 kW and above, they support both single-phase and three-phase power and feature fully automatic operation with minimal heat loss and reduced power consumption. Their durable construction ensures long-term performance in demanding industrial environments.",
         images: [imgMelting1, imgMelting2, imgMelting3, imgMelting4],
-        specs: ["Metals: Aluminium, Brass, Copper, Zinc", "Operation: Fully Automatic Control", "Power: Single & Three Phase Available", "Energy Saving: Minimal Heat Loss Design"],
+        specs: ["Metals: Aluminium, Brass, Copper, Zinc", "Operation: Fully Automatic Control", "Power: Single & Three Phase Available", "Temperature: Can reach up to 980°C"],
       },
       {
         name: "Pallet Furnace",
         desc: "The Laxmi Pallet Furnace is an innovative, eco-friendly heating solution that uses readily available wooden pallets as fuel, eliminating harmful carbon emissions and dramatically reducing energy costs. Compared to conventional gas or diesel furnaces, it can save industries up to ₹25 lakhs per year in fuel costs while delivering high-performance heating for aluminium melting and other industrial processes. Recognised and promoted by the Indian government as a sustainable alternative to fossil-fuel-based heating.",
         images: [imgPallet2, imgPallet3, imgPallet4, imgPallet1],
-        specs: ["Fuel Cost Savings: Up to ₹25 Lakhs / Year", "Carbon Emissions: Zero – Eco-Friendly Fuel", "Fuel Source: Waste Wooden Pallets", "Govt Recognition: Promoted by Govt of India"],
+        specs: ["Fuel Cost Savings: Up to ₹25 Lakhs / Year", "Carbon Emissions: Zero – Eco-Friendly Fuel", "Fuel Source: Wooden Pallets", "Govt Recognition: Promoted by Govt of India"],
       },
       {
         name: "Oil Furnace",
         desc: "Laxmi Engineering Works' Oil Fired Furnaces are built for efficient and reliable metal melting across a wide range of industries, including brass, copper, aluminium, zinc, forging, and chemical processing. Available in capacities from 20 kg to 6 tons with temperatures reaching up to 1600°C, they are offered in fixed and tilt configurations for versatile operation. Engineered for exceptional heating efficiency and durability, these furnaces perform reliably in the most demanding industrial conditions.",
         images: [imgOilFurnace1, imgOilFurnace2, imgOilFurnace3, imgOilFurnace4],
-        specs: ["Industries: Brass, Copper, Aluminium, Zinc", "Configurations: Fixed & Tilt Options", "Capacity Range: 20 kg to 6 Tons", "Performance: High Efficiency & Long Life"],
+        specs: ["Temperature Capacity: Can reach up to 1600°C", "Applications: Metal melting for brass, copper, aluminum, and zinc", "Industries: Forging operations & chemical plants", "Processing: BITUMEN processing & high-heat industrial use"],
       },
     ],
     dropdownModels: [
@@ -177,7 +177,7 @@ export const products: Product[] = [
     serial: "LX-IDB-2024",
     icon: Wind,
     category: "Air Systems",
-    specs: ["Type: Induced Draft", "Drive: Direct / V-Belt", "Material: MS / SS", "Application: Furnace / Boiler"],
+    specs: ["Airflow Capacity: Available from 100 CFM to 21,000 CFM", "Drive: Direct / V-Belt", "Material: MS / SS", "Application: Essential for maintaining clean air quality by effectively extracting smoke and pollutants from industrial setups."],
     desc: "Laxmi Engineering Works' Induced Draft (ID) Blowers are purpose-built for effective exhaust gas extraction in furnaces, boilers, and kilns. Engineered to handle high-temperature flue gases with sustained efficiency, these blowers maintain optimal draft conditions for complete combustion and reduced emissions. Available in a range of capacities with robust MS construction and customisable drive configurations to suit specific industrial requirements.",
     brochure: "https://example.com/id-blower-brochure.pdf",
   },
@@ -553,7 +553,7 @@ const Products = () => {
                     </AnimatePresence>
                     {selectedProduct.specs.length > 0 && (
                     <div className="mt-6 pt-6 border-t border-border">
-                      <span className="font-mono text-xs text-primary tracking-widest uppercase mb-4 block">Key Features</span>
+                      <span className="font-mono text-xs text-primary tracking-widest uppercase mb-4 block">Technical Overview</span>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {selectedProduct.specs.map((spec) => {
                           const colonIdx = spec.indexOf(": ");
