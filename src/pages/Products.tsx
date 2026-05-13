@@ -10,6 +10,7 @@ import imgOilBurner2 from "@/assets/product-oil-burner-2.jpg";
 import imgOilBurner3 from "@/assets/product-oil-burner-3.jpg";
 import imgOilBurner4 from "@/assets/product-oil-burner-4.jpg";
 import imgBlowers from "@/assets/product-blowers.jpg";
+import imgBlowers01 from "@/assets/air-blower-01.jpg";
 import imgBlowers1 from "@/assets/air-blower-1.jpg";
 import imgBlowers2 from "@/assets/air-blower-2.jpg";
 import imgBlowers3 from "@/assets/air-blower-3.png";
@@ -94,7 +95,7 @@ export const products: Product[] = [
   },
   // 2. Air Blowers
   {
-    image: imgBlowers,
+    image: imgBlowers01,
     images: [imgBlowers1, imgBlowers2, imgBlowers3, imgBlowers4],
     name: "Air Blowers",
     serial: "LX-BL-2024",

@@ -11,6 +11,7 @@ import heroVideo from "@/assets/hero-home-video.mp4.asset.json";
 
 import imgOilBurners from "@/assets/product-oil-burners.png";
 import imgBlowers from "@/assets/product-blowers.jpg";
+import imgBlowers01 from "@/assets/air-blower-01.jpg";
 import imgFurnaces from "@/assets/product-furnaces.jpg";
 import imgOilHeating from "@/assets/product-oil-heating.jpg";
 import imgOilLineHeater from "@/assets/product-oil-line-heater.jpg";
@@ -104,7 +105,7 @@ const thirdColumn = testimonials.slice(6, 9);
 
 const featuredProducts = [
   { image: imgOilBurners, name: "Oil Burner", tag: "Best Seller", description: "Precision-engineered oil burners delivering >92% efficiency with advanced flame control for industrial heating applications." },
-  { image: imgBlowers, name: "Air Blowers", tag: "Heavy Duty", description: "Centrifugal and axial blowers rated up to 50,000 CFM, built for non-stop operation in the harshest environments." },
+  { image: imgBlowers01, name: "Air Blowers", tag: "Heavy Duty", description: "Centrifugal and axial blowers rated up to 50,000 CFM, built for non-stop operation in the harshest environments." },
   { image: imgFurnaces, name: "Furnace / Pallet Furnace", tag: "Custom Built", description: "Box, pit, and rotary furnaces reaching 1200°C — designed and built to your exact heat treatment specifications." },
   { image: imgOilHeating, name: "Oil Heating And Pumping Unit", tag: "Precision", description: "Complete oil heating and pumping systems with dual simplex and duplex configurations for reliable fuel delivery." },
 ];
