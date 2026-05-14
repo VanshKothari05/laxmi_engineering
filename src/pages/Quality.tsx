@@ -3,6 +3,7 @@ import { Shield, CheckCircle, FileCheck, Microscope, Award, Target } from "lucid
 import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
 import SpecCard from "@/components/SpecCard";
+import { useSEO } from "@/hooks/useSEO";
 import heroImage from "@/assets/hero-quality.jpg";
 import certificationImg from "@/assets/quality-certification.png";
 
@@ -26,6 +27,13 @@ const qcProcess = [
 ];
 
 const Quality = () => {
+  useSEO({
+    title: "Quality Assurance | ISO 9001:2015 Certified — Laxmi Engineering Works",
+    description: "Laxmi Engineering Works' zero-defect quality commitment: ISO 9001:2015, IBR Approved, CE Marked. Multi-stage QC from incoming material inspection to final performance testing and documentation.",
+    canonical: "/quality",
+    keywords: "ISO 9001 2015 certified manufacturer, IBR approved, CE marking, quality control industrial, zero defect manufacturing, inspection documentation, industrial quality assurance Mumbai",
+  });
+
   return (
     <>
       <HeroSection

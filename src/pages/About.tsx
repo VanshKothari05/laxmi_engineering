@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
+import { useSEO } from "@/hooks/useSEO";
 import heroImage from "@/assets/hero-about.jpg";
 import capCncImg from "@/assets/capability-cnc.jpg";
 import capPrototypeImg from "@/assets/capability-prototype.jpg";
@@ -108,6 +109,13 @@ const capabilities = [
 ];
 
 const About = () => {
+  useSEO({
+    title: "About Us | Laxmi Engineering Works — 50+ Years of Industrial Manufacturing",
+    description: "Learn about Laxmi Engineering Works — founded in 1974, ISO 9001:2015 certified, 40,000 sq. ft. facility in Mumbai. 500+ clients across 10+ industrial sectors. CNC machining, custom fabrication & quality testing.",
+    canonical: "/about",
+    keywords: "about Laxmi Engineering Works, industrial manufacturer Mumbai, ISO 9001 certified, CNC machining, custom fabrication, 50 years manufacturing, engineering company India",
+  });
+
   return (
     <>
       <HeroSection

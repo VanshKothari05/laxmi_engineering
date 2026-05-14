@@ -3,10 +3,18 @@ import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
+import { useSEO } from "@/hooks/useSEO";
 import heroImage from "@/assets/hero-contact.jpg";
 import { toast } from "sonner";
 
 const Contact = () => {
+  useSEO({
+    title: "Contact Us | Get a Quote — Laxmi Engineering Works, Mumbai",
+    description: "Contact Laxmi Engineering Works for industrial equipment quotes. Located at Bhola Bhagwan Industrial Estate, Goregaon East, Mumbai 400063. Call +91 98332 41824 or email info@laxmieng.com.",
+    canonical: "/contact",
+    keywords: "contact Laxmi Engineering Works, industrial equipment quote Mumbai, oil burner supplier contact, blower manufacturer Mumbai, Goregaon East Mumbai manufacturer",
+  });
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",

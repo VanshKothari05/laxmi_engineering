@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, ArrowRight, X, Flame, Wind, Thermometer, Cog, ThermometerSun, Filter, Factory, CircleDot } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
+import { useSEO } from "@/hooks/useSEO";
 import heroImage from "@/assets/hero-products.jpg";
 import { Link, useLocation } from "react-router-dom";
 
@@ -64,6 +65,7 @@ type ProductModel = {
   specs: string[];
   desc: string;
   images?: string[];
+  brochure?: string;
 };
 
 type Product = {
@@ -103,7 +105,7 @@ export const products: Product[] = [
     category: "Air Systems",
     specs: ["Drive Options: Direct / V-Belt / CI Coupling", "Impeller Material: MS & Aluminium", "Pressure Range: Low / Medium / High", "Standards: IS & AMCA Compliant"],
     desc: "Laxmi Engineering Works' Industrial Air Blowers deliver efficient and reliable air movement for low, medium, and high-pressure industrial environments. Available in flow rates from 1,000 to 6,000 CFM, with impellers fabricated in Mild Steel and Aluminium for long-lasting durability. Drive options include direct shaft mount, C.I. coupling, and V-Belt configurations — all customisable to specific operational requirements.",
-    brochure: "https://example.com/air-blowers-brochure.pdf",
+    brochure: "/brochures/airblower.pdf",
   },
   // 3. Furnace / Pallet Furnace
   {
@@ -114,25 +116,28 @@ export const products: Product[] = [
     category: "Heat Treatment",
     specs: [],
     desc: "All types of industrial furnaces for heat treatment, forging, melting, and processing applications.",
-    brochure: "https://example.com/furnace-brochure.pdf",
+    brochure: "/brochures/oilfired_furnace.pdf",
     models: [
       {
         name: "Melting Furnace",
         desc: "Laxmi Engineering Works' Electric Furnaces are purpose-built for efficient and reliable metal melting, particularly aluminium, with temperatures reaching up to 980°C. Rated at 6 kW and above, they support both single-phase and three-phase power and feature fully automatic operation with minimal heat loss and reduced power consumption. Their durable construction ensures long-term performance in demanding industrial environments.",
         images: [imgMelting1, imgMelting2, imgMelting3, imgMelting4],
         specs: ["Metals: Aluminium, Brass, Copper, Zinc", "Operation: Fully Automatic Control", "Power: Single & Three Phase Available", "Temperature: Can reach up to 980°C"],
+        brochure: "/brochures/electricfurnace.pdf",
       },
       {
         name: "Pallet Furnace",
         desc: "The Laxmi Pallet Furnace is an innovative, eco-friendly heating solution that uses readily available wooden pallets as fuel, eliminating harmful carbon emissions and dramatically reducing energy costs. Compared to conventional gas or diesel furnaces, it can save industries up to ₹25 lakhs per year in fuel costs while delivering high-performance heating for aluminium melting and other industrial processes. Recognised and promoted by the Indian government as a sustainable alternative to fossil-fuel-based heating.",
         images: [imgPallet2, imgPallet3, imgPallet4, imgPallet1],
         specs: ["Fuel Cost Savings: Up to ₹25 Lakhs / Year", "Carbon Emissions: Zero – Eco-Friendly Fuel", "Fuel Source: Wooden Pallets", "Govt Recognition: Promoted by Govt of India"],
+        brochure: "/brochures/pallet_furnace.pdf",
       },
       {
         name: "Oil Furnace",
         desc: "Laxmi Engineering Works' Oil Fired Furnaces are built for efficient and reliable metal melting across a wide range of industries, including brass, copper, aluminium, zinc, forging, and chemical processing. Available in capacities from 20 kg to 6 tons with temperatures reaching up to 1600°C, they are offered in fixed and tilt configurations for versatile operation. Engineered for exceptional heating efficiency and durability, these furnaces perform reliably in the most demanding industrial conditions.",
         images: [imgOilFurnace1, imgOilFurnace2, imgOilFurnace3, imgOilFurnace4],
         specs: ["Temperature Capacity: Can reach up to 1600°C", "Applications: Metal melting for brass, copper, aluminum, and zinc", "Industries: Forging operations & chemical plants", "Processing: BITUMEN processing & high-heat industrial use"],
+        brochure: "/brochures/oilfired_furnace.pdf",
       },
     ],
     dropdownModels: [
@@ -150,7 +155,7 @@ export const products: Product[] = [
     category: "Heating",
     specs: [],
     desc: "Laxmi Engineering Works' Oil Heating and Pumping Units provide efficient oil circulation and precise heating for demanding industrial processes. Available in Simplex and Duplex models, each equipped with oil filters, pressure gauges, temperature gauges, and return and pressure line fittings mounted on a robust MS structure. Built for durability and optimal performance, these units ensure consistent oil supply to burners and industrial systems.",
-    brochure: "https://example.com/oil-heating-pumping-brochure.pdf",
+    brochure: "/brochures/oilheating_pumpingunit.pdf",
     models: [
       {
         name: "Simplex Model",
@@ -180,7 +185,7 @@ export const products: Product[] = [
     category: "Air Systems",
     specs: ["Airflow Capacity: Available from 100 CFM to 21,000 CFM", "Drive: Direct / V-Belt", "Material: MS / SS", "Application: Essential for maintaining clean air quality by effectively extracting smoke and pollutants from industrial setups."],
     desc: "Laxmi Engineering Works' Induced Draft (ID) Blowers are purpose-built for effective exhaust gas extraction in furnaces, boilers, and kilns. Engineered to handle high-temperature flue gases with sustained efficiency, these blowers maintain optimal draft conditions for complete combustion and reduced emissions. Available in a range of capacities with robust MS construction and customisable drive configurations to suit specific industrial requirements.",
-    brochure: "https://example.com/id-blower-brochure.pdf",
+    brochure: "/brochures/id_blower_brochure.pdf",
   },
   // 6. Tube Axial Fan
   {
@@ -192,7 +197,7 @@ export const products: Product[] = [
     category: "Air Systems",
     specs: ["Type: Axial Flow", "Drive: Direct / V-Belt", "Material: MS / Aluminium", "Application: Ventilation / Cooling"],
     desc: "Laxmi Engineering Works' Tube Axial Fans deliver high-volume airflow in a compact, inline configuration ideal for industrial ventilation, process cooling, and air circulation applications. Designed with aerodynamically optimised blades for maximum efficiency and low noise, they are available in multiple sizes and drive options. Their robust construction ensures reliable, long-term performance in demanding environments.",
-    brochure: "https://example.com/tube-axial-fan-brochure.pdf",
+    brochure: "/brochures/axial_fan_brochure.pdf",
   },
   // 7. Oil Line Heater
   {
@@ -243,7 +248,7 @@ export const products: Product[] = [
       "Compliance: Supports Industrial Emission Control Norms",
     ],
     desc: "Laxmi Engineering Works' Cyclone Separators are high-performance industrial dust collection systems that harness centrifugal force to efficiently separate dust, particulates, and debris from gas or air streams — with no moving parts and virtually no maintenance. Widely used in foundries, kilns, furnaces, and manufacturing facilities, they help industries achieve clean air standards, protect downstream equipment, and comply with environmental emission regulations.",
-    brochure: "https://example.com/cyclone-brochure.pdf",
+    brochure: "/brochures/cyclone.pdf",
   },
   // 10. Valve
   {
@@ -287,6 +292,13 @@ const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
 };
 
 const Products = () => {
+  useSEO({
+    title: "Products | Oil Burners, Blowers, Furnaces & More — Laxmi Engineering Works",
+    description: "Browse Laxmi Engineering Works' complete industrial product range: oil burners (3–350 LPH), air blowers, ID blowers, tube axial fans, melting & pallet furnaces, oil heating units, cyclone separators, and valves. ISO certified, Mumbai.",
+    canonical: "/products",
+    keywords: "industrial oil burner, air blower manufacturer, ID blower, tube axial fan, melting furnace, pallet furnace, oil fired furnace, oil heating pumping unit, cyclone separator, industrial valve, oil filter Mumbai",
+  });
+
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeModel, setActiveModel] = useState(0);
@@ -603,9 +615,9 @@ const Products = () => {
                   <Link to="/contact" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 font-mono text-xs tracking-widest uppercase hover:bg-primary/90 transition-colors">
                     Request Quote <ArrowRight size={14} />
                   </Link>
-                  {selectedProduct.brochure && (
+                  {(selectedProduct.models?.[activeModel]?.brochure ?? selectedProduct.brochure) && (
                     <a
-                      href={selectedProduct.brochure}
+                      href={selectedProduct.models?.[activeModel]?.brochure ?? selectedProduct.brochure}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 border border-primary/50 text-primary px-6 py-3 font-mono text-xs tracking-widest uppercase hover:bg-primary/10 transition-colors"

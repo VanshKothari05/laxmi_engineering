@@ -6,6 +6,7 @@ import SectionHeading from "@/components/SectionHeading";
 import FlipCard from "@/components/FlipCard";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { TestimonialsColumn } from "@/components/ui/testimonials-columns-1";
+import { useSEO } from "@/hooks/useSEO";
 import heroImage from "@/assets/hero-home.jpg";
 import heroVideo from "@/assets/hero-home-video.mp4.asset.json";
 
@@ -127,6 +128,13 @@ const industries = [
 ];
 
 const Index = () => {
+  useSEO({
+    title: "Laxmi Engineering Works | Industrial Oil Burners, Blowers & Furnaces — Since 1974",
+    description: "Laxmi Engineering Works — ISO 9001:2015 certified manufacturer of industrial oil burners, air blowers, furnaces, cyclone separators & oil heating units. 50+ years of precision manufacturing, Mumbai, India.",
+    canonical: "/",
+    keywords: "oil burner manufacturer Mumbai, industrial air blower, industrial furnace manufacturer, pallet furnace, ID blower, axial fan, cyclone separator, Laxmi Engineering Works, ISO 9001 manufacturer India",
+  });
+
   return (
     <>
       <HeroSection
