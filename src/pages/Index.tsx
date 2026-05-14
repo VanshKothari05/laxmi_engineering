@@ -159,7 +159,7 @@ const industries = [
 
 const Index = () => {
   useSEO({
-    title: "Industrial Oil Burner Manufacturer in India | Laxmi Engineering Works",
+    title: "Industrial Burners & Furnaces | Laxmi Engineering Works",
     description:
       "Leading manufacturer of industrial oil burners, blowers, furnaces, and heating systems in Mumbai, India. Trusted engineering solutions since 1974.",
     canonical: "/",
