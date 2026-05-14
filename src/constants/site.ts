@@ -1,5 +1,5 @@
 /** Production site origin — keep in sync with index.html canonical and public/sitemap.xml */
-export const SITE_URL = "https://laxmieng.com";
+export const SITE_URL = "https://laxmi-engineering.vercel.app";
 
 export const COMPANY = {
   legalName: "Laxmi Engineering Works",

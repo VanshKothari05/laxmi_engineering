@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /brochures/
 
-Sitemap: https://laxmieng.com/sitemap.xml
+Sitemap: https://laxmi-engineering.vercel.app/sitemap.xml

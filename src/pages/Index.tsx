@@ -161,7 +161,7 @@ const Index = () => {
   useSEO({
     title: "Industrial Oil Burner Manufacturer in India | Laxmi Engineering Works",
     description:
-      "Leading manufacturer of industrial oil burners, furnaces, and blowers since 1974. ISO 9001:2015 certified engineering from Goregaon East, Mumbai — trusted across Maharashtra and India.",
+      "Leading manufacturer of industrial oil burners, blowers, furnaces, and heating systems in Mumbai, India. Trusted engineering solutions since 1974.",
     canonical: "/",
     keywords:
       "oil burner manufacturer Mumbai, industrial furnace manufacturer India, burner supplier Maharashtra, industrial blower manufacturer, ID blower India, pallet furnace, Laxmi Engineering Works Goregaon",
@@ -171,8 +171,8 @@ const Index = () => {
     <>
       <HeroSection
         tagline={<>Precision Engineering<span className="text-xl"> Since 1974</span></>}
-        title="ENGINEERING THE FUTURE"
-        titleAccent="OF INDUSTRIAL INFRASTRUCTURE"
+        title="Industrial Oil Burners, Blowers & Furnaces Manufacturer"
+        titleAccent="in Mumbai"
         subtitle="A trusted leader in high-performance industrial manufacturing. Oil burners, blowers, furnaces, and precision machinery."
         image={heroImage}
         video={heroVideo.url}
@@ -263,7 +263,7 @@ const Index = () => {
               className="lg:col-span-5 flex flex-col justify-center"
             >
               <p className="text-muted-foreground leading-relaxed mb-4">
-                <strong className="text-foreground">Laxmi Engineering Works</strong> is one of India&apos;s most trusted names in industrial manufacturing. From our 40,000 sq. ft. ISO 9001:2015 certified facility in <strong className="text-foreground">Goregaon East, Mumbai, Maharashtra</strong>, we deliver precision-engineered oil burners, blowers, furnaces, and custom machinery to 500+ clients across 10+ sectors.
+                <strong className="text-foreground">Laxmi Engineering Works</strong> is one of India&apos;s most trusted names in industrial manufacturing. Serving clients across Mumbai, Maharashtra, and India with industrial combustion and heating solutions since 1974. From our 40,000 sq. ft. ISO 9001:2015 certified facility in <strong className="text-foreground">Goregaon East, Mumbai</strong>, we deliver precision-engineered oil burners, blowers, furnaces, and custom machinery to 500+ clients across 10+ sectors.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Our experienced team of 100+ engineers combines decades of expertise with modern CNC technology to build equipment that runs reliably, year after year.
