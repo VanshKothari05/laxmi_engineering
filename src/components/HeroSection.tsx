@@ -7,9 +7,14 @@ interface HeroSectionProps {
   subtitle?: string;
   image: string;
   video?: string;
+  /** Decorative hero background — keep descriptive for SEO when no video */
+  imageAlt?: string;
 }
 
-const HeroSection = ({ tagline, title, titleAccent, subtitle, image, video }: HeroSectionProps) => {
+const HeroSection = ({ tagline, title, titleAccent, subtitle, image, video, imageAlt }: HeroSectionProps) => {
+  const backgroundAlt =
+    imageAlt ??
+    "Industrial manufacturing facility and engineered equipment — Laxmi Engineering Works, Mumbai, India";
   return (
     <section className="relative h-[80vh] min-h-[600px] flex items-center overflow-hidden bg-background">
       <div className="container relative z-10 grid grid-cols-12">
@@ -64,8 +69,9 @@ const HeroSection = ({ tagline, title, titleAccent, subtitle, image, video }: He
         >
           <img
             src={image}
-            alt=""
+            alt={backgroundAlt}
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
         </motion.div>
       )}

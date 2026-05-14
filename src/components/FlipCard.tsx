@@ -9,9 +9,16 @@ interface FlipCardProps {
   tag: string;
   description: string;
   index: number;
+  /** Router path for CTA (default full catalog) */
+  ctaPath?: string;
+  /** Descriptive alt for product imagery */
+  imageAlt?: string;
 }
 
-const FlipCard = ({ image, name, tag, description, index }: FlipCardProps) => {
+const FlipCard = ({ image, name, tag, description, index, ctaPath = "/products", imageAlt }: FlipCardProps) => {
+  const frontAlt =
+    imageAlt ??
+    `${name} — industrial equipment by Laxmi Engineering Works, oil burner and furnace manufacturer Mumbai India`;
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
@@ -33,8 +40,9 @@ const FlipCard = ({ image, name, tag, description, index }: FlipCardProps) => {
         <div className="absolute inset-0 [backface-visibility:hidden] overflow-hidden border border-border">
           <img
             src={image}
-            alt={name}
+            alt={frontAlt}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            loading="lazy"
           />
           {/* Overlay gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
@@ -71,6 +79,7 @@ const FlipCard = ({ image, name, tag, description, index }: FlipCardProps) => {
             <img
               src={image}
               alt=""
+              role="presentation"
               className="w-full h-full object-cover opacity-15 blur-sm scale-110"
             />
           </div>
@@ -99,7 +108,7 @@ const FlipCard = ({ image, name, tag, description, index }: FlipCardProps) => {
               {description}
             </p>
             <Link
-              to="/products"
+              to={ctaPath}
               className="group/link inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 font-mono text-[11px] tracking-[0.15em] uppercase hover:bg-primary/90 transition-all"
             >
               View Details 

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { SITE_URL } from "@/constants/site";
 
 interface SEOProps {
   title: string;
@@ -8,8 +9,7 @@ interface SEOProps {
   keywords?: string;
 }
 
-const BASE_URL = "https://laxmieng.com";
-const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 export const useSEO = ({ title, description, canonical, ogImage, keywords }: SEOProps) => {
   useEffect(() => {
@@ -37,13 +37,13 @@ export const useSEO = ({ title, description, canonical, ogImage, keywords }: SEO
       el.setAttribute("href", href);
     };
 
-    const canonicalUrl = canonical ? `${BASE_URL}${canonical}` : BASE_URL;
+    const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : SITE_URL;
     const image = ogImage || DEFAULT_OG_IMAGE;
 
     // Standard meta
     setMeta('meta[name="description"]', "content", description);
     if (keywords) setMeta('meta[name="keywords"]', "content", keywords);
-    setMeta('meta[name="robots"]', "content", "index, follow");
+    setMeta('meta[name="robots"]', "content", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
 
     // Canonical
     setLink("canonical", canonicalUrl);

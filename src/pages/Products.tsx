@@ -93,7 +93,7 @@ export const products: Product[] = [
     category: "Combustion",
     specs: ["Oil Flow: 3 – 350 LPH", "Max Temp: 1500°C", "Firing: Auto / Manual / Dual Fire", "Fuels: LDO / HSD / FO"],
     desc: "Laxmi Engineering Works' Industrial Oil Burners are engineered for precision and efficiency, available in Gas and Oil Burner models with oil flow capacities ranging from 3 to 350 litres per hour. Capable of reaching temperatures up to 1500°C, they are ideal for melting Aluminium, Brass, Copper, and Zinc. Both Automatic and Manual firing options are available, including Dual Fire configurations for maximum flexibility.",
-    brochure: "https://example.com/oil-burner-brochure.pdf",
+    brochure: "/brochures/oil_burner.pdf",
   },
   // 2. Air Blowers
   {
@@ -214,7 +214,7 @@ export const products: Product[] = [
       "Design: Low Maintenance with Long Service Life",
     ],
     desc: "Laxmi Engineering Works' Oil Line Heaters are engineered to ensure a consistent and reliable supply of pre-heated fuel oil to burner systems. By maintaining oil at the ideal operating temperature, these heaters improve fuel atomisation, enhance combustion efficiency, and protect burner components from the damaging effects of cold, high-viscosity oil. Compact, robust, and built for continuous duty, they are an essential part of any well-functioning industrial burner installation.",
-    brochure: "https://example.com/oil-line-heater-brochure.pdf",
+
   },
   // 8. Oil Filter
   {
@@ -231,7 +231,7 @@ export const products: Product[] = [
       "Durability: Built for Continuous Heavy-Duty Operation",
     ],
     desc: "Laxmi Engineering Works' Industrial Oil Filters provide dependable filtration to safeguard burner systems and downstream equipment from contaminants and impurities present in fuel oil. Engineered for durability and ease of maintenance, these filters extend the operating life of pumps, valves, and burner nozzles by delivering a consistently clean and stable oil supply. A critical component for any industrial fuel-oil system.",
-    brochure: "https://example.com/oil-filter-brochure.pdf",
+
   },
   // 9. Cyclone
   {
@@ -265,7 +265,7 @@ export const products: Product[] = [
       "Flexibility: Available in Various Materials & Configurations",
     ],
     desc: "Laxmi Engineering Works manufactures industrial-grade valves designed for dependable flow control across a wide range of piping applications including oil, gas, steam, water, and chemical systems. Engineered to perform reliably under demanding pressure and temperature conditions, our valves deliver leak-proof sealing and long-term durability. Available in multiple materials and configurations, each valve is built to the specific requirements of the application.",
-    brochure: "https://example.com/valve-brochure.pdf",
+
   },
 ];
 
@@ -284,7 +284,12 @@ const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
           className="relative border border-border overflow-hidden bg-secondary"
           style={{ paddingBottom: "100%" }}
         >
-          <img src={img} alt={`${name} - ${idx + 1}`} className="absolute inset-0 w-full h-full object-cover" />
+          <img
+            src={img}
+            alt={`${name} — industrial product image ${idx + 1} of 4 — Laxmi Engineering Works manufacturer Mumbai India`}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
         </motion.div>
       ))}
     </div>
@@ -293,10 +298,12 @@ const ImageGallery = ({ images, name }: { images: string[]; name: string }) => {
 
 const Products = () => {
   useSEO({
-    title: "Products | Oil Burners, Blowers, Furnaces & More — Laxmi Engineering Works",
-    description: "Browse Laxmi Engineering Works' complete industrial product range: oil burners (3–350 LPH), air blowers, ID blowers, tube axial fans, melting & pallet furnaces, oil heating units, cyclone separators, and valves. ISO certified, Mumbai.",
+    title: "Industrial Products Catalog | Oil Burners, Blowers, Furnaces — Laxmi Engineering Works Mumbai",
+    description:
+      "Browse Laxmi Engineering Works' industrial catalog: oil burners (3–350 LPH), air blowers, ID blowers, tube axial fans, melting & pallet furnaces, oil heating units, cyclone separators, and valves. ISO 9001:2015, Goregaon East, Mumbai — supply across Maharashtra and India.",
     canonical: "/products",
-    keywords: "industrial oil burner, air blower manufacturer, ID blower, tube axial fan, melting furnace, pallet furnace, oil fired furnace, oil heating pumping unit, cyclone separator, industrial valve, oil filter Mumbai",
+    keywords:
+      "oil burner manufacturer Mumbai, industrial blower catalog, furnace manufacturer India, burner supplier Maharashtra, cyclone separator, oil heating unit, Laxmi Engineering Works products",
   });
 
   const [activeCategory, setActiveCategory] = useState("All");

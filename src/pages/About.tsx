@@ -110,10 +110,12 @@ const capabilities = [
 
 const About = () => {
   useSEO({
-    title: "About Us | Laxmi Engineering Works — 50+ Years of Industrial Manufacturing",
-    description: "Learn about Laxmi Engineering Works — founded in 1974, ISO 9001:2015 certified, 40,000 sq. ft. facility in Mumbai. 500+ clients across 10+ industrial sectors. CNC machining, custom fabrication & quality testing.",
+    title: "About Us | Industrial Manufacturer Mumbai, Maharashtra — Laxmi Engineering Works Since 1974",
+    description:
+      "Laxmi Engineering Works — ISO 9001:2015 industrial manufacturer in Goregaon East, Mumbai. Founded 1974: CNC machining, custom fabrication, oil burners, blowers & furnaces for clients across India.",
     canonical: "/about",
-    keywords: "about Laxmi Engineering Works, industrial manufacturer Mumbai, ISO 9001 certified, CNC machining, custom fabrication, 50 years manufacturing, engineering company India",
+    keywords:
+      "about Laxmi Engineering Works, industrial manufacturer Mumbai Goregaon, ISO 9001 certified Maharashtra, CNC machining India, custom fabrication, 50 years manufacturing, engineering company India",
   });
 
   return (
@@ -129,6 +131,7 @@ const About = () => {
         titleAccent="EXCELLENCE"
         subtitle="40,000 sq. ft. facility. ISO 9001:2015 Certified. 50+ years of industrial manufacturing."
         image={heroImage}
+        imageAlt="About Laxmi Engineering Works — industrial manufacturing company Mumbai Maharashtra India"
       />
 
       {/* Who We Are - with images */}
@@ -149,7 +152,7 @@ const About = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.6 }}
                     src={aboutFactoryUrl}
-                    alt="Manufacturing facility"
+                    alt="Heavy industrial manufacturing hall — steel fabrication and machinery Mumbai India"
                     className="w-full h-[450px] object-cover"
                   />
                 </div>
@@ -162,7 +165,7 @@ const About = () => {
                 >
                   <img
                     src={aboutTeamUrl}
-                    alt="Engineering team"
+                    alt="Plant engineers and technicians — industrial equipment manufacturing team India"
                     className="w-full h-[220px] object-cover"
                   />
                 </motion.div>
@@ -243,7 +246,7 @@ const About = () => {
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=80"
-            alt=""
+            alt="Decorative industrial metal workshop texture background"
             className="w-full h-full object-cover opacity-[0.06]"
           />
         </div>

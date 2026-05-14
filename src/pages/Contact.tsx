@@ -47,6 +47,7 @@ const Contact = () => {
         titleAccent="FOR QUOTE"
         subtitle="Contact our engineering team for custom solutions, product details, and competitive pricing."
         image={heroImage}
+        imageAlt="Contact Laxmi Engineering Works for industrial oil burner and furnace quotes — Mumbai manufacturer"
       />
 
       <section className="py-[15vh] bg-background">

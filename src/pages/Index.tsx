@@ -6,7 +6,9 @@ import SectionHeading from "@/components/SectionHeading";
 import FlipCard from "@/components/FlipCard";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { TestimonialsColumn } from "@/components/ui/testimonials-columns-1";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useSEO } from "@/hooks/useSEO";
+import { SITE_FAQ } from "@/data/siteFaq";
 import heroImage from "@/assets/hero-home.jpg";
 import heroVideo from "@/assets/hero-home-video.mp4.asset.json";
 
@@ -105,10 +107,38 @@ const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);
 
 const featuredProducts = [
-  { image: imgOilBurners, name: "Oil Burner", tag: "Best Seller", description: "Precision-engineered oil burners delivering >92% efficiency with advanced flame control for industrial heating applications." },
-  { image: imgBlowers01, name: "Air Blowers", tag: "Heavy Duty", description: "Centrifugal and axial blowers rated up to 50,000 CFM, built for non-stop operation in the harshest environments." },
-  { image: imgFurnaces, name: "Furnace / Pallet Furnace", tag: "Custom Built", description: "Box, pit, and rotary furnaces reaching 1200°C — designed and built to your exact heat treatment specifications." },
-  { image: imgOilHeating, name: "Oil Heating And Pumping Unit", tag: "Precision", description: "Complete oil heating and pumping systems with dual simplex and duplex configurations for reliable fuel delivery." },
+  {
+    image: imgOilBurners,
+    name: "Oil Burner",
+    tag: "Best Seller",
+    description: "Precision-engineered oil burners delivering >92% efficiency with advanced flame control for industrial heating applications.",
+    ctaPath: "/oil-burners",
+    imageAlt: "Industrial oil burner systems — Laxmi Engineering Works, manufacturer Mumbai Maharashtra India",
+  },
+  {
+    image: imgBlowers01,
+    name: "Air Blowers",
+    tag: "Heavy Duty",
+    description: "Centrifugal and axial blowers rated up to 50,000 CFM, built for non-stop operation in the harshest environments.",
+    ctaPath: "/industrial-blowers",
+    imageAlt: "Industrial centrifugal air blowers — Laxmi Engineering Works blower manufacturer India",
+  },
+  {
+    image: imgFurnaces,
+    name: "Furnace / Pallet Furnace",
+    tag: "Custom Built",
+    description: "Box, pit, and rotary furnaces reaching 1200°C — designed and built to your exact heat treatment specifications.",
+    ctaPath: "/furnaces",
+    imageAlt: "Industrial melting and heat treatment furnaces — furnace manufacturer India Mumbai",
+  },
+  {
+    image: imgOilHeating,
+    name: "Oil Heating And Pumping Unit",
+    tag: "Precision",
+    description: "Complete oil heating and pumping systems with dual simplex and duplex configurations for reliable fuel delivery.",
+    ctaPath: "/products?open=oil-heating-pumping-unit",
+    imageAlt: "Oil heating and pumping unit skid — industrial fuel oil systems India",
+  },
 ];
 
 const industries = [
@@ -129,10 +159,12 @@ const industries = [
 
 const Index = () => {
   useSEO({
-    title: "Laxmi Engineering Works | Industrial Oil Burners, Blowers & Furnaces — Since 1974",
-    description: "Laxmi Engineering Works — ISO 9001:2015 certified manufacturer of industrial oil burners, air blowers, furnaces, cyclone separators & oil heating units. 50+ years of precision manufacturing, Mumbai, India.",
+    title: "Industrial Oil Burner Manufacturer in India | Laxmi Engineering Works",
+    description:
+      "Leading manufacturer of industrial oil burners, furnaces, and blowers since 1974. ISO 9001:2015 certified engineering from Goregaon East, Mumbai — trusted across Maharashtra and India.",
     canonical: "/",
-    keywords: "oil burner manufacturer Mumbai, industrial air blower, industrial furnace manufacturer, pallet furnace, ID blower, axial fan, cyclone separator, Laxmi Engineering Works, ISO 9001 manufacturer India",
+    keywords:
+      "oil burner manufacturer Mumbai, industrial furnace manufacturer India, burner supplier Maharashtra, industrial blower manufacturer, ID blower India, pallet furnace, Laxmi Engineering Works Goregaon",
   });
 
   return (
@@ -144,6 +176,7 @@ const Index = () => {
         subtitle="A trusted leader in high-performance industrial manufacturing. Oil burners, blowers, furnaces, and precision machinery."
         image={heroImage}
         video={heroVideo.url}
+        imageAlt="Industrial manufacturing — oil burners furnaces and blowers by Laxmi Engineering Works Mumbai India"
       />
 
       {/* Stats Section */}
@@ -180,8 +213,11 @@ const Index = () => {
               <div className="col-span-2 relative overflow-hidden group">
                 <img
                   src={aboutFactoryImg}
-                  alt="Industrial manufacturing facility"
+                  alt="ISO certified industrial manufacturing plant — Laxmi Engineering Works Mumbai India"
                   className="w-full h-[300px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  width={800}
+                  height={600}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
                 <motion.div
@@ -199,15 +235,21 @@ const Index = () => {
               <div className="overflow-hidden group">
                 <img
                   src={aboutTeamImg}
-                  alt="Engineering team at work"
+                  alt="Industrial engineers and fabrication team — Laxmi Engineering Works Goregaon Mumbai"
                   className="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  width={400}
+                  height={360}
                 />
               </div>
               <div className="overflow-hidden group">
                 <img
                   src={aboutWorkshopImg}
-                  alt="CNC machinery workshop"
+                  alt="CNC machining workshop for industrial burners and blowers — Laxmi Engineering Works"
                   className="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  width={400}
+                  height={360}
                 />
               </div>
             </motion.div>
@@ -221,7 +263,7 @@ const Index = () => {
               className="lg:col-span-5 flex flex-col justify-center"
             >
               <p className="text-muted-foreground leading-relaxed mb-4">
-                <strong className="text-foreground">Laxmi Engineering Works</strong> is one of Global's most trusted names in industrial manufacturing. From our 40,000 sq. ft. ISO 9001:2015 certified facility, we deliver precision-engineered oil burners, blowers, furnaces, and custom machinery to 500+ clients across 10+ sectors.
+                <strong className="text-foreground">Laxmi Engineering Works</strong> is one of India&apos;s most trusted names in industrial manufacturing. From our 40,000 sq. ft. ISO 9001:2015 certified facility in <strong className="text-foreground">Goregaon East, Mumbai, Maharashtra</strong>, we deliver precision-engineered oil burners, blowers, furnaces, and custom machinery to 500+ clients across 10+ sectors.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Our experienced team of 100+ engineers combines decades of expertise with modern CNC technology to build equipment that runs reliably, year after year.
@@ -281,6 +323,8 @@ const Index = () => {
                 tag={product.tag}
                 description={product.description}
                 index={i}
+                ctaPath={product.ctaPath}
+                imageAlt={product.imageAlt}
               />
             ))}
           </div>
@@ -380,6 +424,69 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Local SEO hubs + internal linking */}
+      <section className="py-[12vh] bg-background border-t border-border">
+        <div className="container">
+          <SectionHeading
+            tag="Solutions"
+            title="Industrial Equipment Hubs"
+            description="Deep-dive pages for procurement teams searching by product category — Mumbai engineering, India-wide supply."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              {
+                title: "Oil burners",
+                desc: "LDO, HSD, FO firing — auto, manual, and dual-fire configurations for furnaces and process heat.",
+                to: "/oil-burners",
+              },
+              {
+                title: "Industrial blowers",
+                desc: "Centrifugal air blowers, ID blowers, and tube axial fans for draft, ventilation, and process airflow.",
+                to: "/industrial-blowers",
+              },
+              {
+                title: "Furnaces",
+                desc: "Melting, pallet, and oil-fired furnace lines for foundries and metal processing across India.",
+                to: "/furnaces",
+              },
+            ].map((hub, i) => (
+              <motion.div
+                key={hub.to}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="border border-border bg-secondary/40 p-6 hover:border-primary/40 transition-colors flex flex-col h-full"
+              >
+                <h3 className="font-display text-lg font-bold text-foreground mb-2">{hub.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-4">{hub.desc}</p>
+                <Link
+                  to={hub.to}
+                  className="inline-flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-primary hover:underline"
+                >
+                  View hub <ArrowRight size={14} />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+          <p className="mt-8 text-center text-muted-foreground text-sm">
+            Serving <strong className="text-foreground">Mumbai, Maharashtra</strong> and pan-India — also see our{" "}
+            <Link to="/products" className="text-primary hover:underline">
+              full product catalog
+            </Link>
+            ,{" "}
+            <Link to="/about" className="text-primary hover:underline">
+              company profile
+            </Link>
+            , and{" "}
+            <Link to="/contact" className="text-primary hover:underline">
+              contact for quotes
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
       {/* Testimonials - Scrolling Columns */}
       <section className="py-[15vh] bg-background border-t border-border">
         <div className="container">
@@ -448,6 +555,27 @@ const Index = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ — matches JSON-LD FAQPage in StructuredData */}
+      <section className="py-[15vh] bg-background border-t border-border">
+        <div className="container max-w-3xl">
+          <SectionHeading
+            tag="FAQ"
+            title="Common Questions"
+            description="Straight answers for buyers comparing industrial burners, blowers, and furnaces across India."
+          />
+          <Accordion type="single" collapsible className="w-full border-t border-border mt-8">
+            {SITE_FAQ.map((item, idx) => (
+              <AccordionItem key={item.question} value={`item-${idx}`}>
+                <AccordionTrigger className="font-display text-left text-base text-foreground hover:no-underline hover:text-primary">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">{item.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 

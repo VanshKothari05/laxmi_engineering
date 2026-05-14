@@ -107,6 +107,25 @@ const Navbar = () => {
                       )}
                     </div>
                   ))}
+                  <div className="border-t border-border mt-1 pt-1 px-2 pb-2">
+                    <p className="px-2 py-1.5 font-mono text-[9px] text-muted-foreground tracking-widest uppercase">
+                      Popular categories
+                    </p>
+                    {[
+                      { label: "Oil burners (Mumbai & India)", to: "/oil-burners" },
+                      { label: "Industrial blowers", to: "/industrial-blowers" },
+                      { label: "Furnaces", to: "/furnaces" },
+                    ].map((hub) => (
+                      <Link
+                        key={hub.to}
+                        to={hub.to}
+                        onClick={() => setIsProductOpen(false)}
+                        className="block px-4 py-2 text-sm text-primary/90 hover:text-primary hover:bg-primary/10"
+                      >
+                        {hub.label}
+                      </Link>
+                    ))}
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -192,6 +211,20 @@ const Navbar = () => {
                     )}
                   </div>
                 ))}
+                <div className="mt-3 pt-3 border-t border-border/60 space-y-1">
+                  <span className="font-mono text-[9px] text-muted-foreground tracking-widest uppercase block py-1">
+                    Popular categories
+                  </span>
+                  <Link to="/oil-burners" onClick={() => setIsOpen(false)} className="block py-1.5 text-sm text-primary">
+                    Oil burners
+                  </Link>
+                  <Link to="/industrial-blowers" onClick={() => setIsOpen(false)} className="block py-1.5 text-sm text-primary">
+                    Industrial blowers
+                  </Link>
+                  <Link to="/furnaces" onClick={() => setIsOpen(false)} className="block py-1.5 text-sm text-primary">
+                    Furnaces
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>

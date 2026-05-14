@@ -137,6 +137,9 @@ const Footer = () => {
                 { label: "Home", path: "/" },
                 { label: "About", path: "/about" },
                 { label: "Products", path: "/products" },
+                { label: "Oil burners", path: "/oil-burners" },
+                { label: "Industrial blowers", path: "/industrial-blowers" },
+                { label: "Furnaces", path: "/furnaces" },
                 { label: "Quality", path: "/quality" },
                 { label: "Contact", path: "/contact" },
               ].map((item) => (
@@ -154,8 +157,14 @@ const Footer = () => {
           <div>
             <h4 className="font-mono text-xs tracking-widest uppercase text-primary mb-6">Contact</h4>
             <div className="flex flex-col gap-3 text-sm text-muted-foreground">
-              <p>Laxmi Engineering Works</p>
-              <p>Goregaon East, Mumbai – 400063</p>
+              <p className="text-foreground font-medium">Laxmi Engineering Works</p>
+              <p>
+                Unit No. 09, Bhola Bhagwan Industrial Estate,
+                <br />
+                IB Patel Road, Goregaon East,
+                <br />
+                Mumbai 400063, Maharashtra, India
+              </p>
               <a
                 href="mailto:info@laxmieng.com"
                 className="text-foreground hover:text-primary transition-colors"

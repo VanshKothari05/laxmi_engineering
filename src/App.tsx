@@ -13,6 +13,7 @@ import Products from "./pages/Products";
 import Quality from "./pages/Quality";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ProductHubPage from "./pages/ProductHubPage";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -41,6 +42,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/oil-burners" element={<ProductHubPage hubSlug="oil-burners" />} />
+            <Route path="/industrial-blowers" element={<ProductHubPage hubSlug="industrial-blowers" />} />
+            <Route path="/furnaces" element={<ProductHubPage hubSlug="furnaces" />} />
             <Route path="/quality" element={<Quality />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />

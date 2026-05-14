@@ -42,6 +42,7 @@ const Quality = () => {
         titleAccent="COMMITMENT"
         subtitle="Rigorous quality control at every stage — from raw material to final delivery. Precision you can trust."
         image={heroImage}
+        imageAlt="ISO 9001 quality assurance and industrial inspection — Laxmi Engineering Works Mumbai"
       />
 
        <section className="py-[15vh] bg-background">
