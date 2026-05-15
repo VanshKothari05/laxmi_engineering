@@ -263,7 +263,7 @@ const Index = () => {
               className="lg:col-span-5 flex flex-col justify-center"
             >
               <p className="text-muted-foreground leading-relaxed mb-4">
-                <strong className="text-foreground">Laxmi Engineering Works</strong> is one of India&apos;s most trusted names in industrial manufacturing. Serving clients across Mumbai, Maharashtra, and India with industrial combustion and heating solutions since 1974. From our 40,000 sq. ft. ISO 9001:2015 certified facility in <strong className="text-foreground">Goregaon East, Mumbai</strong>, we deliver precision-engineered oil burners, blowers, furnaces, and custom machinery to 500+ clients across 10+ sectors.
+                <strong className="text-foreground">Laxmi Engineering Works</strong> is one of India&apos;s most trusted names in industrial manufacturing. Serving clients across Mumbai, Maharashtra, India as well as Internationally with industrial combustion and heating solutions since 1974. From our 40,000 sq. ft. ISO 9001:2015 certified facility in <strong className="text-foreground">Goregaon East, Mumbai</strong>, we deliver precision-engineered oil burners, blowers, furnaces, and custom machinery to 500+ clients across 10+ sectors.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Our experienced team of 100+ engineers combines decades of expertise with modern CNC technology to build equipment that runs reliably, year after year.
