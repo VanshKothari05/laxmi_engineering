@@ -21,7 +21,7 @@ import imgMelting1 from "@/assets/melting-1.jpg";
 import imgMelting2 from "@/assets/melting-2.jpg";
 import imgMelting3 from "@/assets/melting-3.jpg";
 import imgMelting4 from "@/assets/melting-4.jpg";
-import imgOilFurnace1 from "@/assets/oil-1.jpg";
+import imgOilFurnace1 from "@/assets/oil-1-square.jpg";
 import imgOilFurnace2 from "@/assets/oil-2.jpg";
 import imgOilFurnace3 from "@/assets/oil-3.jpg";
 import imgOilFurnace4 from "@/assets/oil-4.jpg";
@@ -32,7 +32,7 @@ import imgPallet4 from "@/assets/pallet-4.jpg";
 import imgOilHeating from "@/assets/product-oil-heating.jpg";
 import imgSimplex1 from "@/assets/simple-1.jpg";
 import imgSimplex2 from "@/assets/simple-2.jpg";
-import imgSimplex3 from "@/assets/simple-3.jpg";
+import imgSimplex3 from "@/assets/simple-3-square.jpg";
 import imgDuplex1 from "@/assets/duplex-1.jpg";
 import imgDuplex2 from "@/assets/duplex-2.jpg";
 import imgDuplex3 from "@/assets/duplex-3.jpg";
@@ -40,7 +40,7 @@ import imgOilLineHeater from "@/assets/product-oil-line-heater.jpg";
 import imgOilFilter from "@/assets/product-oil-filter.jpg";
 import imgCyclone from "@/assets/product-cyclone.jpg";
 import imgCyclone1 from "@/assets/cyclone-1.jpg";
-import imgCyclone2 from "@/assets/cyclone-2.jpg";
+import imgCyclone2 from "@/assets/cyclone-2-square.jpg";
 import imgCyclone3 from "@/assets/cyclone-3.jpg";
 import imgCyclone4 from "@/assets/cyclone-4.jpg";
 import imgValve from "@/assets/product-valve.jpg";
@@ -109,7 +109,7 @@ export const products: Product[] = [
   },
   // 3. Furnace / Pallet Furnace
   {
-    image: imgFurnaces,
+    image: imgOilFurnace1,
     name: "Furnace / Pallet Furnace",
     serial: "LX-FR-2024",
     icon: Factory,
@@ -148,7 +148,7 @@ export const products: Product[] = [
   },
   // 4. Oil Heating & Pumping Unit
   {
-    image: imgOilHeating,
+    image: imgSimplex3,
     name: "Oil Heating & Pumping Unit",
     serial: "LX-OH-2024",
     icon: Thermometer,
@@ -235,7 +235,7 @@ export const products: Product[] = [
   },
   // 9. Cyclone
   {
-    image: imgCyclone,
+    image: imgCyclone2,
     images: [imgCyclone1, imgCyclone2, imgCyclone3, imgCyclone4],
     name: "Cyclone",
     serial: "LX-CY-2024",
@@ -524,7 +524,11 @@ const Products = () => {
                 <div className="flex items-center gap-3 mb-2">
                   <span className="font-mono text-[10px] text-primary tracking-widest uppercase bg-primary/15 px-3 py-1 border border-primary/30">{selectedProduct.category}</span>
                 </div>
-                <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground">{selectedProduct.name}</h2>
+                <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+                  {selectedProduct.models 
+                    ? `${selectedProduct.name.split(" / ")[0]} / ${selectedProduct.models[activeModel].name}` 
+                    : selectedProduct.name}
+                </h2>
                 <button onClick={() => setSelectedProduct(null)} className="absolute top-4 right-4 w-10 h-10 bg-secondary border border-border flex items-center justify-center hover:bg-accent transition-colors">
                   <X size={18} />
                 </button>
