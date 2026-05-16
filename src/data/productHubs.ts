@@ -30,7 +30,7 @@ const hubs: Record<string, ProductHubConfig> = {
     lede:
       "Laxmi Engineering Works engineers and supplies industrial oil burners for melting, heat treatment, and process heating — built for Indian fuels, plant duty cycles, and long field life.",
     paragraphs: [
-      "From our Goregaon East, Mumbai facility, we support projects across India, Sri Lanka, and international markets with application-fit burner sizing, combustion tuning guidance, and documentation for procurement and maintenance teams.",
+      "From our Goregaon East, Mumbai facility, we support projects across India, and international markets with application-fit burner sizing, combustion tuning guidance, and documentation for procurement and maintenance teams.",
       "Explore capacities, firing modes, and integration options on our full product catalog, or contact us with your furnace type, fuel, and required heat release for a configuration-led quotation.",
     ],
     primaryCta: { label: "View oil burners in catalog", to: "/products?open=oil-burner" },
@@ -57,7 +57,7 @@ const hubs: Record<string, ProductHubConfig> = {
       "High-performance air movement for combustion draft, ventilation, and process cooling — designed for continuous duty in foundries, furnaces, boilers, and manufacturing plants.",
     paragraphs: [
       "Our blower range includes centrifugal air blowers, induced draft (ID) blowers for flue gas paths, and tube axial fans for high-volume airflow — with MS, SS, and aluminium impeller options and direct or belt drive layouts.",
-      "Based in Mumbai, we routinely support customers across India, Sri Lanka, and international markets with application-specific selection, fabrication discipline, and after-sales spares readiness.",
+      "Based in Mumbai, we routinely support customers across India, international markets with application-specific selection, fabrication discipline, and after-sales spares readiness.",
     ],
     primaryCta: { label: "Browse air blowers", to: "/products?open=air-blowers" },
     secondaryCtas: [

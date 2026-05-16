@@ -15,7 +15,7 @@ import heroVideo from "@/assets/hero-home-video.mp4.asset.json";
 import imgOilBurners from "@/assets/product-oil-burners.png";
 import imgBlowers from "@/assets/product-blowers.jpg";
 import imgBlowers01 from "@/assets/air-blower-01.jpg";
-import imgFurnaces from "@/assets/oil-1-square.jpg";
+import imgFurnaces from "@/assets/pallet-1.jpg";
 import imgOilHeating from "@/assets/simple-3-square.jpg";
 import imgOilLineHeater from "@/assets/product-oil-line-heater.jpg";
 import imgOilFilter from "@/assets/product-oil-filter.jpg";
@@ -470,7 +470,7 @@ const Index = () => {
             ))}
           </div>
           <p className="mt-8 text-center text-muted-foreground text-sm">
-            Serving <strong className="text-foreground">India, Sri Lanka, and Global Markets</strong> — also see our{" "}
+            Serving <strong className="text-foreground">India, and Global Markets</strong> — also see our{" "}
             <Link to="/products" className="text-primary hover:underline">
               full product catalog
             </Link>

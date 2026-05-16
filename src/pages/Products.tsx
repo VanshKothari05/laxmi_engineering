@@ -109,7 +109,7 @@ export const products: Product[] = [
   },
   // 3. Furnace / Pallet Furnace
   {
-    image: imgOilFurnace1,
+    image: imgPallet1,
     name: "Furnace / Pallet Furnace",
     serial: "LX-FR-2024",
     icon: Factory,
