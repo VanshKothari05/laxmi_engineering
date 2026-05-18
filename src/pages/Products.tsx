@@ -93,7 +93,7 @@ export const products: Product[] = [
     category: "Combustion",
     specs: ["Oil Flow: 3 – 350 LPH", "Max Temp: 1500°C", "Firing: Auto / Manual / Dual Fire", "Fuels: LDO / HSD / FO"],
     desc: "Laxmi Engineering Works' Industrial Oil Burners are engineered for precision and efficiency, available in Gas and Oil Burner models with oil flow capacities ranging from 3 to 350 litres per hour. Capable of reaching temperatures up to 1500°C, they are ideal for melting Aluminium, Brass, Copper, and Zinc. Both Automatic and Manual firing options are available, including Dual Fire configurations for maximum flexibility.",
-    brochure: "https://drive.google.com/file/d/1tlqgjZLvSDY1EC31sA6fi8zY1EvX4MK7/view?usp=drive_link",
+    brochure: "https://drive.google.com/file/d/1cdKHOBBVRHxFssGLPhOTr1odFjCi9Nh4/view?usp=drive_link",
   },
   // 2. Air Blowers
   {
@@ -105,7 +105,7 @@ export const products: Product[] = [
     category: "Air Systems",
     specs: ["Drive Options: Direct / V-Belt / CI Coupling", "Impeller Material: MS & Aluminium", "Pressure Range: Low / Medium / High", "Standards: IS & AMCA Compliant"],
     desc: "Laxmi Engineering Works' Industrial Air Blowers deliver efficient and reliable air movement for low, medium, and high-pressure industrial environments. Available in flow rates from 1,000 to 6,000 CFM, with impellers fabricated in Mild Steel and Aluminium for long-lasting durability. Drive options include direct shaft mount, C.I. coupling, and V-Belt configurations — all customisable to specific operational requirements.",
-    brochure: "https://drive.google.com/file/d/1ZcbmCKuoR6JOahDK6oG94TWwM14yV-wR/view?usp=drive_link",
+    brochure: "https://drive.google.com/file/d/1SSuxesO7i4YeLloP8KZYU8su8UDx_D8a/view?usp=drive_link",
   },
   // 3. Furnace / Pallet Furnace
   {
@@ -123,21 +123,21 @@ export const products: Product[] = [
         desc: "Laxmi Engineering Works' Electric Furnaces are purpose-built for efficient and reliable metal melting, particularly aluminium, with temperatures reaching up to 980°C. Rated at 6 kW and above, they support both single-phase and three-phase power and feature fully automatic operation with minimal heat loss and reduced power consumption. Their durable construction ensures long-term performance in demanding industrial environments.",
         images: [imgMelting1, imgMelting2, imgMelting3, imgMelting4],
         specs: ["Metals: Aluminium, Brass, Copper, Zinc", "Operation: Fully Automatic Control", "Power: Single & Three Phase Available", "Temperature: Can reach up to 980°C"],
-        brochure: "https://drive.google.com/file/d/1YUfUYBXFM2mk1Z8wCLX1JoRXj3EOvOiy/view?usp=drive_link",
+        brochure: "https://drive.google.com/file/d/1ft_CZXAga5nQA91f5A4rUSYbddnt-7cF/view?usp=drive_link",
       },
       {
         name: "Pallet Furnace",
         desc: "The Laxmi Pallet Furnace is an innovative, eco-friendly heating solution that uses readily available wooden pallets as fuel, eliminating harmful carbon emissions and dramatically reducing energy costs. Compared to conventional gas or diesel furnaces, it can save industries up to ₹25 lakhs per year in fuel costs while delivering high-performance heating for aluminium melting and other industrial processes. Recognised and promoted by the Indian government as a sustainable alternative to fossil-fuel-based heating.",
         images: [imgPallet2, imgPallet3, imgPallet4, imgPallet1],
         specs: ["Fuel Cost Savings: Up to ₹25 Lakhs / Year", "Carbon Emissions: Zero – Eco-Friendly Fuel", "Fuel Source: Wooden Pallets", "Govt Recognition: Promoted by Govt of India"],
-        brochure: "https://drive.google.com/file/d/1TkTQXk-hBJzvUCimRxdFmAAPV_E3az0J/view?usp=drive_link",
+        brochure: "https://drive.google.com/file/d/1VRg83xQ2NjenPJc0xVW6uilWHrUuNn2m/view?usp=drive_link",
       },
       {
         name: "Oil Furnace",
         desc: "Laxmi Engineering Works' Oil Fired Furnaces are built for efficient and reliable metal melting across a wide range of industries, including brass, copper, aluminium, zinc, forging, and chemical processing. Available in capacities from 20 kg to 6 tons with temperatures reaching up to 1600°C, they are offered in fixed and tilt configurations for versatile operation. Engineered for exceptional heating efficiency and durability, these furnaces perform reliably in the most demanding industrial conditions.",
         images: [imgOilFurnace1, imgOilFurnace2, imgOilFurnace3, imgOilFurnace4],
         specs: ["Temperature Capacity: Can reach up to 1600°C", "Applications: Metal melting for brass, copper, aluminum, and zinc", "Industries: Forging operations & chemical plants", "Processing: BITUMEN processing & high-heat industrial use"],
-        brochure: "https://drive.google.com/file/d/1_jLhnkOb7PlP7O0N2jbM0cCaXxtmbnVk/view?usp=drive_link",
+        brochure: "https://drive.google.com/file/d/1oKY70oQ0FRvCwPHEJYNd4qxz4CMMgYmB/view?usp=drive_link",
       },
     ],
     dropdownModels: [
@@ -155,7 +155,7 @@ export const products: Product[] = [
     category: "Heating",
     specs: [],
     desc: "Laxmi Engineering Works' Oil Heating and Pumping Units provide efficient oil circulation and precise heating for demanding industrial processes. Available in Simplex and Duplex models, each equipped with oil filters, pressure gauges, temperature gauges, and return and pressure line fittings mounted on a robust MS structure. Built for durability and optimal performance, these units ensure consistent oil supply to burners and industrial systems.",
-    brochure: "https://drive.google.com/file/d/1jKKdqxm6XnvvL2eLyFMBl8gttigQt_Cm/view?usp=drive_link",
+    brochure: "https://drive.google.com/file/d/1HbDLc8Tqa-bSEhDhv-Y-puMVxLOs5nJL/view?usp=drive_link",
     models: [
       {
         name: "Simplex Model",
@@ -185,7 +185,7 @@ export const products: Product[] = [
     category: "Air Systems",
     specs: ["Airflow Capacity: Available from 100 CFM to 21,000 CFM", "Drive: Direct / V-Belt", "Material: MS / SS", "Application: Essential for maintaining clean air quality by effectively extracting smoke and pollutants from industrial setups."],
     desc: "Laxmi Engineering Works' Induced Draft (ID) Blowers are purpose-built for effective exhaust gas extraction in furnaces, boilers, and kilns. Engineered to handle high-temperature flue gases with sustained efficiency, these blowers maintain optimal draft conditions for complete combustion and reduced emissions. Available in a range of capacities with robust MS construction and customisable drive configurations to suit specific industrial requirements.",
-    brochure: "https://drive.google.com/file/d/1kHE5MM-6yvKmdtP9oauSqflJjgdGA9BH/view?usp=drive_link",
+    brochure: "https://drive.google.com/file/d/1AD0IpushzANhL5tyR9xgK5ynOC2RKfZQ/view?usp=drive_link",
   },
   // 6. Tube Axial Fan
   {
@@ -197,7 +197,7 @@ export const products: Product[] = [
     category: "Air Systems",
     specs: ["Type: Axial Flow", "Drive: Direct / V-Belt", "Material: MS / Aluminium", "Application: Ventilation / Cooling"],
     desc: "Laxmi Engineering Works' Tube Axial Fans deliver high-volume airflow in a compact, inline configuration ideal for industrial ventilation, process cooling, and air circulation applications. Designed with aerodynamically optimised blades for maximum efficiency and low noise, they are available in multiple sizes and drive options. Their robust construction ensures reliable, long-term performance in demanding environments.",
-    brochure: "https://drive.google.com/file/d/1VWDRBV-MMNdIsBRvRyNXvgt5lPhjCT0y/view?usp=drive_link",
+    brochure: "https://drive.google.com/file/d/1SSuxesO7i4YeLloP8KZYU8su8UDx_D8a/view?usp=drive_link",
   },
   // 7. Oil Line Heater
   {
@@ -248,7 +248,7 @@ export const products: Product[] = [
       "Compliance: Supports Industrial Emission Control Norms",
     ],
     desc: "Laxmi Engineering Works' Cyclone Separators are high-performance industrial dust collection systems that harness centrifugal force to efficiently separate dust, particulates, and debris from gas or air streams — with no moving parts and virtually no maintenance. Widely used in foundries, kilns, furnaces, and manufacturing facilities, they help industries achieve clean air standards, protect downstream equipment, and comply with environmental emission regulations.",
-    brochure: "https://drive.google.com/file/d/1jb1Bj6fWsBOhD_e0n-xGmlpzmdYAGc-8/view?usp=drive_link",
+    brochure: "https://drive.google.com/file/d/10_B8Jh9FXzWIyxmb_NwFaNAhmdhFnYWC/view?usp=drive_link",
   },
   // 10. Valve
   {
